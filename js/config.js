@@ -6,8 +6,8 @@ let respecConfig = {
   // TODO: title is verplicht! Neem hieronder de titel van het document op
   title: "CIM RTTP",
   //-- specStatus is verplicht! (activeer 1 van de volgende)
-  //specStatus: "wv",                 // Werkversie
-  specStatus: "cv",               // Consultatieversie
+  specStatus: "wv",                 // Werkversie
+  //specStatus: "cv",               // Consultatieversie
   //specStatus: "vv",               // Versie ter vaststelling
   //specStatus: "def",              // Vastgestelde versie
   //specStatus: "basis",            // Basis Document
@@ -48,8 +48,8 @@ let respecConfig = {
   publishVersion: [],
  
   //-- Voor dit blok geldt: alleen als er eerdere versies zijn en altijd beide aan/uit! 
-  //previousPublishDate: "2014-05-01",
-  //previousMaturity: "CV",
+  previousPublishDate: "2026-07-10",
+  previousMaturity: "CV",
 
   //-- Deze gebruiken we niet binnen Geonovum
   //prevVersion: "0.0.1",
