@@ -1,0 +1,1801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mim:Informatiemodel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mim="http://www.geostandaarden.nl/mim/mim-core/1.2" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="&#xA;                https://raw.githubusercontent.com/Imvertor/Imvertor-Maven/refs/heads/master/src/main/resources/etc/xsd/MIMformat/v2/1.2/MIMFORMAT_Mim_relatierol.xsd&#xA;    ">
+	<mim:alias>Actueel Verkeersplan</mim:alias>
+	<mim:MIMVersie>1.2</mim:MIMVersie>
+	<mim:MIMTaal>Nederlands</mim:MIMTaal>
+	<mim:relatiemodelleringstype>Relatierol</mim:relatiemodelleringstype>
+	<mim:toelichting>"C:\Users\Arnoud.deBoer\OneDrive - ProRail BV\Documenten\22 RTTP\Informatiemodel RTTP  - werkversie.docx"</mim:toelichting>
+	<mim:informatiemodeldomein>RTTP</mim:informatiemodeldomein>
+	<mim:informatiemodeltype>CIM</mim:informatiemodeltype>
+	<mim:basis-uri>https://improrail.github.io/RTTP</mim:basis-uri>
+	<mim:datumOpname>01-07-2026</mim:datumOpname>
+	<mim:packages>
+		<mim:Domein>
+			<mim:datumOpname>08-04-2026</mim:datumOpname>
+			<mim:alias>Conceptueel informatiemodel RTTP</mim:alias>
+			<mim:datatypen>
+				<mim:Enumeratie id="U20c5880c-f71a-42d3-8628-c823b8902544" index="1">
+					<mim:naam>Instructie</mim:naam>
+					<mim:definitie/>
+					<mim:waarden>
+						<mim:Waarde id="U878326c0-1bf1-46ab-bb54-6b7d6e36a260" index="1">
+							<mim:naam>roestrijden</mim:naam>
+							<mim:definitie/>
+						</mim:Waarde>
+						<mim:Waarde id="Ub6a58b97-c297-48cb-b432-eed3626fe716" index="2">
+							<mim:naam>rijden_op_zicht</mim:naam>
+							<mim:definitie/>
+						</mim:Waarde>
+						<mim:Waarde id="U454f0927-d907-4424-b2fa-e6ca65f7632b" index="3">
+							<mim:naam>goederencriterium</mim:naam>
+							<mim:definitie/>
+						</mim:Waarde>
+						<mim:Waarde id="U64a3dab6-bb36-48a2-9700-106d8faeaf7d" index="4">
+							<mim:naam>dieseltractie</mim:naam>
+							<mim:definitie/>
+						</mim:Waarde>
+						<mim:Waarde id="Uc136cb46-91fa-4297-87dd-932b15af0f4b" index="5">
+							<mim:naam>herfstcriterium</mim:naam>
+							<mim:definitie/>
+						</mim:Waarde>
+					</mim:waarden>
+				</mim:Enumeratie>
+				<mim:Enumeratie id="U9d6733a9-7359-4418-ac20-b51619db7df6" index="2">
+					<mim:naam>TypeTreinbeweging</mim:naam>
+					<mim:definitie>Een treinrit met het oogmerk van vervoer, waarbij goederen, personen of materieel over het spoor worden verplaatst volgens een dienstregeling of gepland traject.</mim:definitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:waarden>
+						<mim:Waarde id="U445be15a-9fd8-4a0f-b8b3-fe66daf1aba9" index="1">
+							<mim:naam>vervoerbeweging</mim:naam>
+							<mim:definitie>Een treinrit met het oogmerk van vervoer, waarbij goederen, personen of materieel over het spoor worden verplaatst volgens een dienstregeling of gepland traject.</mim:definitie>
+							<mim:alias>treinrit</mim:alias>
+							<mim:toelichting>Deze beweging vindt plaats over de vrije baan en/of emplacementen en wordt gerealiseerd via vastgelegde routes en rijwegen.</mim:toelichting>
+							<mim:herkomstDefinitie>RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Waarde>
+						<mim:Waarde id="Ucba7278a-3823-4d88-a58e-e31235599aa3" index="2">
+							<mim:naam>rangeerbeweging</mim:naam>
+							<mim:definitie>Een beweging van spoorvoertuigen zonder oogmerk van vervoer, uitgevoerd binnen de grenzen van een emplacement of materieelknooppunt, waarbij geen vrije baan wordt bereden.</mim:definitie>
+							<mim:toelichting>In bediend gebied blijft de beweging binnen één PPLG, tenzij een PPLG-vrijebaan kort wordt bereden om te keren (zaagbeweging).</mim:toelichting>
+							<mim:herkomstDefinitie>RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Waarde>
+						<mim:Waarde id="U24d8784c-18b3-4e46-b7fd-dfa691c5148d" index="3">
+							<mim:naam>terminalbeweging</mim:naam>
+							<mim:definitie>Een beweging van spoorvoertuigen binnen een terminalgebied, uitgevoerd om logistieke activiteiten zoals laden, lossen, rangeren of opstellen mogelijk te maken.</mim:definitie>
+							<mim:toelichting>Deze beweging vindt plaats buiten de reguliere vervoersroute en is vaak gekoppeld aan een tijd-ruimte reservering (ruimteslot) in plaats van een vooraf exact vastgelegde route.</mim:toelichting>
+							<mim:herkomstDefinitie>RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Waarde>
+					</mim:waarden>
+				</mim:Enumeratie>
+				<mim:Enumeratie id="U8336ae34-6d92-4858-8964-19a2e9393f47" index="3">
+					<mim:naam>TypeGebeurtenis</mim:naam>
+					<mim:definitie>Waardenverzameling voor typen Gebeurtenis.</mim:definitie>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:waarden>
+						<mim:Waarde id="U8a224b27-1d28-4b96-ac5e-0992c0a0717a" index="1">
+							<mim:naam>aankomst</mim:naam>
+							<mim:definitie>Gebeurtenis die markeert dat een trein een locatie bereikt.</mim:definitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>ITM DienstregelInfraInzetPlan en Uitvoering</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="U093c0c2f-837a-408b-83e6-5264f2ef230f" index="2">
+							<mim:naam>doorkomst</mim:naam>
+							<mim:definitie>Gebeurtenis die markeert dat een trein een locatie passeert zonder daar te stoppen.</mim:definitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>ITM DienstregelInfraInzetPlan en Uitvoering</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="Ub32afc1b-20d4-4bb6-8d5b-d752c48da891" index="3">
+							<mim:naam>vertrek</mim:naam>
+							<mim:definitie>Gebeurtenis die markeert dat een trein een locatie verlaat.</mim:definitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>ITM DienstregelInfraInzetPlan en Uitvoering</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+					</mim:waarden>
+				</mim:Enumeratie>
+				<mim:Enumeratie id="Ud70e4911-5f4e-4acd-8479-e9d4877e822c" index="4">
+					<mim:naam>TypeOpstelling</mim:naam>
+					<mim:definitie>Een materieelopstelling waarbij materieel is opgesteld ten behoeve van operationele handelingen, zoals samenstellen, splitsen, combineren, keren of locomotief omlopen.</mim:definitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:waarden>
+						<mim:Waarde id="Ufffbf8ea-bde7-4dd5-a2bc-faa7d23b3b8c" index="1">
+							<mim:naam>wachten</mim:naam>
+							<mim:definitie/>
+							<mim:alias>0042</mim:alias>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Waarde>
+						<mim:Waarde id="Udb6f1f10-8e18-489b-910e-2950fbfba734" index="2">
+							<mim:naam>voertuig_parkeren</mim:naam>
+							<mim:definitie/>
+							<mim:alias>0018</mim:alias>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Waarde>
+						<mim:Waarde id="Ubb537f5c-0fde-48f0-8815-5bd1f29ba18f" index="3">
+							<mim:naam>operationele_opstelling</mim:naam>
+							<mim:definitie>Een materieelopstelling waarbij materieel is opgesteld ten behoeve van operationele handelingen, zoals samenstellen, splitsen, combineren, keren of locomotief omlopen.</mim:definitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+						</mim:Waarde>
+					</mim:waarden>
+				</mim:Enumeratie>
+				<mim:Enumeratie id="U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e" index="5">
+					<mim:naam>TypeMeetpunt</mim:naam>
+					<mim:definitie>&#xD;sectielas&#xD;assentellergrens&#xD;balisegroep&#xD;detectiepunt&#xD;sein&#xD;wissel&#xD;virtueel meetpunt&#xD;</mim:definitie>
+					<mim:waarden>
+						<mim:Waarde id="U9c80a136-699a-4870-87a8-b63d23f171ab" index="1">
+							<mim:naam>assentellertelpunt</mim:naam>
+							<mim:definitie/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:begrip>https://otl.prorail.nl/otl/vigerend/Assenteller-Telpunt</mim:begrip>
+							<mim:herkomstDefinitie>ProRail OTLspoor</mim:herkomstDefinitie>
+							<mim:herkomst>ProRail OTLspoor</mim:herkomst>
+						</mim:Waarde>
+						<mim:Waarde id="U77ec8185-380f-4726-b3b6-1c7c5766e5c1" index="2">
+							<mim:naam>balisegroep</mim:naam>
+							<mim:definitie/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:begrip>https://otl.prorail.nl/otl/vigerend/Balise-Groep</mim:begrip>
+							<mim:herkomst>ProRail OTLspoor</mim:herkomst>
+							<mim:alias>Balise-Groep</mim:alias>
+							<mim:herkomstDefinitie>ProRail OTLspoor</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="U6c1d06c2-1ac0-4af5-b655-9cad6cb3b767" index="3">
+							<mim:naam>detectiepedaal</mim:naam>
+							<mim:definitie/>
+							<mim:begrip>https://otl.prorail.nl/otl/vigerend/Detectiepedaal</mim:begrip>
+							<mim:herkomst>ProRail OTLspoor</mim:herkomst>
+							<mim:herkomstDefinitie>ProRail OTLspoor</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Waarde>
+						<mim:Waarde id="Uff29c00c-e7f5-452e-afd4-e6fc663dce45" index="4">
+							<mim:naam>massadetectielus</mim:naam>
+							<mim:definitie/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:begrip>https://otl.prorail.nl/otl/vigerend/Massadetectielus</mim:begrip>
+							<mim:herkomst>ProRail OTLspoor</mim:herkomst>
+							<mim:herkomstDefinitie>ProRail OTLspoor</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="Ua3b2ff4d-ac8a-4dc6-82c9-277e30e2c0ec" index="5">
+							<mim:naam>sectielas</mim:naam>
+							<mim:definitie/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:begrip>https://otl.prorail.nl/otl/vigerend/ES-Las</mim:begrip>
+							<mim:alias>ES-las</mim:alias>
+							<mim:herkomst>ProRail OTLspoor</mim:herkomst>
+							<mim:herkomstDefinitie>ProRail OTLspoor</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="U576e80f5-09a1-46ff-ac0b-0c2acb833e7b" index="6">
+							<mim:naam>virtueel_meetpunt</mim:naam>
+							<mim:definitie>Logisch gedefinieerd meetpunt zonder directe fysieke infrastructuurcomponent.</mim:definitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+					</mim:waarden>
+				</mim:Enumeratie>
+				<mim:Enumeratie id="U7cc99c65-b26e-463b-9f21-ec7bbe42134b" index="6">
+					<mim:naam>SoortRijactiviteit</mim:naam>
+					<mim:definitie>Waardenverzameling voor soorten Rijactiviteit.</mim:definitie>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:waarden>
+						<mim:Waarde id="U199af993-c8b8-42c0-844d-3b3097a0b77d" index="1">
+							<mim:naam>rangeren</mim:naam>
+							<mim:definitie/>
+							<mim:alias>0020</mim:alias>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="U84bee097-abeb-42d7-b006-b8468d6a3939" index="2">
+							<mim:naam>rangeerdienst_uitvoeren</mim:naam>
+							<mim:definitie/>
+							<mim:alias>0021</mim:alias>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="U23d04c1e-6b03-4055-920f-f4f7299cb18d" index="3">
+							<mim:naam>terminaldienst_verlenen</mim:naam>
+							<mim:definitie/>
+							<mim:alias>0022</mim:alias>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="U9174cbb5-f47c-41cb-876d-375bbe8d62b4" index="4">
+							<mim:naam>locomotief_omlopen</mim:naam>
+							<mim:definitie/>
+							<mim:alias>0007</mim:alias>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+						<mim:Waarde id="Ue5e2c01b-d856-4b81-ac0c-d41d801ea523" index="5">
+							<mim:naam>meerijden_met_andere_trein</mim:naam>
+							<mim:definitie/>
+							<mim:alias>0043</mim:alias>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Waarde>
+					</mim:waarden>
+				</mim:Enumeratie>
+				<mim:Enumeratie id="Uc87fbb26-64be-48f3-a58d-028d640c782b" index="7">
+					<mim:naam>TypeVrijgave</mim:naam>
+					<mim:definitie/>
+					<mim:waarden>
+						<mim:Waarde id="Ua3670258-ff17-4d82-bc05-c7f63516969a" index="1">
+							<mim:naam>vrijgave_rangeergebied</mim:naam>
+							<mim:definitie/>
+							<mim:begrip>https://otl.prorail.nl/otl/vigerend/Vrijgave-Rangeer-Gebied</mim:begrip>
+							<mim:herkomst>OTL ProRail</mim:herkomst>
+							<mim:herkomstDefinitie>OTL ProRail</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Waarde>
+					</mim:waarden>
+				</mim:Enumeratie>
+			</mim:datatypen>
+			<mim:objecttypen>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Ub4ada878-801e-46df-b6f6-5fadbe94571d" index="1">
+					<mim:naam>Infracapaciteitseenheid</mim:naam>
+					<mim:definitie>Abstract objecttype voor de beschrijving van onderdelen van de infrastructuur die kunnen worden gebruikt bij de afbakening van routes, gebieden en capaciteitsgebruik.</mim:definitie>
+					<mim:indicatieAbstractObject>true</mim:indicatieAbstractObject>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5" index="2">
+					<mim:naam>InfraGebruiksdoel</mim:naam>
+					<mim:definitie>Het doel waarvoor railinfrastructuur wordt ingezet of gereserveerd binnen een actueel verkeersplan.</mim:definitie>
+					<mim:indicatieAbstractObject>true</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U55787f00-2065-4c90-9c0c-1877209534de" index="1">
+							<mim:naam>datum</mim:naam>
+							<mim:definitie>Tijdstip van de treinbeweging.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U6d9fd6dc-b198-4235-8b4d-51e6ed1dd7cd">Day</mim:type>
+							<mim:patroon>Datum</mim:patroon>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:toelichting> Het geeft aan waarom infrastructuur nodig is, onafhankelijk van de wijze van inzet (bepaald of onbepaald) en zonder technische details over routes of rijwegen.</mim:toelichting>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Uc066c964-03d9-4829-80b8-dcecde688b82" index="3">
+					<mim:naam>InfraUitvoeringsmiddel</mim:naam>
+					<mim:definitie>Middel waarmee de uitvoering van het plan wordt gerealiseerd.</mim:definitie>
+					<mim:indicatieAbstractObject>true</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Uaa39c21a-8c69-4db5-8760-c8df7338d763" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een InfraUitvoeringsmiddel.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Nee</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Uc308fba2-665f-437a-ad7b-6454a4d4830d" index="2">
+							<mim:naam>begintijd</mim:naam>
+							<mim:definitie>Tijdstip waarop het infrauitvoeringsmiddel van kracht wordt of kan worden toegepast.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</mim:type>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U090f2e93-1ead-4be3-956d-ef5edd63057f" index="3">
+							<mim:naam>eindtijd</mim:naam>
+							<mim:definitie>Tijdstip waarop het infrauitvoeringsmiddel niet langer van kracht is of kan worden toegepast.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</mim:type>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="U0092d851-e3e3-4001-8fec-4ff80f333b36" index="1">
+							<mim:naam>wordt ingezet ten behoeve van</mim:naam>
+							<mim:definitie>Één of meer InfraUitvoeringsmiddelen worden ingezet ten behoeve van één of meer InfraGebruiksdoelen.</mim:definitie>
+							<mim:kardinaliteit>1..*</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1..*</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5" label="InfraGebruiksdoel"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U34df50ea-31ce-46cd-875d-55b94381aa85">
+									<mim:naam>infragebruiksdoel</mim:naam>
+									<mim:definitie>Gerelateerde infragebruiksdoel, ten behoeve waarvan het Infrauitvoeringsmiddel wordt ingezet.</mim:definitie>
+									<mim:kardinaliteit>1..*</mim:kardinaliteit>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+									<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U0a8bae27-fd03-42ba-bf31-e74a54560d09" index="4">
+					<mim:naam>Locatie</mim:naam>
+					<mim:definitie>Een plaats, een geografisch punt, binnen of buiten het spoorwegnet, dat moet worden geïdentificeerd voor operationele, technische, administratieve of statistische doeleinden.</mim:definitie>
+					<mim:indicatieAbstractObject>true</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U39c10596-fd99-420c-932a-cbcd281080f5" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een Locatie.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Nee</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Ub34ce562-662c-47b5-ad94-8b960a5e0d53" index="2">
+							<mim:naam>geometrie</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U662d3618-ee94-442d-8159-0644baab2e9f">GM_Point</mim:type>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:toelichting>Dit kan zowel een spoorweglocatie zijn als een locatie van een klant van een vervoerder (RU).&#xD;
+Locaties kunnen logisch of fysiek zijn, bijvoorbeeld:&#xD;
+&#xD;
+- stations&#xD;
+- rangeerterreinen&#xD;
+- haltes&#xD;
+- terminals of laadpunten&#xD;
+- magazijnen&#xD;
+- onderhoudswerkplaatsen&#xD;
+- overslag- of transitpunten&#xD;
+- overdrachtspunten en wisselpunten&#xD;
+- aansluitsporen van klanten&#xD;
+- reisbureaus&#xD;
+- verkooppunten&#xD;
+- sporen (bijvoorbeeld: spoor X&#xD;
+&#xD;
+Een locatie kan ook een deel of sectie van dergelijke plaatsen vertegenwoordigen.</mim:toelichting>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751" index="5">
+					<mim:naam>Materieelopstelling</mim:naam>
+					<mim:definitie>Een operationele situatie waarin materieel gedurende een bepaalde periode op een operationele locatie gebruik maakt van infrastructuurcapaciteit.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Ue07b75e5-c1ac-4f56-bd4e-51a80a54a149" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een InfraGebruiksdoel.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:heeftTijdlijnRegistratie>Nee</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U9ed99ad3-3ce0-406e-be29-9696afebb967" index="2">
+							<mim:naam>type</mim:naam>
+							<mim:definitie>Samenstelling van het materieel dat onderdeel uitmaakt van een materieelopstelling.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="Ud70e4911-5f4e-4acd-8479-e9d4877e822c">TypeOpstelling</mim:type>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U82789d37-0d40-46b4-b361-b58f3a492554" index="1">
+							<mim:supertype xlink:href="Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5" label="InfraGebruiksdoel"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="Uebf0b3ce-58b6-4ee7-bb42-e02366685af7" index="1">
+							<mim:naam>Materieeluitwisseling</mim:naam>
+							<mim:definitie>Gerelateerde materieelopstelling, van waaruit materieel wordt uitgewisseld met één of meer doelopstellingen.</mim:definitie>
+							<mim:kardinaliteit>1..*</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1..*</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751" label="Materieelopstelling"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Bron id="U3aa7b769-ec87-4016-bf31-456e09cc5564">
+									<mim:naam>bronopstelling</mim:naam>
+									<mim:definitie>Gerelateerde materieelopstelling, van waaruit materieel wordt uitgewisseld met één of meer doelopstellingen.</mim:definitie>
+									<mim:kardinaliteit>1..*</mim:kardinaliteit>
+									<mim:alias>begin materieelopstelling</mim:alias>
+									<mim:authentiek>Basisgegeven</mim:authentiek>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+								</mim:Bron>
+								<mim:Doel id="Uf2afbcaa-feb2-4c02-9a04-bae943c427da">
+									<mim:naam>doelopstelling</mim:naam>
+									<mim:definitie>Gerelateerde Materieelopstelling, waarmee materieel wordt uitgewisseld met één of meer bronopstellingen.</mim:definitie>
+									<mim:kardinaliteit>1..*</mim:kardinaliteit>
+									<mim:alias>eind materieelopstelling</mim:alias>
+									<mim:authentiek>Basisgegeven</mim:authentiek>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:relatieklasse>
+								<mim:Relatieklasse id="Uf2afbcaa-feb2-4c02-9a04-bae943c427da">
+									<mim:naam>Materieeluitwisseling</mim:naam>
+									<mim:definitie>false</mim:definitie>
+									<mim:kardinaliteit>1..*</mim:kardinaliteit>
+									<mim:indicatieAfleidbaar>false</mim:indicatieAfleidbaar>
+									<mim:aggregatietype>none</mim:aggregatietype>
+									<mim:alias>Materieelrelatie</mim:alias>
+									<mim:toelichting>Materieeluitwisselingen beschrijven hoe materieelstromen zich tussen opeenvolgende materieelopstellingen verhouden. Voorbeelden zijn overgaan, splitsen, combineren en keren.</mim:toelichting>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:authentiek>Basisgegeven</mim:authentiek>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+									<mim:alias>wisselt materieel uit met</mim:alias>
+								</mim:Relatieklasse>
+							</mim:relatieklasse>
+							<mim:alias>Materieelrelatie</mim:alias>
+							<mim:toelichting>Materieeluitwisselingen beschrijven hoe materieelstromen zich tussen opeenvolgende materieelopstellingen verhouden. Voorbeelden zijn overgaan, splitsen, combineren en keren.</mim:toelichting>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:authentiek>Basisgegeven</mim:authentiek>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:alias>wisselt materieel uit met</mim:alias>
+						</mim:Relatiesoort>
+						<mim:Relatiesoort id="Ubdc4e406-432e-4f19-b723-ff84c6aae100" index="2">
+							<mim:naam>ontstaat uit</mim:naam>
+							<mim:definitie>Materieelopstelling ontstaat uit één aanvoerende Treinbeweging.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="U51824e05-fc15-4638-a3ed-5cae68ce634b" label="Treinbeweging"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U9023e23c-31eb-4404-98f0-bffe8ef67ae6">
+									<mim:naam>aanvoerendeBeweging</mim:naam>
+									<mim:definitie>Gerelateerde Treinbeweging, waaruit de materieelopstelling ontstaat.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Relatiesoort>
+						<mim:Relatiesoort id="U29225762-adc2-4853-9290-35b3effa39ae" index="3">
+							<mim:naam>eindigt door</mim:naam>
+							<mim:definitie>Materieelopstelling eindigt door één afvoerende Treinbeweging.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="U51824e05-fc15-4638-a3ed-5cae68ce634b" label="Treinbeweging"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U49c6d53b-39e2-418f-8b44-fc4d4fa89822">
+									<mim:naam>afvoerendeBeweging</mim:naam>
+									<mim:definitie>Gerelateerde Treinbeweging, waarmee de materieeopstelling eindigt.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+						</mim:Relatiesoort>
+						<mim:Relatiesoort id="U605671e1-72d0-4faf-8601-262ffdeb42a6" index="4">
+							<mim:naam>stelt op</mim:naam>
+							<mim:definitie>Materieelopstelling stelt één Materieelsamenstelling op.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Udfa001ee-e823-4bf1-8f33-a309392b962c" label="Materieelsamenstelling"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U24afd675-e907-4f87-8248-540f478062ec">
+									<mim:naam>materieelsamenstelling</mim:naam>
+									<mim:definitie>Gerelateerde Materieelsamenstelling, die door de materieelosptelling wordt opgesteld.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" index="6">
+					<mim:naam>OperationeleLocatie</mim:naam>
+					<mim:definitie>Any operation point along a train journey</mim:definitie>
+					<mim:indicatieAbstractObject>true</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U0b6afe1f-566d-46f0-87f9-295d43a81a70" index="1">
+							<mim:naam>primaireLocatiecode</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:herkomstDefinitie>TSI</mim:herkomstDefinitie>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U3b63546f-78ae-468b-a35f-8b6cad6b8945" index="2">
+							<mim:naam>subLocatiecode</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:herkomstDefinitie>TSI</mim:herkomstDefinitie>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="Uba611227-7a8d-4266-b6ae-5a0a9d2c15e4" index="1">
+							<mim:supertype xlink:href="U0a8bae27-fd03-42ba-bf31-e74a54560d09" label="Locatie"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:alias>OperationalPoint, PlannedJourneyLocation</mim:alias>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U46fa23bd-364f-4fb7-9766-7cea0aabbf1f" index="7">
+					<mim:naam>Rijweginstructie</mim:naam>
+					<mim:definitie>Rijweginstructie is de inzet van infra t.b.v. een specifieke rijweg op een bepaalde tijd aan de hand van nul of meer aanwijzingen.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U790f2c7b-c44c-4356-8722-c0486d484e93" index="1">
+							<mim:naam>instructie</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..*</mim:kardinaliteit>
+							<mim:type id="U20c5880c-f71a-42d3-8628-c823b8902544">Instructie</mim:type>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U46e9c6b9-f31b-4d6c-8a8b-2cfe3bf2e022" index="2">
+							<mim:naam>bijzonderheid</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..*</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U1750d15c-a7b6-4e66-97a5-00097419ae76" index="1">
+							<mim:supertype xlink:href="Uc066c964-03d9-4829-80b8-dcecde688b82" label="InfraUitvoeringsmiddel"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="Ufba42d5a-e3f8-4f1b-b0fa-39a3098563cf" index="1">
+							<mim:naam>bevat</mim:naam>
+							<mim:definitie>Rijweginstructie bevat één Route.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Uca9eaa96-4a76-4572-b58b-725c1e4d1197" label="Route"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U716f4b30-1b59-4e6d-b205-48302927d13d">
+									<mim:naam>route</mim:naam>
+									<mim:definitie>Gerelateerde Route, die door de rijweginstructie wordt bevat.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:alias>rijweg</mim:alias>
+									<mim:authentiek>Basisgegeven</mim:authentiek>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+						</mim:Relatiesoort>
+						<mim:Relatiesoort id="U104f029d-fb2e-44ae-bf26-98a0ffa0563b" index="2">
+							<mim:naam>realiseert</mim:naam>
+							<mim:definitie>Één of meer Rijweginstructie realiseert een Treinbeweging.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1..*</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="U51824e05-fc15-4638-a3ed-5cae68ce634b" label="Treinbeweging"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U9ca39e9c-95dc-4235-9951-55b7adc0015a">
+									<mim:naam>treinbeweging</mim:naam>
+									<mim:definitie>Gerelateerde Treinbeweging, die door de rijweginstructie wordt gerealiseerd.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+									<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Uca9eaa96-4a76-4572-b58b-725c1e4d1197" index="8">
+					<mim:naam>Route</mim:naam>
+					<mim:definitie>Route is een topologische precisering van een rijweg die naast het van-spoor en naar-spoor ook aangeeft via welke wissels.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U811054fb-35a4-4a1b-a89d-52f6fcd477d2" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een Route.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U5b4bcf8b-bf5c-4d91-9da7-140cc77941a6" index="2">
+							<mim:naam>dwangnummer</mim:naam>
+							<mim:definitie>Waarde waarmee de voorkeurs- of afhandelingsvolgorde van een route wordt vastgelegd.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U53648542-fdfd-4119-8496-d862d6a99937">CharacterString</mim:type>
+							<mim:herkomst>ITM DienstregelingInfrainzetPlan en Uitvoering</mim:herkomst>
+							<mim:formeelPatroon>[-1;9]</mim:formeelPatroon>
+							<mim:patroon>Geheel getal tussen -1 en 9</mim:patroon>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:toelichting>Een dwangnummer bepaalt de relatieve voorkeur tussen alternatieve routes. Een dwangnummer met waarde -1 geeft de voorkeursroute aan.</mim:toelichting>
+							<mim:maximumwaardeInclusief>9</mim:maximumwaardeInclusief>
+							<mim:minimumwaardeInclusief>-1</mim:minimumwaardeInclusief>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="Ue9561808-b566-46ee-81af-ddb7fe748b09" index="1">
+							<mim:naam>is samengesteld uit</mim:naam>
+							<mim:definitie>Route is samengesteld uit één of meer Infracapaciteitseenheden.</mim:definitie>
+							<mim:kardinaliteit>1..*</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Ub4ada878-801e-46df-b6f6-5fadbe94571d" label="Infracapaciteitseenheid"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="Ube5058c3-1d9f-4e7a-8f10-6f08971b6148">
+									<mim:naam>infracapaciteitseenheid</mim:naam>
+									<mim:definitie>Gerelateerde infracapaciteitseenheid, waar de route uit is samengesteld.</mim:definitie>
+									<mim:kardinaliteit>1..*</mim:kardinaliteit>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+								</mim:Doel>
+							</mim:relatierollen>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:herkomstDefinitie>BOM Logistiek</mim:herkomstDefinitie>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa" index="9">
+					<mim:naam>Activiteit</mim:naam>
+					<mim:definitie>Een werkzaamheid, gebruiksdoel of operationele handeling die gedurende een tijdsinterval plaatsvindt tussen een begin- en eindgebeurtenis.</mim:definitie>
+					<mim:indicatieAbstractObject>true</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U43b03a98-75b2-44f0-b5d0-7928913c6d6f" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een Activiteit.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U53648542-fdfd-4119-8496-d862d6a99937">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U490e3763-9257-44f4-aec0-744a257e0329" index="2">
+							<mim:naam>begintijd</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..*</mim:kardinaliteit>
+							<mim:type id="U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</mim:type>
+							<mim:toelichting>Begintijd mag niet eerder zijn dan de tijd van gebeurtenis</mim:toelichting>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Uad4e2d9d-3bd4-44f8-aa4a-e9641d2c0613" index="3">
+							<mim:naam>eindtijd</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..*</mim:kardinaliteit>
+							<mim:type id="U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</mim:type>
+							<mim:toelichting>Eindtijd mag niet later zijn dan het tijdstip van de eindgebeurtenis.</mim:toelichting>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="U8df64324-ac46-418a-87e8-425167f8ce39" index="1">
+							<mim:naam>begint bij</mim:naam>
+							<mim:definitie>Activiteit begint bij één begingebeurtenis.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Udc571835-5e18-4656-96c0-b51ce65bed71" label="Gebeurtenis"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="Uef42fdcb-29d4-49e6-b9d0-5cef66e989f5">
+									<mim:naam>begingebeurtenis</mim:naam>
+									<mim:definitie>Gerelateerde Gebeurtenis, waar de activiteit begint.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+								</mim:Doel>
+							</mim:relatierollen>
+						</mim:Relatiesoort>
+						<mim:Relatiesoort id="Uce3ae398-ef2f-4e84-a97f-1b69e09ce19e" index="2">
+							<mim:naam>eindigt bij</mim:naam>
+							<mim:definitie>Activiteit eindigt bij één eindgebeurtenis.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Udc571835-5e18-4656-96c0-b51ce65bed71" label="Gebeurtenis"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="Ub14368a0-2ca9-41c8-aa62-dfb6bb946aea">
+									<mim:naam>eindgebeurtenis</mim:naam>
+									<mim:definitie>Gerelateerde Gebeurtenis, waar de activiteit eindigt.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+								</mim:Doel>
+							</mim:relatierollen>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:alias>Trainactivity; Treinoperatie</mim:alias>
+					<mim:toelichting>Activiteiten beschrijven wat er gebeurt tussen twee gebeurtenissen, zoals reizigers vervoeren, commercieel stoppen, machinist wisselen, rangeren, keren, locomotief omlopen of het koppelen en ontkoppelen van materieel.</mim:toelichting>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Udc571835-5e18-4656-96c0-b51ce65bed71" index="10">
+					<mim:naam>Gebeurtenis</mim:naam>
+					<mim:definitie>Een gepland moment binnen een treinbeweging dat plaatsvindt op een operationele locatie en bijdraagt aan het beschrijven van het volgordelijke verloop van de treinbeweging.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Uba3a4c3d-7ee7-45cd-beac-0e8f58c7fb6b" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een Gebeurtenis</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U53648542-fdfd-4119-8496-d862d6a99937">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Nee</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U7ed4cfd6-2a19-4ccd-86ae-20b03c136868" index="2">
+							<mim:naam>type</mim:naam>
+							<mim:definitie>Een aanduiding waarmee de aard van een Gebeurtenis wordt aangegeven</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U8336ae34-6d92-4858-8964-19a2e9393f47">TypeGebeurtenis</mim:type>
+							<mim:herkomst>ITM DienstregelInfraPlan en Uitvoering</mim:herkomst>
+							<mim:herkomstDefinitie>IM RTTP</mim:herkomstDefinitie>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U01833926-f906-47f4-9d08-3ed20e98a102" index="3">
+							<mim:naam>vertrekgereedgemeld</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id="U324f0f00-e6f6-48ee-90a3-7d18aff70ec0">Boolean</mim:type>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:gegevensgroepen>
+						<mim:Gegevensgroep id="U286badda-f2db-4c1a-ae27-3850e93c6a60" index="1">
+							<mim:naam>tijd</mim:naam>
+							<mim:definitie/>
+							<mim:gegevensgroeptype>
+								<mim-ref:GegevensgroeptypeRef label="TijdOpLocatie" xlink:href="U7a5f0cf6-ae02-4450-ae37-8aaab0baab63"/>
+							</mim:gegevensgroeptype>
+							<mim:kardinaliteit>1..*</mim:kardinaliteit>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+						</mim:Gegevensgroep>
+					</mim:gegevensgroepen>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="U643d1f21-7a06-4962-a202-aac085d76f5b" index="1">
+							<mim:naam>Gebeurtenisvolgorde</mim:naam>
+							<mim:definitie>Gerelateerde Gebeurtenis, die voorafgaat aan de volgende gebeurtenis.&#xD;</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Udc571835-5e18-4656-96c0-b51ce65bed71" label="Gebeurtenis"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Bron id="U0de79b6f-9ff7-4680-bc4d-be4e02f65560">
+									<mim:naam>voorgaandeGebeurtenis</mim:naam>
+									<mim:definitie>Gerelateerde Gebeurtenis, die voorafgaat aan de volgende gebeurtenis.&#xD;</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+								</mim:Bron>
+								<mim:Doel id="U0720a309-ea44-4400-a1a8-478abe2c0318">
+									<mim:naam>volgendeGebeurtenis</mim:naam>
+									<mim:definitie>Gerelateerde Gebeurtenis, die volgt op de voorgaande gebeurtenis.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:relatieklasse>
+								<mim:Relatieklasse id="U0720a309-ea44-4400-a1a8-478abe2c0318">
+									<mim:naam>Gebeurtenisvolgorde</mim:naam>
+									<mim:definitie>false</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:indicatieAfleidbaar>false</mim:indicatieAfleidbaar>
+									<mim:aggregatietype>none</mim:aggregatietype>
+									<mim:toelichting>Een gebeurtenisvolgorde legt de expliciete ordening vast tussen twee gebeurtenissen (bron en doel) die plaatsvinden op dezelfde operationele locatie. Deze volgorde representeert de volgorde van gebruik van infrastructuurcapaciteit en wordt toegepast in situaties waarin deze niet eenduidig uit tijdstippen kan worden afgeleid of expliciet moet worden vastgelegd voor planning en bijsturing. Constraint: bronGebeurtenis en doelGebeurtenis vinden plaats op dezelfde operationele locatie.</mim:toelichting>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:authentiek>Basisgegeven</mim:authentiek>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+									<mim:alias>wordt opgevolgd door</mim:alias>
+								</mim:Relatieklasse>
+							</mim:relatieklasse>
+							<mim:toelichting>Een gebeurtenisvolgorde legt de expliciete ordening vast tussen twee gebeurtenissen (bron en doel) die plaatsvinden op dezelfde operationele locatie. Deze volgorde representeert de volgorde van gebruik van infrastructuurcapaciteit en wordt toegepast in situaties waarin deze niet eenduidig uit tijdstippen kan worden afgeleid of expliciet moet worden vastgelegd voor planning en bijsturing. Constraint: bronGebeurtenis en doelGebeurtenis vinden plaats op dezelfde operationele locatie.</mim:toelichting>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:authentiek>Basisgegeven</mim:authentiek>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:alias>wordt opgevolgd door</mim:alias>
+						</mim:Relatiesoort>
+						<mim:Relatiesoort id="Uc32a80bd-c692-4650-bc12-70bccd65ea76" index="2">
+							<mim:naam>vindt plaats op</mim:naam>
+							<mim:definitie>Gebeurtenis vindt plaats op één of meer Locaties.</mim:definitie>
+							<mim:kardinaliteit>1..*</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="U0a8bae27-fd03-42ba-bf31-e74a54560d09" label="Locatie"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U42ede67c-e308-46ac-a62f-250c5f52e06e">
+									<mim:naam>locatie</mim:naam>
+									<mim:definitie>Gerelateerde Locatie, waar de gebeurtenis plaatsvindt.</mim:definitie>
+									<mim:kardinaliteit>1..*</mim:kardinaliteit>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+								</mim:Doel>
+							</mim:relatierollen>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:alias>OperationalTrain</mim:alias>
+					<mim:toelichting>Een gebeurtenis representeert een vertrek, doorkomst of aankomst van een treinbeweging. Aan een gebeurtenis zijn één of meer tijdstippen gekoppeld. Gebeurtenissen begrenzen activiteiten en leggen vast waar en wanneer een treinbeweging zich bevindt.</mim:toelichting>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Udfa001ee-e823-4bf1-8f33-a309392b962c" index="11">
+					<mim:naam>Materieelsamenstelling</mim:naam>
+					<mim:definitie>De wijze waarop locomotieven, treinstellen, rijtuigen en/of wagons tot één operationele eenheid zijn samengesteld.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Uf8d94c6c-6fd1-420b-bea8-ea806ea09ae3" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een Materieelsamenstelling.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:heeftTijdlijnRegistratie>Nee</mim:heeftTijdlijnRegistratie>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Ubb84bffa-5383-4951-95f3-3b6d59c53cf7" index="2">
+							<mim:naam>indicatieVeeOfPersonen</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U324f0f00-e6f6-48ee-90a3-7d18aff70ec0">Boolean</mim:type>
+							<mim:alias>LivestockOrPeopleIndicator</mim:alias>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:gegevensgroepen>
+						<mim:Gegevensgroep id="Ub9321115-1e9f-483a-9c50-f182cea7036d" index="1">
+							<mim:naam>locomotief</mim:naam>
+							<mim:definitie/>
+							<mim:gegevensgroeptype>
+								<mim-ref:GegevensgroeptypeRef label="Locomotief" xlink:href="U4ab8a0e5-62aa-415e-8133-e3acb58036f9"/>
+							</mim:gegevensgroeptype>
+							<mim:kardinaliteit>0..*</mim:kardinaliteit>
+							<mim:alias>LocoIdent</mim:alias>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Gegevensgroep>
+						<mim:Gegevensgroep id="Uee476b86-947d-4f8d-829e-5385a3ecfd94" index="2">
+							<mim:naam>wagon</mim:naam>
+							<mim:definitie/>
+							<mim:gegevensgroeptype>
+								<mim-ref:GegevensgroeptypeRef label="Wagon" xlink:href="U05704d5f-6a58-4120-8708-c7625452cb9c"/>
+							</mim:gegevensgroeptype>
+							<mim:kardinaliteit>0..*</mim:kardinaliteit>
+							<mim:alias>WagonData</mim:alias>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Gegevensgroep>
+						<mim:Gegevensgroep id="U11d15023-46d0-4364-90bc-b289fe92a234" index="3">
+							<mim:naam>kenmerken</mim:naam>
+							<mim:definitie/>
+							<mim:gegevensgroeptype>
+								<mim-ref:GegevensgroeptypeRef label="Treinkenmerken" xlink:href="U36de988e-5e44-4e91-913f-84dbc5281515"/>
+							</mim:gegevensgroeptype>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:alias>TrainRunningData</mim:alias>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Gegevensgroep>
+					</mim:gegevensgroepen>
+					<mim:alias>TrainComposition</mim:alias>
+					<mim:herkomst>TSI</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U32454a87-4bae-4bfc-b269-975cbda9fbdd" index="12">
+					<mim:naam>Vrijgave</mim:naam>
+					<mim:definitie>Het na keuring verlof geven om het uit te voeren, te verkopen.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Uea273b8c-eb55-4488-befd-833163dd2184" index="1">
+							<mim:naam>type</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="Uc87fbb26-64be-48f3-a58d-028d640c782b">TypeVrijgave</mim:type>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U75013b8e-535e-4dea-b248-3d50a22e7e03" index="1">
+							<mim:supertype xlink:href="U6aa03c6c-589d-4e84-beef-0daa52eb44ea" label="Toestemming"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="Udca3c01d-bed7-4084-b8f8-8fe80fa0fe1a" index="1">
+							<mim:naam>is verleend binnen</mim:naam>
+							<mim:definitie>Vrijgave is verleend binnen Vrijgavegebied.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Uebb6afb8-3844-45a6-a6a8-925caccab021" label="Vrijgavegebied"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U799d0357-d036-45f4-958d-7d97466be01a">
+									<mim:naam>vrijgavegebied</mim:naam>
+									<mim:definitie>Gerelateerde Vrijgavegebied, waar vrijgave binnen is verleend.</mim:definitie>
+									<mim:kardinaliteit>1</mim:kardinaliteit>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+								</mim:Doel>
+							</mim:relatierollen>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:herkomst>Spoorse begrippen</mim:herkomst>
+					<mim:herkomstDefinitie>Spoorse begrippen</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:alias>VrijgaveRangeren</mim:alias>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U6aa03c6c-589d-4e84-beef-0daa52eb44ea" index="13">
+					<mim:naam>Toestemming</mim:naam>
+					<mim:definitie>Abstract objecttype dat de bevoegdheid of het recht vastlegt om een handeling of gebruik van infrastructuur onder bepaalde voorwaarden uit te voeren.</mim:definitie>
+					<mim:indicatieAbstractObject>true</mim:indicatieAbstractObject>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="Ufd601147-3475-4cc7-b387-19fad090ebab" index="1">
+							<mim:supertype xlink:href="Uc066c964-03d9-4829-80b8-dcecde688b82" label="InfraUitvoeringsmiddel"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U184d0a92-1ac5-4e52-b7c2-cbaabbed6e46" index="14">
+					<mim:naam>Dienstregelpunt</mim:naam>
+					<mim:definitie>Een primair gebied dat een beperkt, aaneengesloten en eenduidig begrensd deel van de railinfrastructuur vormt en dat een functie vervult bij het opzetten en vastleggen van de dienstregeling. </mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U3a1b03a4-46eb-4de4-bc0b-dd3d29231b0c" index="1">
+							<mim:naam>vlakgeometrie</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id="Ueebfcc79-3ec5-4dd4-80df-d558ab8ccf17">GM_Surface</mim:type>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U253352f0-d09e-4973-9abc-9814ee426f3f" index="1">
+							<mim:supertype xlink:href="Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" label="OperationeleLocatie"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U73d89a4c-f8bc-4673-bae5-a2118ee95f71" index="15">
+					<mim:naam>Gebied</mim:naam>
+					<mim:definitie/>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Ub1b8489c-cd3f-4736-9735-771ed9c2e7ac" index="1">
+							<mim:naam>vlakgeometrie</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id="Ueebfcc79-3ec5-4dd4-80df-d558ab8ccf17">GM_Surface</mim:type>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U1c06948e-b0ca-467d-8640-8370434592af" index="1">
+							<mim:supertype xlink:href="Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" label="OperationeleLocatie"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Ua0f1e891-8071-4c82-a253-e5328dd2a38e" index="16">
+					<mim:naam>Overdrachtspunt</mim:naam>
+					<mim:definitie>Operationele locatie waar de verantwoordelijkheid voor een trein, treinbeweging, vervoersproces of materieel wordt overgedragen tussen betrokken partijen of processen.&#xD;</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="Ub4c0fe44-a186-4e4d-bcab-218a6682488c" index="1">
+							<mim:supertype xlink:href="Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" label="OperationeleLocatie"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:alias>Handover Point</mim:alias>
+					<mim:toelichting>Een overdrachtspunt is geen specifiek type infrastructuur, maar een rol die een operationele locatie vervult. Afhankelijk van de situatie kan een overdrachtspunt bijvoorbeeld een station, emplacement, terminal, werkplaats of ander operationeel punt zijn. Op een overdrachtspunt vindt een overdracht plaats tussen organisaties, processen of operationele verantwoordelijkheden.</mim:toelichting>
+					<mim:herkomst>TSI</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U51824e05-fc15-4638-a3ed-5cae68ce634b" index="17">
+					<mim:naam>Treinbeweging</mim:naam>
+					<mim:definitie>Gepland gebruik van infrastructuurcapaciteit voor het uitvoeren van een treinrit.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Ua7900b7d-c802-4f10-b846-ed6424c668a0" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een Treinbeweging.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U0683bd4d-5788-41fb-b532-fd5435d3be81">Treinidentificatie</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:authentiek>Basisgegeven</mim:authentiek>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Ub92a70bd-2cb3-44e9-b1f5-6fb3cd1a4634" index="2">
+							<mim:naam>typeBeweging</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9d6733a9-7359-4418-ac20-b51619db7df6">TypeTreinbeweging</mim:type>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U862ffb55-c02c-4372-aeda-c4a84ea7748b" index="1">
+							<mim:supertype xlink:href="Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5" label="InfraGebruiksdoel"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="Ua10567fb-5375-4774-8146-6b680f5c9b51" index="1">
+							<mim:naam>bestaat uit  </mim:naam>
+							<mim:definitie>Treinbeweging bestaat uit één of meer Gebeurtenissen.</mim:definitie>
+							<mim:kardinaliteit>1..*</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Udc571835-5e18-4656-96c0-b51ce65bed71" label="Gebeurtenis"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="U9c769044-fe8b-48f6-b753-70da5cca1766">
+									<mim:naam>gebeurtenis</mim:naam>
+									<mim:definitie>Gerelateerde gebeurtenis, waaruit de treinbeweging bestaat.</mim:definitie>
+									<mim:kardinaliteit>1..*</mim:kardinaliteit>
+									<mim:datumOpname>01-07-2026</mim:datumOpname>
+									<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+									<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+									<mim:herkomst>CIM RTTP</mim:herkomst>
+									<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+									<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+								</mim:Doel>
+							</mim:relatierollen>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:toelichting>Een treinbeweging beschrijft het verplaatsen van materieel over de infrastructuur en bestaat uit één of meer gebeurtenissen op operationele locaties.</mim:toelichting>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U54981b20-0ba4-4dd7-b6a3-f7343748e5b9" index="18">
+					<mim:naam>Spoor</mim:naam>
+					<mim:definitie/>
+					<mim:indicatieAbstractObject>true</mim:indicatieAbstractObject>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U8678ed66-47e5-413c-9662-917adcdc1db4" index="1">
+							<mim:supertype xlink:href="Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" label="OperationeleLocatie"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U401e3616-1e27-4d9f-b016-a59c7d51f603" index="19">
+					<mim:naam>Opstelspoor</mim:naam>
+					<mim:definitie/>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U039016c1-f52e-44df-92ce-a8f6e31122ad" index="1">
+							<mim:supertype xlink:href="U54981b20-0ba4-4dd7-b6a3-f7343748e5b9" label="Spoor"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U6a92ee59-74ac-4e7f-9e37-8d2bd61d2bd9" index="20">
+					<mim:naam>Perronspoor</mim:naam>
+					<mim:definitie/>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U1e620f7a-8a30-4fe2-80d5-0cb48c318c30" index="1">
+							<mim:supertype xlink:href="U54981b20-0ba4-4dd7-b6a3-f7343748e5b9" label="Spoor"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U887b3b2a-4e4a-4262-89f8-f332c503580a" index="21">
+					<mim:naam>Meetpunt</mim:naam>
+					<mim:definitie>Een locatie waarvoor gebeurtenissen in de planning of uitvoering van treinverkeer kunnen worden geregistreerd, geobserveerd, berekend of voorspeld, teneinde treinbewegingen, punctualiteit, doorstroming en capaciteitsgebruik te volgen.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Ua152895a-0647-4748-ac72-a49117acf560" index="1">
+							<mim:naam>type</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</mim:type>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:heeftTijdlijnGeldigheid>Ja</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Ja</mim:heeftTijdlijnRegistratie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="Ube5ed1f7-26f8-4073-b0a9-2ecadc83f3fc" index="1">
+							<mim:supertype xlink:href="U0a8bae27-fd03-42ba-bf31-e74a54560d09" label="Locatie"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:alias>TimingPoint</mim:alias>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Uaf277e92-cba6-4df4-9810-06ce5e2f5dc8" index="22">
+					<mim:naam>Slot</mim:naam>
+					<mim:definitie>Een in tijd en ruimte aaneengesloten samenstel van één of meer infracapaciteitseenheden, dat ruimte biedt aan een geldig infragebruiksdoel van de spoorweginfrastructuur’. </mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U2c4a7f7f-c8f1-472d-a324-b83861f5a141" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een Slot.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U6a3207fd-03b4-4f00-a7ab-e99ff15f87ee" index="1">
+							<mim:supertype xlink:href="U6aa03c6c-589d-4e84-beef-0daa52eb44ea" label="Toestemming"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:relatiesoorten/>
+					<mim:herkomst>Spoorse begrippen</mim:herkomst>
+					<mim:herkomstDefinitie>Spoorse begrippen</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:alias>Gebiedstoestemming, TijdRuimteSlot</mim:alias>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U1c080acd-fde9-4e98-bf5b-feda1834816d" index="23">
+					<mim:naam>Rijactiviteit</mim:naam>
+					<mim:definitie>Activiteit waarbij een voertuig, trein of ander verkeersobject zich over infrastructuur verplaatst en daarbij infrastructuurcapaciteit benut.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Ufd7b6373-f493-4152-902b-aff9beee3fcf" index="1">
+							<mim:naam>treinsoort</mim:naam>
+							<mim:definitie>De treinsoort waarmee de bewegingsactiviteit wordt uitgevoerd.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="Uf5bddf99-dd6b-43dd-9909-fe4dfbbb0dd3">Rijkarakteristiek</mim:type>
+							<mim:alias>voorheen: rijkarakteristiek</mim:alias>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U11288899-25e7-4dc4-b93e-5d19c1e62aa2" index="2">
+							<mim:naam>activiteitsoort</mim:naam>
+							<mim:definitie>Classificatie van een activiteit naar haar aard of functie.</mim:definitie>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id="U7cc99c65-b26e-463b-9f21-ec7bbe42134b">SoortRijactiviteit</mim:type>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U7c081ca6-d923-4d78-a0e5-36ddb291595f" index="1">
+							<mim:supertype xlink:href="Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa" label="Activiteit"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:toelichting>Een bewegingsactiviteit wordt gekenmerkt door het gebruik van infrastructuurcapaciteit en kan worden beschreven met rijkarakteristieken en andere specifieke kenmerken voor dat deel van de beweging.</mim:toelichting>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:alias>voorheen: Bewegingsactiviteit</mim:alias>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Ucb80813a-51cb-440b-8fad-6c91d2244ea9" index="24">
+					<mim:naam>Stopactiviteit</mim:naam>
+					<mim:definitie>Activiteit die binnen een treinbeweging wordt uitgevoerd ten behoeve van de voorbereiding, ondersteuning of afronding van de exploitatie van een trein, zonder dat daarbij sprake is van een verplaatsing over infrastructuur.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U1a1e7000-6be3-4c02-b830-529969252b4a" index="1">
+							<mim:naam>activiteitsoort</mim:naam>
+							<mim:definitie>Classificatie van een activiteit naar haar aard of functie.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="Ud456c192-64be-4131-831d-ca631c143ffc">SoortStopactiviteit</mim:type>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U1a3933f4-cf03-452b-ab29-42d4a35ba455" index="1">
+							<mim:supertype xlink:href="Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa" label="Activiteit"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:toelichting>Stopactiviteiten vinden plaats binnen één treinbeweging. Activiteiten die betrekking hebben op de overgang van materieel tussen treinbewegingen worden gemodelleerd als materieeluitwisseling en niet als stopactiviteit.</mim:toelichting>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:alias>Werkactiviteit</mim:alias>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="Uebb6afb8-3844-45a6-a6a8-925caccab021" index="25">
+					<mim:naam>Vrijgavegebied</mim:naam>
+					<mim:definitie>Een gebied dat (tijdelijk) onttrokken is aan de ter plaatse gangbare beveiliging en bediening en dat bedoeld is om beschikbaar te zijn voor het uitvoeren van activiteiten door infragebruikers, afgeschermd van de reguliere treindienst. </mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U926bc4cf-2b47-4366-b424-c7bb9dc72fc5" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Unieke aanduiding van een Vrijgavegebied.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:identificerend>Ja</mim:identificerend>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>CIM RTTP</mim:herkomst>
+							<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:relatiesoorten>
+						<mim:Relatiesoort id="U8a584621-9583-4e54-af79-fa95e30dfc45" index="1">
+							<mim:naam>bestaat uit</mim:naam>
+							<mim:definitie>Infracapiteitseenheid bestaat uit één of meer Infracapaciteitseenheden.</mim:definitie>
+							<mim:kardinaliteit>1..*</mim:kardinaliteit>
+							<mim:kardinaliteitBron>1</mim:kardinaliteitBron>
+							<mim:doel>
+								<mim-ref:ObjecttypeRef xlink:href="Ub4ada878-801e-46df-b6f6-5fadbe94571d" label="Infracapaciteitseenheid"/>
+							</mim:doel>
+							<mim:relatierollen>
+								<mim:Doel id="Ub77aa956-98f7-468c-8f87-891736ddb16c">
+									<mim:naam>infracapaciteitseenheid</mim:naam>
+									<mim:definitie>Gerelateerde infracapaciteitseenheid, waar het vrijgavegebied uit bestaat.</mim:definitie>
+									<mim:kardinaliteit>1..*</mim:kardinaliteit>
+								</mim:Doel>
+							</mim:relatierollen>
+						</mim:Relatiesoort>
+					</mim:relatiesoorten>
+					<mim:herkomst>Spoorse begrippen</mim:herkomst>
+					<mim:herkomstDefinitie>Spoorse begrippen</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-206</mim:datumOpname>
+					<mim:alias>VrijgaveRangeergebied</mim:alias>
+				</mim:Objecttype>
+				<mim:Objecttype xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U9217d8a2-0604-4690-8ab3-2e7848530576" index="26">
+					<mim:naam>VolumeInzet</mim:naam>
+					<mim:definitie>De infrainzet voor een samenhangend geheel van infradelen voor langere, soms nader te bepalen tijdsduur.</mim:definitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:supertypen>
+						<mim:GeneralisatieObjecttypen id="U7a38c08f-3c2e-4c9c-8b65-f680a074938d" index="1">
+							<mim:supertype xlink:href="Uc066c964-03d9-4829-80b8-dcecde688b82" label="InfraUitvoeringsmiddel"/>
+							<mim:typeSupertype/>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+						</mim:GeneralisatieObjecttypen>
+					</mim:supertypen>
+					<mim:herkomstDefinitie>Spoorse begrippen</mim:herkomstDefinitie>
+					<mim:herkomst>Begrippenkader NCBG</mim:herkomst>
+					<mim:toelichting>“Volume” bestaat uit de combinatie van een (groter) deel van de betrokken infrastructuur en een (langer) tijdsbestek waarin die infrastructuur bezet gehouden wordt. Het tijdsbestek is tenminste 4 weken. (bron: Spoorse begrippen)</mim:toelichting>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:alias>VolumeInfraInzet</mim:alias>
+				</mim:Objecttype>
+			</mim:objecttypen>
+			<mim:gegevensgroeptypen>
+				<mim:Gegevensgroeptype id="U4ab8a0e5-62aa-415e-8133-e3acb58036f9" index="1">
+					<mim:naam>Locomotief</mim:naam>
+					<mim:definitie>Definieert het daadwerkelijke type, het aantal en de wijze van inzet van een tractie‑eenheid van de goederentrein.&#xD;</mim:definitie>
+					<mim:herkomstDefinitie>Definieert het daadwerkelijke type, het aantal en de wijze van inzet van een tractie‑eenheid van de goederentrein.&#xD;</mim:herkomstDefinitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U584b5846-1655-48e6-bda3-aa0410674a22" index="1">
+							<mim:naam>tractie</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U53648542-fdfd-4119-8496-d862d6a99937">CharacterString</mim:type>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomst>TSI</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+				</mim:Gegevensgroeptype>
+				<mim:Gegevensgroeptype id="U05704d5f-6a58-4120-8708-c7625452cb9c" index="2">
+					<mim:naam>Wagon</mim:naam>
+					<mim:definitie/>
+					<mim:herkomstDefinitie/>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:herkomst>TSI</mim:herkomst>
+				</mim:Gegevensgroeptype>
+				<mim:Gegevensgroeptype id="Ue7875566-059c-4121-ad49-fc6719c86769" index="3">
+					<mim:naam>GeplandeTreinkenmerken</mim:naam>
+					<mim:definitie>Train relevant data for a planning period</mim:definitie>
+					<mim:herkomstDefinitie>Train relevant data for a planning period</mim:herkomstDefinitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Ue9103afe-8b0f-45d3-960e-abdae720e6c1" index="1">
+							<mim:naam>treintype</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id=""/>
+							<mim:alias>TrainType</mim:alias>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Udb0914d3-f16e-4b26-8c29-b63aec2a2764" index="2">
+							<mim:naam>verkeerstype</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id=""/>
+							<mim:alias>Traffictype</mim:alias>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U31483545-2476-414f-8209-d54cd509ddf4" index="3">
+							<mim:naam>duwtrektrein</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U25aaa673-1a43-4a68-b47f-6daaca9a514a" index="4">
+							<mim:naam>diensttype</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U15f2e216-392c-4eaf-ad05-3a201ddbaf79" index="5">
+							<mim:naam>commercieelVerkeerstype</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Ub75ed1eb-0f98-4284-a857-0c1aa30c5678" index="6">
+							<mim:naam>indicatieGevaarlijkeStoffen</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id="U324f0f00-e6f6-48ee-90a3-7d18aff70ec0">Boolean</mim:type>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U0e0caab9-c7b9-4760-966c-f88baa5985e3" index="7">
+							<mim:naam>profielGecombineerdVervoer</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U321572e0-9134-4ebe-8b20-4cab22e98977" index="8">
+							<mim:naam>buitenProfiel</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:gegevensgroepen>
+						<mim:Gegevensgroep xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U2b951f1e-b06e-4a7e-87da-f09913ca9526" index="1">
+							<mim:naam>technischeKenmerken</mim:naam>
+							<mim:definitie/>
+							<mim:gegevensgroeptype>
+								<mim-ref:GegevensgroeptypeRef label="TechnischeKenmerkenGeplandeTrein" xlink:href="U3008ff32-6c29-4bc2-b5f8-4d5dfeeccefa"/>
+							</mim:gegevensgroeptype>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+						</mim:Gegevensgroep>
+					</mim:gegevensgroepen>
+				</mim:Gegevensgroeptype>
+				<mim:Gegevensgroeptype id="U3008ff32-6c29-4bc2-b5f8-4d5dfeeccefa" index="4">
+					<mim:naam>TechnischeKenmerkenGeplandeTrein</mim:naam>
+					<mim:definitie/>
+					<mim:herkomstDefinitie/>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+				</mim:Gegevensgroeptype>
+				<mim:Gegevensgroeptype id="Ufa4f49d6-ad73-401c-a16e-dd710cb0931e" index="5">
+					<mim:naam>TechnischeTreinkenmerken</mim:naam>
+					<mim:definitie/>
+					<mim:herkomstDefinitie/>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U83964fcf-ea2c-410c-9755-ee61ea1718c9" index="1">
+							<mim:naam>type</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U036d10dc-4721-4ce1-88dd-1453793cf1c1" index="2">
+							<mim:naam>gewicht</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U6a361303-cf1f-4a52-be7b-2df4f4e64a70" index="3">
+							<mim:naam>lengte</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Ud0011690-f6cb-484d-b9cc-feb1032d7997" index="4">
+							<mim:naam>CCsysteem</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U6958f207-812f-4963-b547-e0143bb639ab" index="5">
+							<mim:naam>radiosysteeem</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U0322e45a-e996-4a88-8757-9cf5bc044a19" index="6">
+							<mim:naam>maximum_snelheid</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U7cd71ba1-1521-4a5d-819c-da31aa7537ce" index="7">
+							<mim:naam>maximale_aslast</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U94e14e1a-0436-4c3a-b2a0-48a6ea633394" index="8">
+							<mim:naam>remtype</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U6d3c8684-969d-48dd-a791-69e66c18f2ed" index="9">
+							<mim:naam>remratio</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Ub58b1801-c34b-4c4e-8ae1-cede32501cb7" index="10">
+							<mim:naam>remgewicht</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U49913056-8851-486f-a4fb-7b10cf4ba691" index="11">
+							<mim:naam>aantalvoertuigen</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U467f186d-da85-48f6-bf9a-a3c2998b90e4" index="12">
+							<mim:naam>aantalassen</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id=""/>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+					<mim:herkomst>TSI</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+				</mim:Gegevensgroeptype>
+				<mim:Gegevensgroeptype id="U7a5f0cf6-ae02-4450-ae37-8aaab0baab63" index="6">
+					<mim:naam>TijdOpLocatie</mim:naam>
+					<mim:definitie>Gegevensgroeptype waarin de tijdsaanduidingen van een gebeurtenis op een specifieke operationele locatie zijn vastgelegd.</mim:definitie>
+					<mim:herkomstDefinitie>Gegevensgroeptype waarin de tijdsaanduidingen van een gebeurtenis op een specifieke operationele locatie zijn vastgelegd.</mim:herkomstDefinitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Ua3daf3e3-a390-4b16-8cbc-286b4a72bf73" index="1">
+							<mim:naam>tijdclassificatie</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>0..1</mim:kardinaliteit>
+							<mim:type id="U76c7442c-722a-4d6a-9b87-34dbe697992b">Tijdclassificatie</mim:type>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Uda5b8500-75f7-497d-bd36-7c75906d4f80" index="2">
+							<mim:naam>tijd</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U43a947a8-1b66-489d-a09e-25f6b56838cd">Tijd</mim:type>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Ud4a06162-feaa-40da-9ff9-2322e3c6dc1a" index="3">
+							<mim:naam>dagverschuiving</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U5dbde24c-3600-4074-8e22-635e33e80191">Integer</mim:type>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:herkomst>TSI</mim:herkomst>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Gegevensgroeptype>
+				<mim:Gegevensgroeptype id="U36de988e-5e44-4e91-913f-84dbc5281515" index="7">
+					<mim:naam>Treinkenmerken</mim:naam>
+					<mim:definitie/>
+					<mim:herkomstDefinitie/>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="U745c223d-f292-4d94-9b96-3a62c902f741" index="1">
+							<mim:naam>indicatieUitzonderlijkProfiel</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U324f0f00-e6f6-48ee-90a3-7d18aff70ec0">Boolean</mim:type>
+							<mim:alias>TrainRunningData</mim:alias>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="Uad3a1311-6f63-4db8-a371-c963c395201b" index="2">
+							<mim:naam>indicatieGevaarlijkeStoffen</mim:naam>
+							<mim:definitie/>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U324f0f00-e6f6-48ee-90a3-7d18aff70ec0">Boolean</mim:type>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:gegevensgroepen>
+						<mim:Gegevensgroep xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" id="U6fcdc8f4-2663-43ef-ae0f-3ddf5e5874e0" index="1">
+							<mim:naam>technischeKenmerken</mim:naam>
+							<mim:definitie/>
+							<mim:gegevensgroeptype>
+								<mim-ref:GegevensgroeptypeRef label="TechnischeTreinkenmerken" xlink:href="Ufa4f49d6-ad73-401c-a16e-dd710cb0931e"/>
+							</mim:gegevensgroeptype>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+						</mim:Gegevensgroep>
+					</mim:gegevensgroepen>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:herkomst>TSI</mim:herkomst>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Gegevensgroeptype>
+				<mim:Gegevensgroeptype id="U0683bd4d-5788-41fb-b532-fd5435d3be81" index="8">
+					<mim:naam>Treinidentificatie</mim:naam>
+					<mim:definitie>Verzameling identificerende kenmerken waarmee een trein of treinbeweging uniek kan worden herkend binnen operationele en informatiekundige processen.</mim:definitie>
+					<mim:herkomstDefinitie>Verzameling identificerende kenmerken waarmee een trein of treinbeweging uniek kan worden herkend binnen operationele en informatiekundige processen.</mim:herkomstDefinitie>
+					<mim:indicatieAbstractObject>false</mim:indicatieAbstractObject>
+					<mim:attribuutsoorten>
+						<mim:Attribuutsoort id="Ud091e9c5-1888-49d6-a9fe-9fc3a0a3e6bc" index="1">
+							<mim:naam>identificatie</mim:naam>
+							<mim:definitie>Een unieke identificatie van een trein binnen het TAF/TAP-TSI-kader.</mim:definitie>
+							<mim:kardinaliteit>1</mim:kardinaliteit>
+							<mim:type id="U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</mim:type>
+							<mim:alias>TrainID</mim:alias>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:herkomstDefinitie>TSI</mim:herkomstDefinitie>
+							<mim:toelichting>Deze identificatie wordt gebruikt om een trein eenduidig te kunnen volgen in plannings- en operationele processen, onafhankelijk van eventuele wijzigingen van het operationele treinnummer. </mim:toelichting>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Nee</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+						<mim:Attribuutsoort id="U410645a2-846c-4178-95bd-f3a790afc50d" index="2">
+							<mim:naam>treinnummer</mim:naam>
+							<mim:definitie>Het nummer waaronder een trein operationeel wordt uitgevoerd en herkend tijdens (delen van) zijn rit. </mim:definitie>
+							<mim:kardinaliteit>1..*</mim:kardinaliteit>
+							<mim:type id="U53648542-fdfd-4119-8496-d862d6a99937">CharacterString</mim:type>
+							<mim:alias>OperationalTrainNumber</mim:alias>
+							<mim:toelichting>Het OTN wordt beheerd door de infrastructuurbeheerder en is bedoeld om de trein operationeel te identificeren binnen de verkeersafhandeling. Het OTN blijft in principe stabiel gedurende de treinreis, maar kan wijzigen tussen verschillende delen van hetzelfde pad of dezelfde treinreis.</mim:toelichting>
+							<mim:datumOpname>01-07-2026</mim:datumOpname>
+							<mim:herkomst>TSI</mim:herkomst>
+							<mim:herkomstDefinitie>TSI</mim:herkomstDefinitie>
+							<mim:mogelijkGeenWaarde>Nee</mim:mogelijkGeenWaarde>
+							<mim:mogelijkGeenWaarde>Ja</mim:mogelijkGeenWaarde>
+							<mim:heeftTijdlijnGeldigheid>Nee</mim:heeftTijdlijnGeldigheid>
+							<mim:heeftTijdlijnRegistratie>Nee</mim:heeftTijdlijnRegistratie>
+						</mim:Attribuutsoort>
+					</mim:attribuutsoorten>
+					<mim:toelichting>Een treinidentificatie bevat één of meer identificerende kenmerken waarmee een trein of treinbeweging gedurende zijn levenscyclus kan worden herkend en gevolgd. Hieronder vallen zowel stabiele identificaties, zoals een TrainID, als operationele identificaties, zoals een Operational Train Number (OTN).</mim:toelichting>
+					<mim:herkomstDefinitie>CIM RTTP</mim:herkomstDefinitie>
+					<mim:herkomst>CIM RTTP</mim:herkomst>
+					<mim:datumOpname>01-07-2026</mim:datumOpname>
+				</mim:Gegevensgroeptype>
+			</mim:gegevensgroeptypen>
+		</mim:Domein>
+		<mim:View/>
+		<mim:Extern>
+			<mim:alias>TSI Telematics</mim:alias>
+			<mim:herkomst>https://www.era.europa.eu/domains/technical-specifications-interoperability_en</mim:herkomst>
+		</mim:Extern>
+	</mim:packages>
+</mim:Informatiemodel>
