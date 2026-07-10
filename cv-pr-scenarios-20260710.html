@@ -1,0 +1,2449 @@
+<!DOCTYPE html><html lang="nl"><head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta content="text/html; charset=utf-8" http-equiv="content-type">
+<meta name="generator" content="ReSpec 37.2.0">
+<style>
+dfn{cursor:pointer}
+.dfn-panel{position:absolute;z-index:35;min-width:300px;max-width:500px;padding:.5em .75em;margin-top:.6em;font-family:"Helvetica Neue",sans-serif;font-size:small;background:#fff;background:var(--indextable-hover-bg,#fff);color:#000;color:var(--text,#000);box-shadow:0 1em 3em -.4em rgba(0,0,0,.3),0 0 1px 1px rgba(0,0,0,.05);box-shadow:0 1em 3em -.4em var(--tocsidebar-shadow,rgba(0,0,0,.3)),0 0 1px 1px var(--tocsidebar-shadow,rgba(0,0,0,.05));border-radius:2px}
+.dfn-panel:not(.docked)>.caret{position:absolute;top:-9px}
+.dfn-panel:not(.docked)>.caret::after,.dfn-panel:not(.docked)>.caret::before{content:"";position:absolute;border:10px solid transparent;border-top:0;border-bottom:10px solid #fff;border-bottom-color:var(--indextable-hover-bg,#fff);top:0}
+.dfn-panel:not(.docked)>.caret::before{border-bottom:9px solid #a2a9b1;border-bottom-color:var(--indextable-hover-bg,#a2a9b1)}
+.dfn-panel *{margin:0}
+.dfn-panel b{display:block;color:#000;color:var(--text,#000);margin-top:.25em}
+.dfn-panel ul a[href]{color:#333;color:var(--text,#333)}
+.dfn-panel>div{display:flex}
+.dfn-panel a.self-link{font-weight:700;margin-right:auto}
+.dfn-panel .marker{padding:.1em;margin-left:.5em;border-radius:.2em;text-align:center;white-space:nowrap;font-size:90%;color:#040b1c}
+.dfn-panel .marker.dfn-exported{background:#d1edfd;box-shadow:0 0 0 .125em #1ca5f940}
+.dfn-panel .marker.idl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel .marker.cddl-block{background:#8ccbf2;box-shadow:0 0 0 .125em #0670b161}
+.dfn-panel a:not(:hover){text-decoration:none!important;border-bottom:none!important}
+.dfn-panel a[href]:hover{border-bottom-width:1px}
+.dfn-panel ul{padding:0}
+.dfn-panel li{margin-left:1em}
+.dfn-panel.docked{position:fixed;left:.5em;top:unset;bottom:2em;margin:0 auto;max-width:calc(100vw - .75em * 2 - .5em - .2em * 2);max-height:30vh;overflow:auto}
+</style>
+  
+  
+  
+  
+       
+  
+  
+  
+  
+  
+  
+
+  
+  
+<script>document.title = respecConfig.title</script>
+<title>Scenario's RTTP</title>
+
+  
+  
+<link rel="shortcut icon" type="image/x-icon" href="https://www.prorail.nl/static/favicon.ico">
+ 
+
+
+
+
+  
+
+  
+<style>
+div.imageinfo img {max-width: none;}
+
+    .label-group {color: #000;}
+    .methods-group { display: none;}
+
+   marker.extension path {
+      fill:white !important;
+    }
+
+    g.label foreignObject:first-of-type .nodeLabel {
+    font-size: 0.8em;
+}
+
+    g.abstractObject .classTitle {    
+      font-style: italic;
+      font-size: 0.95em;
+
+    }
+/* 
+    g.node rect, g.node line {
+      fill: #ddd !important;
+      stroke: #888 !important;
+
+    } */
+
+    h7 {font-variant:small-caps;}
+
+    th:first-child {
+    width: 250px;
+    }
+
+    blockquote {
+      font-size: small;
+    }
+
+  
+</style>
+
+
+
+<style id="respec-mainstyle">
+@keyframes pop{
+0%{transform:scale(1,1)}
+25%{transform:scale(1.25,1.25);opacity:.75}
+100%{transform:scale(1,1)}
+}
+a.internalDFN{color:inherit;border-bottom:1px solid #99c;text-decoration:none}
+a.externalDFN{color:inherit;border-bottom:1px dotted #ccc;text-decoration:none}
+a.bibref{text-decoration:none}
+.respec-offending-element:target{animation:pop .25s ease-in-out 0s 1}
+.respec-offending-element,a[href].respec-offending-element{text-decoration:red wavy underline}
+@supports not (text-decoration:red wavy underline){
+.respec-offending-element:not(pre){display:inline-block}
+.respec-offending-element{background:url(data:image/gif;base64,R0lGODdhBAADAPEAANv///8AAP///wAAACwAAAAABAADAEACBZQjmIAFADs=) bottom repeat-x}
+}
+#references :target{background:#eaf3ff;animation:pop .4s ease-in-out 0s 1}
+@media (prefers-color-scheme:dark){
+#references :target{background:color-mix(in srgb, #eaf3ff 15%, transparent)}
+}
+body:has(input[name=color-scheme][value=dark]:checked) #references :target{background:color-mix(in srgb, #eaf3ff 15%, transparent)}
+cite .bibref{font-style:italic}
+a[href].orcid{padding-left:4px;padding-right:4px}
+a[href].orcid>svg{margin-bottom:-2px}
+ol.tof,ul.tof{list-style:none outside none}
+.caption{margin-top:.5em;font-style:italic}
+#issue-summary>ul{column-count:2}
+#issue-summary li{list-style:none}
+details.respec-tests-details{margin-left:1em;display:inline-block;vertical-align:top}
+details.respec-tests-details>*{padding-right:2em}
+details.respec-tests-details[open]{z-index:999999;position:absolute;border:thin solid #cad3e2;border-radius:.3em;background-color:#fff;padding-bottom:.5em}
+details.respec-tests-details[open]>summary{border-bottom:thin solid #cad3e2;padding-left:1em;margin-bottom:1em;line-height:2em}
+details.respec-tests-details>ul{width:100%;margin-top:-.3em}
+details.respec-tests-details>li{padding-left:1em}
+.self-link:hover{opacity:1;text-decoration:none;background-color:transparent}
+aside.example .marker>a.self-link{color:inherit}
+.header-wrapper{display:flex;align-items:baseline}
+:is(h2,h3,h4,h5,h6):not(#toc>h2,#abstract>h2,#sotd>h2,.head>h2):has(+a.self-link){position:relative;left:-.5em}
+:is(h2,h3,h4,h5,h6):not(#toch2)+a.self-link{color:inherit;order:-1;position:relative;left:-.7em;font-size:1rem;opacity:.5}
+:is(h2,h3,h4,h5,h6)+a.self-link::before{content:"§";text-decoration:none;color:var(--heading-text)}
+:is(h2,h3)+a.self-link{top:-.2em}
+:is(h4,h5,h6)+a.self-link::before{color:#000}
+@media (max-width:767px){
+dd{margin-left:0}
+}
+@media print{
+.removeOnSave{display:none}
+}
+body:has(input[name=color-scheme][value=light]:checked),head:not(:has(meta[name=color-scheme][content~=dark]))+body{color-scheme:light}
+body:has(input[name=color-scheme][value=dark]:checked){color-scheme:dark}
+</style>
+<script type="text/javascript">
+   /* Any custom mermaid.js scripts will go here. */
+  </script>
+<style>
+
+  /* Any custom mermaid.js scripts will go here. */
+  }
+</style>
+<style id="respec-nlgov">
+img.license{float:left;padding-right:5px;background:0 0}
+</style>
+<meta name="color-scheme" content="light">
+<meta name="description" content="Deze praktijkrichtlijn bevat voorbeeldscenario’s die laten zien hoe het Conceptueel Informatiemodel RTTP in de praktijk kan worden toegepast. De scenario’s illustreren op een toegankelijke wijze hoe treinbewegingen, gebeurtenissen, activiteiten, materieelopstellingen, materieelsamenstellingen en materieeluitwisselingen kunnen worden gemodelleerd. De richtlijn dient als hulpmiddel voor domeinexperts, architecten en ontwerpers bij het interpreteren, toepassen en verder uitwerken van het CIM RTTP.">
+<style>
+
+  .sidelabel {
+    position: fixed;
+    -webkit-transform-origin: top right;
+    right: 100%;
+    top: 0;
+    -webkit-transform: rotate(-90deg);
+    padding: 4px 50px 4px 10px;
+    color: white;
+    white-space: nowrap;
+    z-index: 1;
+    background-color: #00822e;
+  }
+</style>
+<script type="text/javascript">
+   /* Any custom mermaid.js scripts will go here. */
+  </script>
+<style>
+
+  /* Any custom mermaid.js scripts will go here. */
+  }
+</style>
+<script id="initialUserConfig" type="application/json">{
+  "nl_organisationName": "ProRail",
+  "nl_organisationStylesURL": "http://localhost:8000/respec/style/",
+  "nl_organisationPublishURL": "https://improrail.github.io/docs",
+  "logos": [
+    {
+      "src": "https://www.prorail.nl/static/assets/brands/default/images/logo_default.svg?v=20250513",
+      "alt": "Prorail",
+      "id": "Prorail",
+      "height": 29,
+      "width": 130,
+      "url": "https://www.prorail.nl/"
+    }
+  ],
+  "postProcess": [
+    null
+  ],
+  "latestVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "shortName",
+    "/"
+  ],
+  "thisVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "specStatus",
+    "-",
+    "specType",
+    "-",
+    "shortName",
+    "-",
+    "publishDate"
+  ],
+  "prevVersion": [
+    "nl_organisationPublishURL",
+    "pubDomain",
+    "/",
+    "previousMaturity",
+    "-",
+    "specType",
+    "-",
+    "shortName",
+    "-",
+    "previousPublishDate"
+  ],
+  "useLogo": true,
+  "useLabel": true,
+  "license": "cc-by",
+  "addSectionLinks": true,
+  "localizationStrings": {
+    "en": {
+      "wv": "Editor's draft",
+      "cv": "Candidate recommendation",
+      "vv": "Proposed recommendation",
+      "def": "Recommendation",
+      "ld": "Living document",
+      "basis": "Document",
+      "no": "Norm",
+      "st": "Standard",
+      "im": "Information model",
+      "pr": "Practical guideline",
+      "hr": "Guide",
+      "wa": "Work process agreement",
+      "al": "General",
+      "bd": "Governance documentation",
+      "bp": "Best practice"
+    },
+    "nl": {
+      "wv": "Werkversie",
+      "cv": "Consultatieversie",
+      "vv": "Versie ter vaststelling",
+      "def": "Vastgestelde versie",
+      "ld": "Levend document",
+      "basis": "Document",
+      "no": "Norm",
+      "st": "Standaard",
+      "im": "Informatiemodel",
+      "pr": "Praktijkrichtlijn",
+      "hr": "Handreiking",
+      "wa": "Werkafspraak",
+      "al": "Algemeen",
+      "bd": "Beheerdocumentatie",
+      "bp": "Best practice"
+    }
+  },
+  "sotdText": {
+    "nl": {
+      "sotd": "Status van dit document",
+      "def": "Dit is de definitieve versie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "wv": "Dit is een werkversie die op elk moment kan worden gewijzigd, verwijderd of vervangen door andere documenten. Het is geen stabiel document.",
+      "cv": "Dit is een consultatieversie.",
+      "vv": "Dit is de definitieve conceptversie van dit document. Wijzigingen naar aanleiding van consultaties zijn doorgevoerd.",
+      "basis": "Dit is een document zonder officiÃ«le status.",
+      "ld": "Dit is een levend document dat regelmatig gewijzigd wordt."
+    },
+    "en": {
+      "sotd": "Status of this document",
+      "def": "This is the definitive version of this document. Edits resulting from consultations have been applied.",
+      "wv": "This is a working draft that can be changed, removed or replaced by other documents at any time. It is not a stable document.",
+      "cv": "This is a stable draft, published for public comment.",
+      "vv": "This is the final draft of this document. Edits resulting from consultations have been applied.",
+      "basis": "This document has no official standing.",
+      "ld": "This is a living document, which is updated regularly."
+    }
+  },
+  "labelColor": {
+    "def": "#bf1238",
+    "wv": "#c2d533",
+    "cv": "#00822e",
+    "vv": "#e8dd11",
+    "basis": "#535266",
+    "ld": "#2c2a3b"
+  },
+  "licenses": {
+    "cc0": {
+      "name": "Creative Commons 0 Public Domain Dedication",
+      "short": "CC0",
+      "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "image": "respec/style/logos/CC-Licentie.svg"
+    },
+    "cc-by": {
+      "name": "Creative Commons Attribution 4.0 International Public License",
+      "short": "CC-BY",
+      "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+      "image": "respec/style/logos/cc-by.svg"
+    },
+    "cc-by-nd": {
+      "name": "Creative Commons Naamsvermelding-GeenAfgeleideWerken 4.0 Internationaal",
+      "short": "CC-BY-ND",
+      "url": "https://creativecommons.org/licenses/by-nd/4.0/legalcode.nl",
+      "image": "respec/style/logos/cc-by-nd.svg"
+    }
+  },
+  "localBiblio": {
+    "SemVer": {
+      "href": "https://semver.org",
+      "title": "Semantic Versioning 2.0.0",
+      "authors": [
+        "T. Preston-Werner"
+      ],
+      "date": "June 2013"
+    },
+    "MIM12": {
+      "id": "MIM12",
+      "title": "MIM - Metamodel Informatie Modellering (Versie 1.2)",
+      "href": "https://docs.geostandaarden.nl/mim/def-st-mim-20240613/",
+      "status": "Definitief",
+      "publisher": "Geonovum",
+      "date": "2024-06-13"
+    }
+  },
+  "preProcess": [
+    null
+  ],
+  "title": "Scenario's RTTP",
+  "specStatus": "cv",
+  "specType": "PR",
+  "pubDomain": "rttp",
+  "shortName": "scenarios",
+  "edDraftName": "rttp/scenarios",
+  "edDraftURI": [
+    "https://improrail.github.io",
+    "/",
+    "edDraftName"
+  ],
+  "publishDate": "2026-07-10",
+  "publishVersion": [],
+  "editors": [
+    {
+      "name": "Arnoud de Boer",
+      "company": "ProRail",
+      "companyURL": "https://www.prorail.nl"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Arnoud de Boer",
+      "company": "ProRail",
+      "companyURL": "https://www.prorail.nl"
+    }
+  ],
+  "github": "https://github.com/IMProRail/RTTP/"
+}</script>
+<link rel="stylesheet" href="http://localhost:8000/respec/style/base.css"></head>
+
+<body class="h-entry informative"><div class="head">
+    <a class="logo" href="https://www.prorail.nl/"><img alt="Prorail" height="29" id="Prorail" src="https://www.prorail.nl/static/assets/brands/default/images/logo_default.svg?v=20250513" width="130">
+  </a> <h1 id="title" class="title">Scenario's RTTP</h1>
+    
+    <h2>
+      ProRail Praktijkrichtlijn<br>
+      Consultatieversie
+      <time class="dt-published" datetime="2026-07-10">10 juli 2026</time>
+    </h2>
+    <dl>
+      <dt>Deze versie:</dt><dd class="status">
+              <a class="u-url status" href="https://improrail.github.io/docs/rttp/cv-pr-scenarios-20260710">https://improrail.github.io/docs/rttp/cv-pr-scenarios-20260710</a>
+            </dd>
+      <dt>Laatst gepubliceerde versie:</dt><dd>
+              <a href="https://improrail.github.io/docs/rttp/scenarios/">https://improrail.github.io/docs/rttp/scenarios/</a>
+            </dd>
+      <dt>Laatste werkversie:</dt><dd><a href="https://improrail.github.io/rttp/scenarios">https://improrail.github.io/rttp/scenarios</a></dd>
+      
+      
+      
+      
+      
+      <dt>Redacteur:</dt>
+      <dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Arnoud de Boer</span> (<a class="p-org org h-org" href="https://www.prorail.nl">ProRail</a>)
+  </dd>
+      
+      <dt>Auteur:</dt><dd class="editor p-author h-card vcard">
+    <span class="p-name fn">Arnoud de Boer</span> (<a class="p-org org h-org" href="https://www.prorail.nl">ProRail</a>)
+  </dd>
+      <dt>Doe mee:</dt><dd>
+    <a href="https://github.com/IMProRail/RTTP/">GitHub IMProRail/RTTP</a>
+  </dd><dd>
+    <a href="https://github.com/IMProRail/RTTP/issues/">All issues</a>
+  </dd><dd>
+    <a href="https://github.com/IMProRail/RTTP/issues/new/choose">Dien een melding in</a>
+  </dd><dd>
+    <a href="https://github.com/IMProRail/RTTP/commits/">Revisiehistorie</a>
+  </dd><dd>
+    <a href="https://github.com/IMProRail/RTTP/pulls/">Pull requests</a>
+  </dd>
+    </dl>
+    
+    
+    
+    <p class="copyright">
+            Dit document valt onder de volgende licentie: 
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/legalcode" class="subfoot"><img class="license" src="respec/style/logos/cc-by.svg" alt="Logo Creative Commons Attribution 4.0 International Public License"><br> Creative Commons Attribution 4.0 International Public License</a>
+          </p>
+    <hr title="Separator for header">
+  </div>
+
+<section id="abstract" class="introductory"><h2>Samenvatting</h2><p>Deze praktijkrichtlijn bevat voorbeeldscenario’s die laten zien hoe het Conceptueel Informatiemodel RTTP in de praktijk kan worden toegepast. De scenario’s illustreren op een toegankelijke wijze hoe treinbewegingen, gebeurtenissen, activiteiten, materieelopstellingen, materieelsamenstellingen en materieeluitwisselingen kunnen worden gemodelleerd. De richtlijn dient als hulpmiddel voor domeinexperts, architecten en ontwerpers bij het interpreteren, toepassen en verder uitwerken van het CIM RTTP.</p>
+</section>
+<section id="sotd" class="introductory"><h2>Status van dit document</h2><p>Dit is een consultatieversie.</p></section><nav id="toc"><h2 class="introductory" id="inhoudsopgave">Inhoudsopgave</h2><ol class="toc"><li class="tocline"><a class="tocxref" href="#abstract">Samenvatting</a></li><li class="tocline"><a class="tocxref" href="#sotd">Status van dit document</a></li><li class="tocline"><a class="tocxref" href="#inleiding"><bdi class="secno">1. </bdi><strong>Inleiding</strong></a></li><li class="tocline"><a class="tocxref" href="#scenario-s"><bdi class="secno">2. </bdi>Scenario’s</a><ol class="toc"><li class="tocline"><a class="tocxref" href="#eenvoudige-treinbeweging-met-vertrek-doorkomst-en-aankomst"><bdi class="secno">2.1 </bdi>Eenvoudige treinbeweging met vertrek, doorkomst en aankomst</a></li><li class="tocline"><a class="tocxref" href="#eenvoudige-treinbeweging-met-materieelopstellingen"><bdi class="secno">2.2 </bdi>Eenvoudige treinbeweging met materieelopstellingen</a></li><li class="tocline"><a class="tocxref" href="#rangeerbeweging-met-materieelopstelling"><bdi class="secno">2.3 </bdi>Rangeerbeweging met materieelopstelling</a></li><li class="tocline"><a class="tocxref" href="#kopmaken"><bdi class="secno">2.4 </bdi>Kopmaken</a></li><li class="tocline"><a class="tocxref" href="#kopmaken-lange-trein-met-vertrek-vanaf-een-ander-spoor"><bdi class="secno">2.5 </bdi>Kopmaken lange trein met vertrek vanaf een ander spoor</a></li><li class="tocline"><a class="tocxref" href="#overgaan"><bdi class="secno">2.6 </bdi>Overgaan</a></li><li class="tocline"><a class="tocxref" href="#keren"><bdi class="secno">2.7 </bdi>Keren</a></li><li class="tocline"><a class="tocxref" href="#combineren"><bdi class="secno">2.8 </bdi>Combineren</a></li><li class="tocline"><a class="tocxref" href="#splitsen-en-afrangeren"><bdi class="secno">2.9 </bdi>Splitsen en afrangeren</a></li><li class="tocline"><a class="tocxref" href="#splitsen-in-drie-delen"><bdi class="secno">2.10 </bdi>Splitsen in drie delen</a></li><li class="tocline"><a class="tocxref" href="#splitsen-splitsen-combineren"><bdi class="secno">2.11 </bdi>Splitsen, Splitsen, Combineren</a></li><li class="tocline"><a class="tocxref" href="#locomotief-omlopen"><bdi class="secno">2.12 </bdi>Locomotief omlopen</a></li><li class="tocline"><a class="tocxref" href="#uiteennemen-c-q-splitsen-van-een-binnenkomende-goederentrein"><bdi class="secno">2.13 </bdi>Uiteennemen c.q. splitsen van een binnenkomende goederentrein</a></li><li class="tocline"><a class="tocxref" href="#reizigerstrein-met-opstellen-vervoer-en-onderhoud"><bdi class="secno">2.14 </bdi>Reizigerstrein met opstellen, vervoer en onderhoud</a></li></ol></li></ol></nav>
+
+
+<section class="informative" id="inleiding"><div class="header-wrapper"><h2 id="x1-inleiding"><bdi class="secno">1. </bdi><strong>Inleiding</strong></h2><a class="self-link" href="#inleiding" aria-label="Permalink for Section 1."></a></div><p><em>Dit onderdeel is niet-normatief.</em></p>
+<p>Deze praktijkrichtlijn beschrijft een aantal voorbeeldscenario’s voor de toepassing van het <strong>Conceptueel Informatiemodel Real Time Traffic Plan (CIM RTTP)</strong>. De scenario’s zijn bedoeld om inzichtelijk te maken hoe de concepten, relaties en modelleerkeuzes uit het informatiemodel kunnen worden toegepast bij het beschrijven van operationele situaties binnen het spoorverkeer.</p>
+<p>De scenario’s hebben een illustratief karakter en dienen niet als een uitputtende beschrijving van alle mogelijke situaties. Zij laten zien hoe treinbewegingen, gebeurtenissen, activiteiten, materieelopstellingen, materieelsamenstellingen en materieeluitwisselingen in samenhang kunnen worden gemodelleerd. Daarbij wordt zichtbaar hoe het model uiteenlopende operationele processen ondersteunt, variërend van vervoer- en rangeerbewegingen tot scenario’s zoals overgaan, splitsen, combineren, keren en locomotief omlopen.</p>
+<p>Per scenario wordt zowel een begrijpelijke beschrijving van de operationele situatie als een informatiekundige uitwerking gegeven. Hierdoor wordt duidelijk hoe de werkelijkheid vertaald kan worden naar de concepten van het CIM RTTP en welke gegevens daarbij worden vastgelegd.</p>
+<p>De praktijkrichtlijn heeft als doel:</p>
+<p>inzicht te geven in de toepassing van het CIM RTTP;</p>
+<p>de gemaakte modelleerkeuzes te verduidelijken;</p>
+<p>een gemeenschappelijk referentiekader te bieden voor ontwerpers, architecten en domeinexperts;</p>
+<p>input te leveren voor de uitwerking van logische modellen en implementaties.</p>
+<p>De beschreven scenario’s zijn nadrukkelijk voorbeelden. Andere operationele situaties kunnen met dezelfde concepten en modelstructuren worden gemodelleerd. Daarmee illustreren de scenario’s de flexibiliteit en toepasbaarheid van het CIM RTTP als gemeenschappelijk semantisch fundament voor het RTTP-domein.</p>
+</section>
+<section class="informative" id="scenario-s"><div class="header-wrapper"><h2 id="x2-scenario-s"><bdi class="secno">2. </bdi>Scenario’s</h2><a class="self-link" href="#scenario-s" aria-label="Permalink for Section 2."></a></div><p><em>Dit onderdeel is niet-normatief.</em></p>
+<p>Dit hoofdstuk bevat een verzameling voorbeeldscenario’s die laten zien hoe het <strong>Conceptueel Informatiemodel RTTP (CIM RTTP)</strong> in de praktijk kan worden toegepast. De scenario’s illustreren hoe operationele situaties kunnen worden beschreven met behulp van de concepten uit het informatiemodel, zoals treinbewegingen, gebeurtenissen, activiteiten, materieelopstellingen, materieelsamenstellingen en materieeluitwisselingen.</p>
+<p>De scenario’s hebben een illustratief karakter en zijn bedoeld om de toepassing van het model inzichtelijk te maken. Per scenario wordt daarom uitsluitend die informatie weergegeven die relevant is om de betreffende situatie en de bijbehorende modelleerkeuze te verduidelijken. Niet alle objecttypen, attributen en relaties uit het CIM RTTP worden in ieder scenario opgenomen. De gegevensuitwerkingen bevatten alleen de tabellen en gegevens die noodzakelijk zijn om het onderscheid met andere scenario’s zichtbaar te maken.</p>
+<p><strong>Tijdstippen</strong></p>
+<p>In de scenario’s worden bij gebeurtenissen verschillende soorten tijdstippen weergegeven. Deze worden aangeduid met een combinatie van twee letters:</p>
+<p>Eerste letter (soort tijdstip)</p>
+<ul>
+<li><p>P = Publieke tijd</p>
+</li>
+<li><p>V = Vroegste tijd</p>
+</li>
+<li><p>U = Uiterste tijd</p>
+</li>
+<li><p>W = Werkelijke tijd</p>
+</li>
+</ul>
+<p>Tweede letter (type gebeurtenis)</p>
+<ul>
+<li><p>V = Vertrektijd</p>
+</li>
+<li><p>A = Aankomsttijd</p>
+</li>
+<li><p>D = Doorkomsttijd</p>
+</li>
+</ul>
+<p>Voorbeelden:</p>
+<ul>
+<li><p>PV = Publieke Vertrektijd</p>
+</li>
+<li><p>VA = Vroegste Aankomsttijd</p>
+</li>
+<li><p>UD = Uiterste Doorkomsttijd</p>
+</li>
+<li><p>WV = Werkelijke Vertrektijd</p>
+</li>
+</ul>
+<p>Werkelijke tijdstippen worden beschouwd als uitvoeringsinformatie. De overige tijdstippen worden gebruikt voor planning en bijsturing.</p>
+<p><strong>Afgeleide activiteitstijden</strong></p>
+<p>Bij activiteiten kan een tijdsinterval worden voorafgegaan door een <strong>“/”</strong>. Dit betekent dat het betreffende tijdstip afleidbaar is uit de begrenzende gebeurtenissen.</p>
+<p>Voorbeeld: /8:50 – 9:30</p>
+<p>In dit geval wordt de begintijd van de activiteit afgeleid van de gebeurtenis die de activiteit laat beginnen. Op vergelijkbare wijze kan een ontbrekende eindtijd worden afgeleid uit de gebeurtenis die de activiteit beëindigt.</p>
+<p>Hiermee blijft zichtbaar dat gebeurtenissen de grenzen van activiteiten vormen, terwijl activiteiten zelf de tijdsintervallen tussen deze gebeurtenissen representeren.</p>
+<section id="eenvoudige-treinbeweging-met-vertrek-doorkomst-en-aankomst"><div class="header-wrapper"><h3 id="x2-1-eenvoudige-treinbeweging-met-vertrek-doorkomst-en-aankomst"><bdi class="secno">2.1 </bdi>Eenvoudige treinbeweging met vertrek, doorkomst en aankomst</h3><a class="self-link" href="#eenvoudige-treinbeweging-met-vertrek-doorkomst-en-aankomst" aria-label="Permalink for Section 2.1"></a></div>
+<p>Dit scenario beschrijft een eenvoudige treinrit met een <strong>vertrek</strong>, een <strong>doorkomst</strong> en een <strong>aankomst</strong>. Het gaat alleen om de rit zelf; alles wat daarvoor gebeurt, zoals het klaarmaken of samenstellen van de trein, hoort hier niet bij.</p>
+<p>De trein vertrekt vanaf <strong>Dienstregelpunt A</strong>, rijdt langs <strong>Dienstregelpunt B</strong> en komt aan op <strong>Dienstregelpunt C</strong>. Deze momenten geven aan waar de trein zich op dat moment bevindt.</p>
+<p>Bij het vertrek en de aankomst worden verschillende soorten tijdstippen vastgelegd.</p>
+<p>Voor reizigerstreinen wordt een <strong>publieke tijd</strong> vastgelegd: de tijd die zichtbaar is in de dienstregeling. Voor goederenvervoer is deze publieke tijd meestal niet aanwezig.</p>
+<p>Daarnaast wordt een <strong>geplande tijd</strong> vastgelegd, die gebruikt wordt door infrabeheerders (IM) en vervoerders (RU) voor planning en bijsturing. Op deze geplande tijd kunnen marges worden vastgelegd in de vorm vanvroegste en laatste tijden voor vertrek, doorkomst en aankomst.</p>
+<p>Omdat dit scenario nog niet is uitgevoerd, zijn de werkelijke tijden nog niet bekend en daarom leeg gelaten.</p>
+<p>Tijdens de treinrit vindt de activiteit <strong>‘reizigers vervoeren’</strong> plaats. Deze activiteit begint bij de vertrekgebeurtenis en eindigt bij de aankomstgebeurtenis. Tussenliggende doorkomstgebeurtenissen dienen uitsluitend als meet- of stuurmoment en hebben geen invloed op de begrenzing van de activiteit.</p>
+<p>Bij de aankomst zijn in dit scenario twee activiteiten vastgelegd. De activiteit ‘reizigers vervoeren’ representeert het vervoer tijdens de rit en onderscheidt zich daarmee van activiteiten zoals ‘commerciële stop’ en ‘machinist wisselen’, die plaatsvinden tijdens stilstand tussen aankomst- en vertrekgebeurtenissen.</p>
+<p><img src="./media/image2.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft een <strong>treinbeweging van het type ‘vervoerbeweging’</strong> met drie gebeurtenissen: <strong>vertrek</strong>, <strong>doorkomst</strong> en <strong>aankomst</strong>. Voorafgaande handelingen en configuraties, zoals materieelopstelling, -uitwisseling en samenstelling, maken geen deel uit van dit scenario.</p>
+<p>De treinbeweging loopt van <strong>Dienstregelpunt A</strong> via <strong>Dienstregelpunt B</strong> naar <strong>Dienstregelpunt C</strong>. De gebeurtenissen zijn in de gegevensstructuur gerelateerd aan <strong>operationele punten</strong> (waaronder dienstregelpunten) waar de gebeurtenissen plaatsvinden.</p>
+<p>Voor de gebeurtenissen vertrek en aankomst wordt de <strong>publieke vertrek- en aankomsttijd</strong> vastgelegd. Daarnaast worden voor vertrek, doorkomst en aankomst de <strong>vroegste en uiterste tijdstippen</strong> opgenomen ten behoeve van planning en bijsturing. De <strong>werkelijke tijden</strong> kunnen na uitvoering worden vastgelegd; in dit scenario zijn deze waarden nog niet bekend en daarom gevuld met «waardeOnbekend».</p>
+<p>De activiteit <strong>‘reizigers vervoeren’</strong> heeft als begin de Gebeurtenis van het type ‘vertrek’ en eindigt bij de Gebeurtenis van het type aankomst. Bij de gebeurtenis <strong>‘aankomst’</strong> zijn twee activiteiten opgenomen.</p>
+<p><em>Gegevensuitwerking van het scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">01-04-2026</td>
+<td>G1, G2, G3, G4</td>
+</tr>
+</tbody></table>
+<p>Gebeurtenis</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>type</th>
+<th>begintijd</th>
+<th>vindtPlaatsOp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G1</td>
+<td>vertrek</td>
+<td>PV 8:15am; VV 8:15am; UV: 8:17am</td>
+<td>OP1</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>doorkomst</td>
+<td>VD 8:28am; UD 8:32am</td>
+<td>OP2</td>
+</tr>
+<tr>
+<td>G3</td>
+<td>aankomst</td>
+<td>PA 8:45am; VA 8:44am; UA: 8:47am</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>vertrek</td>
+<td>PA 8:50am; VA 8:50am; UA: 8:52am</td>
+<td>OP3</td>
+</tr>
+</tbody></table>
+<p>Activiteit</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>soort</th>
+<th>begintijd-eindtijd</th>
+<th>beginGebeurtenis</th>
+<th>eindGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>reizigers vervoeren</td>
+<td><em>/8:15-8:47am</em></td>
+<td><em>G1</em></td>
+<td><em>G3</em></td>
+</tr>
+<tr>
+<td>A3</td>
+<td>commercieel stoppen</td>
+<td>8:45-8:50am</td>
+<td>G3</td>
+<td>G4</td>
+</tr>
+<tr>
+<td>A4</td>
+<td>machinist wisselen</td>
+<td>8:45-8:48am</td>
+<td>G3</td>
+<td>G4</td>
+</tr>
+</tbody></table>
+<p>Operationeel punt</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>naam</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP1</td>
+<td>Dienstregelpunt A</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP2</td>
+<td>Dienstregelpunt B</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP3</td>
+<td>Dienstregelpunt C</td>
+<td>Dienstregelpunt</td>
+</tr>
+</tbody></table>
+</section><section id="eenvoudige-treinbeweging-met-materieelopstellingen"><div class="header-wrapper"><h3 id="x2-2-eenvoudige-treinbeweging-met-materieelopstellingen"><bdi class="secno">2.2 </bdi>Eenvoudige treinbeweging met materieelopstellingen</h3><a class="self-link" href="#eenvoudige-treinbeweging-met-materieelopstellingen" aria-label="Permalink for Section 2.2"></a></div>
+<p>Dit scenario bouwt voort op het eerdere scenario met een eenvoudige treinrit. Daarnaast laat het ook zien hoe het <strong>materieel vóór en na de rit opgesteld staat</strong>, en hoe de <strong>samenstelling van het materieel</strong> daarbij hoort.</p>
+<p>In dit scenario wordt het materieel <strong>niet gesplitst of gecombineerd</strong>. De samenstelling van de trein blijft dus tijdens het hele scenario hetzelfde. De treinsamenstelling die wordt gebruikt tijdens de treinrit is af te leiden uit <strong>materieelsamenstelling 1</strong>, die hoort bij <strong>materieelopstelling 1</strong>.</p>
+<p>De materieelopstelling vóór de treinrit eindigt op het moment dat de trein vertrekt. Vanaf dat moment start de treinbeweging en is de spoorbezetting door de materieelopstelling beëindigd. Andersom geldt dat bij aankomst de treinbeweging stopt en overgaat in een nieuwe materieelopstelling. De treinbeweging is daarmee de aanvoerende beweging voor de materieelopstelling na aankomst.</p>
+<p>Omdat er geen splitsingen of combinaties plaatsvinden, hebben <strong>materieelopstelling 1 en materieelopstelling 2 dezelfde treinsamenstelling</strong>.</p>
+<p>Elke materieelopstelling heeft een treinbeweging die het materieel aanvoert en een treinbeweging die het materieel afvoert. De materieelopstelling begint zodra de aanvoerende treinbeweging is aangekomen, en eindigt zodra de afvoerende treinbeweging vertrekt. Pas op dat moment is de spoorbezetting van die materieelopstelling afgelopen.</p>
+<p>In dit scenario zou het kunnen zijn dat de trein na aankomst mogelijk overgaat in een rangeerbeweging om materieel af te rangeren. Daarom is bij de aankomst een tweede activiteit <strong>‘alleen uitstappen’</strong> toegevoegd.</p>
+<p><img src="./media/image4.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft de eerder gemodelleerde <strong>eenvoudige treinbeweging</strong>, uitgebreid met een <strong>materieelopstelling vooraf</strong>, een <strong>materieelopstelling achteraf</strong> en de bijbehorende <strong>materieelsamenstellingen</strong>.</p>
+<p>In dit scenario vinden <strong>geen splitsingen of combinaties</strong> plaats. De treinsamenstelling van de treinbeweging kan worden afgeleid uit <strong>materieelsamenstelling 1</strong>, die is gerelateerd aan <strong>materieelopstelling 1</strong>.</p>
+<p>Materieelopstelling 1 gaat over in een <strong>afvoerende treinbeweging</strong>. Op dat moment eindigt het gebruik van infrastructuurcapaciteit door de materieelopstelling en start het gebruik van infrastructuurcapaciteit door de treinbeweging. Bij aankomst gaat de treinbeweging over in een (nieuwe) <strong>materieelopstelling</strong>, waarbij de treinbeweging fungeert als <strong>aanvoerende treinbeweging</strong> van deze materieelopstelling.</p>
+<p>Omdat er geen splitsingen of combinaties plaatsvinden, is de treinsamenstelling identiek voor <strong>materieelopstelling 1 en materieelopstelling 2</strong>.</p>
+<p>Elke materieelopstelling heeft zowel een <strong>aanvoerende</strong> als een <strong>afvoerende treinbeweging</strong>. De begintijd van de materieelopstelling kan worden afgeleid van de <strong>laatste gebeurtenis</strong> (aankomst) van de aanvoerende treinbeweging. De materieelopstelling eindigt bij de <strong>eerste gebeurtenis</strong> (vertrek) van de afvoerende treinbeweging. Op dat moment eindigt ook de spoorbezetting van de materieelopstelling.</p>
+<p>Als voorbeeld is in dit scenario zou het kunnen dat de trein na aankomst mogelijk overgaat in een rangeerbeweging voor het afrangeren van materieel. Om deze overgang te ondersteunen, is bij de gebeurtenis <strong>aankomst</strong> een tweede activiteit <strong>‘alleen uitstappen’</strong> opgenomen.</p>
+<p><em>Gegevensuitwerking van het scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">01-04-2026</td>
+<td>G1, G2, G3</td>
+</tr>
+</tbody></table>
+<p>Materieelopstelling</p>
+<table>
+<colgroup>
+<col style="width: 15%">
+<col style="width: 17%">
+<col style="width: 17%">
+<col style="width: 18%">
+<col style="width: 29%">
+</colgroup>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>datum</th>
+<th><p>aanvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>afvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>steltop</p>
+<p>Materieelsamenstelling</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MO1</td>
+<td>01-04-2026</td>
+<td><em>«waardeOnbekend»</em></td>
+<td>T1</td>
+<td>MS1</td>
+</tr>
+<tr>
+<td>MO2</td>
+<td>01-04-2026</td>
+<td>T1</td>
+<td><em>«waardeOnbekend»</em></td>
+<td>MS1</td>
+</tr>
+</tbody>
+</table><p>Materieelsamenstelling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>materieel</th>
+<th align="right">treinstel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MS1</td>
+<td>VIRM4</td>
+<td align="right">9565</td>
+</tr>
+</tbody></table>
+</section><section id="rangeerbeweging-met-materieelopstelling"><div class="header-wrapper"><h3 id="x2-3-rangeerbeweging-met-materieelopstelling"><bdi class="secno">2.3 </bdi>Rangeerbeweging met materieelopstelling</h3><a class="self-link" href="#rangeerbeweging-met-materieelopstelling" aria-label="Permalink for Section 2.3"></a></div>
+<p>Dit scenario beschrijft een <strong>rangeerbeweging</strong> in combinatie met materieelopstellingen. De rangeerbeweging is een speciale treinbeweging die start met een <strong>vertrek</strong> vanuit een <strong>opstelgebied of opstelspoor A</strong>.</p>
+<p>Het vertrek van een rangeerbeweging heeft <strong>geen publieke vertrektijd</strong>, omdat reizigers hier geen rol spelen. Wel worden er een <strong>vroegste en uiterste vertrektijd</strong> vastgelegd. Deze tijden zijn nodig om te zorgen dat het materieel op tijd op het emplacement is, zodat reizigers kunnen in- en uitstappen en een volgende treinrit (een vervoerbeweging) kan starten. De vroegste vertrektijd markeert het begin van de gereserveerde infrastructuurcapaciteit voor de treinbeweging. De uiterste vertrektijd bepaalt het moment waarop het opstelspoor uiterlijk moet zijn vrijgemaakt voor vervolggebruik.</p>
+<p><strong>Materieelopstelling 1</strong> is het opgestelde materieel in het opstelgebied of opstelspoor A. De materieelopstelling representeert het gebruik van de infrastructuurcapaciteit door dit materieel. Zodra de rangeerbeweging start, eindigt de dit capaciteitsgebruik en begtin het capaciteitsgebruik van de treinbeweging. De rangeerbeweging voert het materieel af vanuit het opstelgebied.</p>
+<p>Na enige tijd rangeren komt het materieel aan op (het perronspoor van) <strong>Dienstregelpunt C</strong>. Met die aankomst eindigt de rangeerbeweging. De rangeerbeweging fungeert hier als de <strong>aanvoerende beweging</strong> voor <strong>Materieelopstelling 2</strong>.</p>
+<p>De aankomst op Dienstregelpunt C start vervolgens de activiteit <strong>‘commercieel stoppen’</strong>, waarin reizigers kunnen in- en uitstappen en bijvoorbeeld een machinistenwissel kan plaatsvinden.</p>
+<p>Een commerciële stop kan bestaan uit één of meer activiteiten die tijdens dezelfde stop plaatsvinden, zoals reizigers laten in- en uitstappen of een machinistenwissel. Deze activiteiten kunnen dezelfde begin- en eindgebeurtenis hebben als de commerciële stop, maar desgewenst beschikken over aanvullende tijdstippen waarmee een korter tijdsinterval binnen de totale stop wordt vastgelegd. Hierdoor kunnen de afzonderlijke activiteiten onafhankelijk van elkaar worden gepland, gemonitord en geanalyseerd.</p>
+<p>In dit scenario wordt het materieel <strong>niet gesplitst of gecombineerd</strong>; de samenstelling blijft ongewijzigd.</p>
+<p><img src="./media/image6.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft een <strong>rangeerbeweging</strong>, gemodelleerd als een <strong>treinbeweging van het type ‘rangeerbeweging’</strong>, in combinatie met materieelopstellingen.</p>
+<p>De rangeerbeweging start met een <strong>vertrekgebeurtenis</strong> vanuit een <strong>opstelgebied of opstelspoor A</strong>. Deze vertrekgebeurtenis kent <strong>geen publieke vertrektijd</strong>, maar wel een <strong>vroegste en uiterste vertrektijd</strong>. Deze tijdvensters zijn bedoeld om te borgen dat het materieel tijdig op het emplacement aanwezig is voor het uitvoeren van reizigershandelingen en het starten van een volgende treinbeweging van het type <strong>vervoerbeweging</strong>.</p>
+<p><strong>Materieelopstelling 1</strong> representeert de opstelling van het materieel in het <strong>opstelgebied of -spoor A</strong>. De rangeerbeweging fungeert als <strong>afvoerende treinbeweging</strong> van deze materieelopstelling, waarmee de spoorbezetting van <strong>Materieelopstelling 1</strong> eindigt.</p>
+<p>Na uitvoering van de activiteit <strong>‘rangeren’</strong> vindt een <strong>aankomstgebeurtenis</strong> plaats op het <strong>emplacement / Dienstregelpunt C</strong>. Deze aankomst beëindigt de rangeerbeweging. De rangeerbeweging is hiermee de <strong>aanvoerende treinbeweging</strong> voor <strong>Materieelopstelling 2</strong>.</p>
+<p>De aankomstgebeurtenis op Dienstregelpunt C initieert de activiteit <strong>‘commercieel stoppen’</strong>, ten behoeve van het instappen van reizigers en het wisselen van machinist.</p>
+<p>In dit scenario vinden <strong>geen splitsingen of combinaties</strong> van materieel plaats.</p>
+<p><em>Gegevensuitwerking van het scenario</em></p>
+<p>Dit scenario is afgezien van het soort activiteit en verwijzing naar andere operationele punten nagenoeg gelijk aan voorgaande scenario.</p>
+</section><section id="kopmaken"><div class="header-wrapper"><h3 id="x2-4-kopmaken"><bdi class="secno">2.4 </bdi>Kopmaken</h3><a class="self-link" href="#kopmaken" aria-label="Permalink for Section 2.4"></a></div>
+<p>In dit scenario maakt de trein <strong>kop</strong> tussen aankomst en vertrek. Kopmaken betekent dat een trein <strong>in de tegenovergestelde richting vertrekt ten opzichte van de aankomstrichting</strong>, zonder dat dit de eindbestemming is. De trein blijft daarbij bestaan uit <strong>hetzelfde materieel</strong> en rijdt door onder <strong>hetzelfde treinnummer</strong>.</p>
+<p>Het kopmaken vindt plaats op <strong>hetzelfde operationele punt</strong>, in dit voorbeeld <strong>Dienstregelpunt C</strong>, en gebeurt tussen de gebeurtenissen <strong>‘aankomst’</strong> en <strong>‘vertrek’</strong>.</p>
+<p>Bij de gebeurtenis <strong>‘aankomst’</strong> is de activiteit <strong>‘kopmaken’</strong> opgenomen. De treinbeweging stopt hierbij niet; de treinrit loopt door en blijft dezelfde trein. Er is daarom <strong>geen sprake van materieelopstelling</strong>. In dit scenario vindt namelijk geen materieeluitwisseling plaats en is er geen andere aanvoerende of afvoerende treinbeweging.</p>
+<p>Het kopmaken gebeurt tijdens de <strong>commerciële stop</strong> op Dienstregelpunt C. Informatief gezien wordt hiermee vastgelegd dat de trein na vertrek <strong>in de andere richting verder rijdt</strong>, terwijl het voor reizigers één doorgaande trein blijft.</p>
+<p><img src="./media/image8.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft <strong>kopmaken</strong> binnen een treinbeweging. Kopmaken is het vertrekken van een trein in <strong>tegengestelde rijrichting</strong> ten opzichte van de aankomstrichting, zonder dat sprake is van een eindbestemming, en <strong>met behoud van materieel en treinidentificatie</strong> (treinnummer).</p>
+<p>Het kopmaken vindt plaats tussen de gebeurtenissen <strong>‘aankomst’</strong> en <strong>‘vertrek’</strong> op hetzelfde <strong>operationele punt</strong>, in dit scenario <strong>Dienstregelpunt C</strong>.</p>
+<p>Aan de gebeurtenis <strong>‘aankomst’</strong> is de activiteit <strong>‘kopmaken’</strong> gekoppeld. Deze activiteit beëindigt de treinbeweging niet; de treinrit loopt door onder dezelfde treinidentificatie. Het opnemen van afzonderlijke <strong>materieelopstellingen als planobjecten</strong> is in dit scenario niet nodig, omdat:</p>
+<ul>
+<li><p>geen materieeluitwisseling plaatsvindt, en</p>
+</li>
+<li><p>er geen andere aanvoerende of afvoerende treinbeweging betrokken is.</p>
+</li>
+</ul>
+<p>Het kopmaken vindt plaats <strong>tijdens de commerciële stop</strong> op Dienstregelpunt C. Informatiekundig kan dit gelijktijdig worden beschouwd met een activiteit van het type <strong>‘commercieel stoppen’</strong>, waarbij de aanvullende informatie wordt vastgelegd dat de daaropvolgende vertrekgebeurtenis in <strong>tegengestelde richting</strong> plaatsvindt.</p>
+<p><em>Gegevensuitwerking van dit scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>Identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>…, G3, G4, …</td>
+</tr>
+</tbody></table>
+<p>Gebeurtenis</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>type</th>
+<th>begintijd</th>
+<th>vindtPlaatsOp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G3</td>
+<td>aankomst</td>
+<td>PA 8:45am; VA 8:44am; UV: 8:47am</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>vertrek</td>
+<td></td>
+<td>OP3</td>
+</tr>
+</tbody></table>
+<p>Activiteit</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>soort</th>
+<th>begintijd-eindtijd</th>
+<th>beginGebeurtenis</th>
+<th>eindGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A3</td>
+<td>commercieel stoppen</td>
+<td>8:45-8:50am</td>
+<td>G3</td>
+<td>G4</td>
+</tr>
+<tr>
+<td>A5</td>
+<td>kopmaken</td>
+<td>8:45-8:48am</td>
+<td>G3</td>
+<td>G4</td>
+</tr>
+</tbody></table>
+<p>Operationeel punt</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>naam</th>
+<th>Dienstregelpunt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP3</td>
+<td>Dienstregelpunt C</td>
+<td>Dienstregelpunt</td>
+</tr>
+</tbody></table>
+</section><section id="kopmaken-lange-trein-met-vertrek-vanaf-een-ander-spoor"><div class="header-wrapper"><h3 id="x2-5-kopmaken-lange-trein-met-vertrek-vanaf-een-ander-spoor"><bdi class="secno">2.5 </bdi>Kopmaken lange trein met vertrek vanaf een ander spoor</h3><a class="self-link" href="#kopmaken-lange-trein-met-vertrek-vanaf-een-ander-spoor" aria-label="Permalink for Section 2.5"></a></div>
+<p>In dit scenario wordt een situatie beschreven waarin een trein na aankomst wordt gekeerd en vervolgens vanaf een ander spoor vertrekt. De aankomst- en vertrekgebeurtenis vinden daardoor plaats op verschillende locaties binnen hetzelfde dienstregelpunt.</p>
+<p>De trein arriveert op <strong>Dienstregelpunt C, spoor 8A</strong>. Na aankomst vindt een <strong>commerciële stop</strong> plaats voor het uitstappen en instappen van reizigers. Daarnaast wordt de activiteit <strong>Kopmaken</strong> uitgevoerd, waarmee de rijrichting van de trein wordt omgekeerd. Vervolgens vertrekt de trein vanaf <strong>spoor 8B</strong>.</p>
+<p>In vergelijking met het voorgaande scenario, waarin aankomst en vertrek op hetzelfde spoor plaatsvinden, laat dit scenario zien dat de begin- en eindgebeurtenis van een stop- of keerproces niet noodzakelijk aan dezelfde locatie gekoppeld hoeven te zijn. Hierdoor kan het model ook situaties beschrijven waarin een trein tijdens de stop van perron- of spoorlocatie verandert, terwijl de materieelsamenstelling ongewijzigd blijft.</p>
+<p><img src="./media/image10.svg" alt=""></p>
+</section><section id="overgaan"><div class="header-wrapper"><h3 id="x2-6-overgaan"><bdi class="secno">2.6 </bdi>Overgaan</h3><a class="self-link" href="#overgaan" aria-label="Permalink for Section 2.6"></a></div>
+<p>In dit scenario wordt <strong>overgaan</strong> beschreven.</p>
+<p><strong>Overgaan</strong> betekent dat al het materieel van de ene trein volledig wordt ingezet voor een volgende trein. Het materieel gaat dus over van de ene treinrit naar de andere, zonder dat de materieelsamenstelling wijzigt.</p>
+<p>Treinbeweging 1 is de <strong>aanvoerende beweging</strong> voor <strong>materieelopstelling 1</strong>. Deze materieelopstelling heeft een bepaalde <strong>materieelsamenstelling</strong>. Diezelfde materieelsamenstelling wordt vervolgens gebruikt voor <strong>treinbeweging 2</strong>.</p>
+<p>Tussen treinbeweging 1 en treinbeweging 2 vindt een <strong>materieeluitwisseling</strong> plaats van het type <strong>‘overgaan’</strong>. De materieelopstelling vormt hierbij de schakel: zij wordt aangevoerd door treinbeweging 1 en afgevoerd door treinbeweging 2.</p>
+<p>Omdat de materieelsamenstelling gelijk blijft, zijn de <strong>bronopstelling en doelopstelling</strong> van de materieeluitwisseling hetzelfde: <strong>materieelopstelling 1</strong>.</p>
+<p><img src="./media/image12.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft het concept <strong>overgaan</strong> in samenhang met treinbewegingen, materieelopstellingen en materieeluitwisseling.</p>
+<p><strong>Overgaan</strong> betreft een materieeluitwisseling waarbij <strong>de volledige materieelsamenstelling</strong> van een aanvoerende beweging wordt ingezet in één afvoerende beweging. Het materieel gaat daarbij over van de ene treinbeweging naar de andere, zonder dat de materieelsamenstelling wijzigt.</p>
+<p><strong>Treinbeweging 1</strong>, van het type <strong>vervoerbeweging</strong>, kent een gebeurtenis <strong>‘aankomst’</strong> waarnaeen activiteit van het type <strong>‘commercieel stoppen’</strong> plaatsvindt.</p>
+<p>Treinbeweging 1 fungeert als <strong>aanvoerende treinbeweging</strong> voor <strong>materieelopstelling 1</strong>, waaraan een <strong>materieelsamenstelling</strong> is gekoppeld. Dezelfde materieelsamenstelling wordt vervolgens ingezet voor <strong>treinbeweging 2</strong>.</p>
+<p>Tussen treinbeweging 1 en treinbeweging 2 vindt een <strong>materieeluitwisseling</strong> plaats met handelingsoort <strong>‘overgaan’</strong>. Materieelopstelling 1 heeft hierbij zowel een <strong>aanvoerende</strong> (treinbeweging 1) als een <strong>afvoerende treinbeweging</strong> (treinbeweging 2).</p>
+<p>Omdat de materieelsamenstelling ongewijzigd blijft, zijn de <strong>bronopstelling</strong> en <strong>doelopstelling</strong> van de materieeluitwisseling identiek en verwijzen beide naar <strong>materieelopstelling 2</strong>.</p>
+<p><em>Gegevensuitwerking bij dit scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>…, G3</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>OTN002</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G4, …</td>
+</tr>
+</tbody></table>
+<p>Gebeurtenis</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>type</th>
+<th>begintijd</th>
+<th>vindtPlaatsOp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G3</td>
+<td>aankomst</td>
+<td>PA 8:45am; VA 8:44am; UV: 8:47am</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>vertrek</td>
+<td>PV 8:50am; VV 8:50am; UV: 8:52am</td>
+<td>OP3</td>
+</tr>
+</tbody></table>
+<p>Activiteit</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>soort</th>
+<th>begintijd-eindtijd</th>
+<th>beginGebeurtenis</th>
+<th>eindGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A3</td>
+<td>commercieel stoppen</td>
+<td>8:45-8:50am</td>
+<td>G3</td>
+<td>G4</td>
+</tr>
+<tr>
+<td><em>A7</em></td>
+<td><em>reizigers vervoeren</em></td>
+<td><em>8:50-9:30am</em></td>
+<td><em>G4</em></td>
+<td><em>…</em></td>
+</tr>
+</tbody></table>
+<p>Operationeel punt</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>naam</th>
+<th>Dienstregelpunt</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP3</td>
+<td>Dienstregelpunt C</td>
+<td>Dienstregelpunt</td>
+</tr>
+</tbody></table>
+<p>Materieelopstelling</p>
+<table>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 24%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr>
+<th>identificatie</th>
+<th style="text-align: right;">datum</th>
+<th><p>aanvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>afvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>steltOp</p>
+<p>Materieelsamenstelling</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MO1</td>
+<td style="text-align: right;"><em>1-4-2026</em></td>
+<td>T1</td>
+<td>T2</td>
+<td>MS1</td>
+</tr>
+</tbody>
+</table><p>Materieelsamenstelling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>materieel</th>
+<th align="right">treinstel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MS1</td>
+<td>VIRM4</td>
+<td align="right">9565</td>
+</tr>
+</tbody></table>
+<p>Materieeluitwisseling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>handelingsoort</th>
+<th>bronOpstelling</th>
+<th>doelOpstelling</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MU1</td>
+<td><strong>overgaan</strong></td>
+<td>MO1</td>
+<td>MO1</td>
+</tr>
+</tbody></table>
+</section><section id="keren"><div class="header-wrapper"><h3 id="x2-7-keren"><bdi class="secno">2.7 </bdi>Keren</h3><a class="self-link" href="#keren" aria-label="Permalink for Section 2.7"></a></div>
+<p>In dit scenario wordt <strong>keren</strong> beschreven.</p>
+<p>Keren betekent dat een trein op zijn eindbestemming aankomt en daarna met hetzelfde materieel, maar onder een ander treinnummer, in tegengestelde richting wordt ingezet. Daarbij wordt de volgorde van het materieel omgekeerd ten opzichte van de oorspronkelijke rijrichting (bijvoorbeeld van A‑Z naar Z‑A)</p>
+<p>In dit scenario eindigt treinbeweging 1, een vervoerbeweging, met een aankomst. Na deze aankomst worden activiteiten uitgevoerd, zoals commercieel stoppen zodat reizigers kunnen uitstappen en de activiteit keren, waarmee wordt vastgelegd dat het materieel vervolgens in de tegenovergestelde richting wordt ingezet.</p>
+<p>Treinbeweging 1 is de aanvoerende beweging voor materieelopstelling 1. Deze materieelopstelling heeft een bepaalde materieelsamenstelling. Na de aankomst ontstaat een nieuwe materieelopstelling van waaruit treinbeweging 2 wordt gestart.</p>
+<p>Tussen beide materieelopstellingen vindt een materieeluitwisseling plaats van het type <strong>keren</strong>. De materieelsamenstelling blijft daarbij ongewijzigd. Het materieel gaat over naar een volgende treinbeweging, waarbij de rijrichting ten opzichte van de voorgaande treinbeweging wordt omgekeerd.</p>
+<p><img src="./media/image14.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft het concept <strong>keren</strong> in samenhang met treinbewegingen, materieelopstellingen en materieeluitwisseling.</p>
+<p>Keren is een vorm van materieeluitwisseling waarbij een trein op zijn eindbestemming aankomt en daarna met hetzelfde materieel, maar onder een andere treinidentificatie, in tegengestelde rijrichting wordt ingezet.</p>
+<p>Treinbeweging 1, van het type vervoerbeweging, kent een gebeurtenis <strong>aankomst</strong> waarna twee activiteiten plaatsvinden:</p>
+<ul>
+<li><p>een activiteit van het type <strong>commercieel stoppen</strong>, zodat reizigers kunnen uitstappen;</p>
+</li>
+<li><p>een activiteit van het type <strong>keren</strong>, waarmee wordt vastgelegd dat het materieel vervolgens in de tegenovergestelde rijrichting wordt ingezet.</p>
+</li>
+</ul>
+<p>Treinbeweging 1 fungeert als aanvoerende treinbeweging voor materieelopstelling 1. Op basis van deze materieelopstelling ontstaat na de materieeluitwisseling een nieuwe materieelopstelling, die wordt afgevoerd door treinbeweging 2.</p>
+<p>Tussen beide materieelopstellingen vindt een materieeluitwisseling plaats met handelingsoort <strong>keren</strong>. De materieelsamenstelling blijft daarbij ongewijzigd.</p>
+<p>Omdat een nieuwe operationele situatie ontstaat, zijn bronopstelling en doelopstelling van de materieeluitwisseling verschillend en verwijzen zij respectievelijk naar materieelopstelling 1 en materieelopstelling 2.</p>
+<p><em>Gegevensuitwerking bij dit scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>…, G3</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>OTN002</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G4, …</td>
+</tr>
+</tbody></table>
+<p>Gebeurtenis</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>type</th>
+<th>begintijd</th>
+<th>vindtPlaatsOp</th>
+<th>initieertActiviteit</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G3</td>
+<td>aankomst</td>
+<td>PA 8:45am; VA 8:44am; UV: 8:47am</td>
+<td>OP3</td>
+<td>A3, A6</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>vertrek</td>
+<td>PV 8:50am; VV 8:50am; UV: 8:52am</td>
+<td>OP3</td>
+<td>A7</td>
+</tr>
+</tbody></table>
+<p>Activiteit</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>soort</th>
+<th>begintijd-eindtijd</th>
+<th>beginGebeurtenis</th>
+<th>eindGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A3</td>
+<td>commercieel stoppen</td>
+<td>8:45-8:50am</td>
+<td>G3</td>
+<td>G4</td>
+</tr>
+<tr>
+<td>A6</td>
+<td><strong>keren</strong></td>
+<td>8:45-8:48am</td>
+<td>G3</td>
+<td>G4</td>
+</tr>
+<tr>
+<td><em>A7</em></td>
+<td><em>reizigers vervoeren</em></td>
+<td><em>/8:50-9:30am</em></td>
+<td><em>G4</em></td>
+<td><em>…</em></td>
+</tr>
+</tbody></table>
+<p>Operationeel punt</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>naam</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP3</td>
+<td>Dienstregelpunt C</td>
+<td>Dienstregelpunt</td>
+</tr>
+</tbody></table>
+<p>Materieelopstelling</p>
+<table>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 24%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr>
+<th>identificatie</th>
+<th style="text-align: right;">datum</th>
+<th><p>aanvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>afvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>steltOp</p>
+<p>Materieelsamenstelling</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MO1</td>
+<td style="text-align: right;"><em>1-4-2026</em></td>
+<td>T1</td>
+<td>T2</td>
+<td>MS1</td>
+</tr>
+</tbody>
+</table><p>Materieelsamenstelling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>materieel</th>
+<th align="right">treinstel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MS1</td>
+<td>VIRM4</td>
+<td align="right">9565</td>
+</tr>
+</tbody></table>
+<p>Materieeluitwisseling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>handelingsoort</th>
+<th>bronOpstelling</th>
+<th>doelOpstelling</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MU1</td>
+<td><strong>keren</strong></td>
+<td>MO1</td>
+<td>MO1</td>
+</tr>
+</tbody></table>
+</section><section id="combineren"><div class="header-wrapper"><h3 id="x2-8-combineren"><bdi class="secno">2.8 </bdi>Combineren</h3><a class="self-link" href="#combineren" aria-label="Permalink for Section 2.8"></a></div>
+<p>In dit scenario wordt materieel van <strong>twee treinbewegingen gecombineerd</strong> tot één nieuwe trein voor verdere inzet.</p>
+<p><strong>Treinbeweging 1</strong>, een vervoerbeweging, arriveert met <strong>materieelopstelling 1</strong> en <strong>materieelsamenstelling 1</strong>. Daarnaast arriveert <strong>treinbeweging 2</strong>, een rangeerbeweging, met extra materieel dat bedoeld is om aan de oorspronkelijke trein toe te voegen.</p>
+<p>Tijdens de materieelopstelling worden deze twee materieeldelen <strong>samengevoegd (gecombineerd)</strong>. Het resultaat is één nieuwe trein met een <strong>nieuwe materieelsamenstelling</strong> (materieelsamenstelling 3), die vervolgens wordt ingezet voor het vervolg van <strong>treinbeweging 1</strong>.</p>
+<p>Na het combineren rijdt treinbeweging 1 verder met het gecombineerde materieel. Treinbeweging 2 eindigt na het aanleveren van het materieel.</p>
+<p>Dit scenario is het spiegelbeeld van een splits-scenario: in plaats van één trein die uiteenvalt in meerdere delen, worden hier meerdere materieeldelen samengebracht tot één trein.</p>
+<p><img src="./media/image16.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft een materieelcombinatie waarbij materieel uit <strong>twee treinbewegingen</strong> wordt samengebracht in één nieuwe materieelsamenstelling.</p>
+<p><strong>Treinbeweging 1</strong> (type <strong>vervoerbeweging</strong>) heeft <strong>Materieelopstelling 1</strong> met <strong>Materieelsamenstelling 1</strong>.<br><strong>Treinbeweging 2</strong> (type <strong>rangeerbeweging</strong>) levert materieel aan via een aparte materieelopstelling.</p>
+<p>Tijdens de materieelopstelling vindt <strong>Materieeluitwisseling 1</strong> plaats met handelingsoort <strong>‘combineren’</strong>. Deze materieeluitwisseling kent:</p>
+<ul>
+<li><p><strong>twee bronopstellingen</strong>:</p>
+<ul>
+<li><p>Materieelopstelling 1 (van Treinbeweging 1)</p>
+</li>
+<li><p>Materieelopstelling 2 (van Treinbeweging 2)</p>
+</li>
+</ul>
+</li>
+<li><p><strong>één doelopstelling</strong>:</p>
+<ul>
+<li>Materieelopstelling 3</li>
+</ul>
+</li>
+</ul>
+<p>Materieelopstelling 3 heeft <strong>Materieelsamenstelling 3</strong>, die het samengestelde materieel representeert. Deze materieelsamenstelling wordt ingezet voor het vervolg van <strong>Treinbeweging 1</strong>.</p>
+<p>Treinbeweging 1 fungeert daarmee als <strong>afvoerende treinbeweging</strong> van Materieelopstelling 3.<br>Treinbeweging 2 eindigt na het aanleveren van het materieel en heeft geen verdere afvoerende treinbeweging.</p>
+<p><em>Gegevensuitwerking voor dit scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G1,G2,G3,G6,G7,G8</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>OTN002</td>
+<td>rangeerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G4, G5</td>
+</tr>
+</tbody></table>
+<p>Gebeurtenis</p>
+<table style="width:70%;">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 12%">
+<col style="width: 27%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>type</th>
+<th>tijdOplocatie</th>
+<th>vindtPlaatsOp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>G1</td>
+<td>vertrek</td>
+<td><p>PV 8:28am</p>
+<p>VV 8:28am</p>
+<p>UV 8:32am</p>
+<p>WV «waardeOnbekend»</p></td>
+<td>OP1</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>doorkomst</td>
+<td><p>PV --</p>
+<p>VD 8:38am</p>
+<p>UD 8:40am</p>
+<p>WD «waardeOnbekend»</p></td>
+<td>OP2</td>
+</tr>
+<tr>
+<td>G3</td>
+<td>aankomst</td>
+<td><p>PA 8:45am</p>
+<p>VA 8:44am</p>
+<p>UA 8:47am</p>
+<p>WD «waardeOnbekend»</p></td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>vertrek</td>
+<td><p>PV ---</p>
+<p>VV 8:40am</p>
+<p>UV 8:43am</p>
+<p>WV «waardeOnbekend</p></td>
+<td>OP6</td>
+</tr>
+<tr>
+<td>G5</td>
+<td>aankomst</td>
+<td><p>PA ---</p>
+<p>VA 8:47m</p>
+<p>UA 8:48am</p>
+<p>WA «waardeOnbekend»</p></td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G6</td>
+<td>vertrek</td>
+<td><p>PV 8:50am</p>
+<p>VV 8:50am</p>
+<p>UV 8:52am</p>
+<p>WV «waardeOnbekend»</p></td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G7</td>
+<td>doorkomst</td>
+<td style="text-align: left;"><p>---</p>
+<p>VD 9:00am</p>
+<p>UD 9:01am</p>
+<p>WD «waardeOnbekend»</p></td>
+<td>OP4</td>
+</tr>
+<tr>
+<td>G8</td>
+<td>aankomst</td>
+<td style="text-align: left;"><p>PA 9:15am</p>
+<p>VA 9:14am</p>
+<p>UA 8:16am</p>
+<p>WD «waardeOnbekend»</p></td>
+<td>OP5</td>
+</tr>
+</tbody>
+</table><p>Operationeel punt</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>naam</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP1</td>
+<td>Dienstregelpunt A</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP2</td>
+<td>Dienstregelpunt B</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP3</td>
+<td>Dienstregelpunt C</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP4</td>
+<td>Dienstregelpunt D</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP5</td>
+<td>Dienstregelpunt E</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP6</td>
+<td>Opstelgebied/-spoor A</td>
+<td>Opstel</td>
+</tr>
+</tbody></table>
+<p>Materieelopstelling</p>
+<table style="width:85%;">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 10%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr>
+<th>identificatie</th>
+<th style="text-align: right;">datum</th>
+<th><p>aanvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>afvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>steltop</p>
+<p>Materieelsamenstelling</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MO1</td>
+<td style="text-align: right;">1-4-2026</td>
+<td>T1</td>
+<td>/T1</td>
+<td>MS1</td>
+</tr>
+<tr>
+<td>MO2</td>
+<td style="text-align: right;">1-4-2026</td>
+<td>T2</td>
+<td>/T1</td>
+<td>MS2</td>
+</tr>
+<tr>
+<td>MO3</td>
+<td style="text-align: right;">1-4-2026</td>
+<td>/T1,/T2</td>
+<td>T1</td>
+<td>MS3</td>
+</tr>
+</tbody>
+</table><p>Materieelsamenstelling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>materieel</th>
+<th align="right">treinstel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MS1</td>
+<td>VIRM4</td>
+<td align="right">9565</td>
+</tr>
+<tr>
+<td>MS2</td>
+<td>VIRM4</td>
+<td align="right">9566</td>
+</tr>
+<tr>
+<td>MS3</td>
+<td>VIRM4+VIRM4</td>
+<td align="right">9565, 9566</td>
+</tr>
+</tbody></table>
+<p>Materieeluitwisseling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>handelingsoort</th>
+<th>bronOpstelling</th>
+<th>doelOpstelling</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MU1</td>
+<td><strong>combineren</strong></td>
+<td>MO1,MO2</td>
+<td>MO3</td>
+</tr>
+</tbody></table>
+</section><section id="splitsen-en-afrangeren"><div class="header-wrapper"><h3 id="x2-9-splitsen-en-afrangeren"><bdi class="secno">2.9 </bdi>Splitsen en afrangeren</h3><a class="self-link" href="#splitsen-en-afrangeren" aria-label="Permalink for Section 2.9"></a></div>
+<p>In dit scenario wordt het materieel van een trein <strong>gesplitst</strong>, waarbij een deel van het materieel wordt <strong>afgerangeerd</strong>. De nadruk ligt hierbij op <strong>de materieeluitwisseling</strong> en op de samenhang tussen <strong>treinbewegingen</strong>, <strong>materieelopstellingen</strong> en <strong>materieelsamenstellingen</strong>. Daarom zijn de gebeurtenissen vereenvoudigd tot alleen hun type; tijden en bijbehorende activiteiten zijn niet uitgewerkt.</p>
+<p><strong>Treinbeweging 1</strong> komt aan met een <strong>aankomst</strong> en is daarmee de <strong>aanvoerende treinbeweging</strong> voor <strong>materieelopstelling 1</strong>. Deze materieelopstelling heeft één oorspronkelijke samenstelling: <strong>VIRM4 + VIRM4</strong>.</p>
+<p>Tijdens de materieelopstelling wordt het materieel <strong>gesplitst</strong>. Dat leidt tot twee nieuwe materieelopstellingen, elk met een eigen samenstelling:</p>
+<ul>
+<li><p><strong>Materieelopstelling 2</strong> met <strong>VIRM4</strong></p>
+</li>
+<li><p><strong>Materieelopstelling 3</strong> met <strong>VIRM4</strong></p>
+</li>
+</ul>
+<p>Na de splitsing zijn er dus twee afzonderlijke materieeldelen ontstaan. Vanuit deze materieelopstellingen kunnen vervolgens afzonderlijke treinbewegingen worden gestart. Hiermee blijft expliciet zichtbaar dat beide uitgaande treinbewegingen afhankelijk zijn van dezelfde aanvoerende treinbeweging.</p>
+<p>De oorspronkelijke materieelopstelling 1 wordt aangevoerd door treinbeweging 1. Welke treinbewegingen het materieel afvoeren, volgt uit wat er met de nieuwe materieelopstellingen gebeurt:</p>
+<ul>
+<li><p>Eén deel blijft gekoppeld aan <strong>treinbeweging 1</strong></p>
+</li>
+<li><p>Het andere deel wordt afgevoerd via <strong>treinbeweging 2</strong></p>
+</li>
+</ul>
+<p><img src="./media/image18.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft een materieelsplitsing bij een treinbeweging, waarbij een deel van het materieel wordt afgerangeerd. De focus ligt op de <strong>materieeluitwisseling</strong> en de relaties tussen <strong>materieelopstellingen</strong>, <strong>materieelsamenstellingen</strong> en <strong>treinbewegingen</strong>. Gebeurtenissen zijn daarom gemodelleerd als typen, zonder verdere detaillering van tijdstippen of activiteiten.</p>
+<p><strong>Treinbeweging 1</strong> kent een gebeurtenis van het type <strong>‘aankomst’</strong> en fungeert als <strong>aanvoerende treinbeweging</strong> voor <strong>materieelopstelling 1</strong>. Materieelopstelling 1 heeft als oorspronkelijke samenstelling <strong>Materieelsamenstelling 1: VIRM4 + VIRM4</strong>.</p>
+<p>Tijdens de materieelopstelling vindt een <strong>materieeluitwisseling</strong> plaats van het handelingstype <strong>‘splitsen’</strong>. Informatiekundig resulteert dit in:</p>
+<ul>
+<li><p>één <strong>bronopstelling</strong>: <strong>Materieelopstelling 1</strong>, en</p>
+</li>
+<li><p>twee <strong>doelopstellingen</strong>: <strong>Materieelopstelling 2</strong> en <strong>Materieelopstelling 3</strong>.</p>
+</li>
+</ul>
+<p>De doelopstellingen hebben elk een eigen materieelsamenstelling:</p>
+<ul>
+<li><p><strong>Materieelsamenstelling 2: VIRM4</strong> (Materieelopstelling 2)</p>
+</li>
+<li><p><strong>Materieelsamenstelling 3: VIRM4</strong> (Materieelopstelling 3)</p>
+</li>
+</ul>
+<p>Materieelopstelling 1 heeft als aanvoerende treinbeweging <strong>Treinbeweging 1</strong>. De afvoerende treinbewegingen kunnen worden afgeleid via de materieeluitwisseling:</p>
+<ul>
+<li><p><strong>Materieelopstelling 2</strong> wordt afgevoerd via <strong>Treinbeweging 1</strong></p>
+</li>
+<li><p><strong>Materieelopstelling 3</strong> wordt afgevoerd via <strong>Treinbeweging 2</strong></p>
+</li>
+</ul>
+<p><em>Gegevensuitwerking voor dit scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G1,G2,G3,G4</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>OTN002</td>
+<td>rangeerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G5, G6</td>
+</tr>
+</tbody></table>
+<p>Gebeurtenis</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>type</th>
+<th>vindtPlaatsOp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G1</td>
+<td>aankomst</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>vertrek</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G3</td>
+<td>doorkomst</td>
+<td>OP4</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>aankomst</td>
+<td>OP5</td>
+</tr>
+<tr>
+<td>G5</td>
+<td>vertrek</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G6</td>
+<td>aankomst</td>
+<td>OP6</td>
+</tr>
+</tbody></table>
+<p>Operationeel punt</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>naam</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP3</td>
+<td>Dienstregelpunt C</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP4</td>
+<td>Dienstregelpunt D</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP5</td>
+<td>Dienstregelpunt E</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP6</td>
+<td>Opstelgebied/-spoor A</td>
+<td>Opstel</td>
+</tr>
+</tbody></table>
+<p>Materieelopstelling</p>
+<table style="width:85%;">
+<colgroup>
+<col style="width: 13%">
+<col style="width: 10%">
+<col style="width: 16%">
+<col style="width: 18%">
+<col style="width: 26%">
+</colgroup>
+<thead>
+<tr>
+<th>identificatie</th>
+<th style="text-align: right;">datum</th>
+<th><p>aanvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>afvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>steltop</p>
+<p>Materieelsamenstelling</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MO1</td>
+<td style="text-align: right;">1-4-2026</td>
+<td>T1</td>
+<td>/T1</td>
+<td>MS1</td>
+</tr>
+<tr>
+<td>MO2</td>
+<td style="text-align: right;">1-4-2026</td>
+<td>/T1</td>
+<td>T1</td>
+<td>MS2</td>
+</tr>
+<tr>
+<td>MO3</td>
+<td style="text-align: right;">1-4-2026</td>
+<td>/T1</td>
+<td>T2</td>
+<td>MS3</td>
+</tr>
+</tbody>
+</table><p>Materieelsamenstelling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>materieel</th>
+<th>treinstel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MS1</td>
+<td>VIRM4+VIRM4</td>
+<td>9565, 9566</td>
+</tr>
+<tr>
+<td>MS2</td>
+<td>VIRM4</td>
+<td>9565</td>
+</tr>
+<tr>
+<td>MS3</td>
+<td>VIRM4</td>
+<td>9566</td>
+</tr>
+</tbody></table>
+<p>Materieeluitwisseling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>handelingsoort</th>
+<th>bronOpstelling</th>
+<th>doelOpstelling</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MU1</td>
+<td><strong>splitsen</strong></td>
+<td>MO1</td>
+<td>MO2, MO3</td>
+</tr>
+</tbody></table>
+</section><section id="splitsen-in-drie-delen"><div class="header-wrapper"><h3 id="x2-10-splitsen-in-drie-delen"><bdi class="secno">2.10 </bdi>Splitsen in drie delen</h3><a class="self-link" href="#splitsen-in-drie-delen" aria-label="Permalink for Section 2.10"></a></div>
+<p>In dit scenario arriveert een trein die bestaat uit <strong>drie VIRM4-stellen</strong>. Deze trein wordt <strong>in drie delen gesplitst</strong>, waarbij elk deel een andere vervolgstap krijgt:</p>
+<ul>
+<li><p>Eén deel blijft onderdeel van de <strong>oorspronkelijke treinbeweging 1</strong> en rijdt verder als <strong>intercity</strong>.</p>
+</li>
+<li><p>Eén deel gaat verder in een <strong>nieuwe treinbeweging 2</strong> van het type <strong>vervoerbeweging</strong>, en rijdt door als <strong>stoptrein</strong>.</p>
+</li>
+<li><p>Het derde deel wordt <strong>afgerangeerd</strong> en gaat verder in een <strong>nieuwe treinbeweging 3</strong> van het type <strong>rangeerbeweging</strong>.</p>
+</li>
+</ul>
+<p>Dit scenario is vrijwel gelijk aan het voorgaande scenario met splitsen. Het verschil is dat het materieel nu niet in twee maar in <strong>drie delen</strong> uiteenvalt. Dat betekent dat er na de splitsing <strong>drie afzonderlijke materieelopstellingen</strong> ontstaan, elk met een eigen materieelsamenstelling.</p>
+<p><img src="./media/image20.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft een materieelsplitsing waarbij een trein met <strong>Materieelsamenstelling 1: 3×VIRM4</strong> wordt opgesplitst in drie afzonderlijke delen, die elk in een eigen treinbeweging worden ingezet.</p>
+<p><strong>Materieeluitwisseling 1</strong> heeft als <strong>bronopstelling</strong> <strong>Materieelopstelling 1</strong> en kent <strong>drie doelopstellingen</strong> (in plaats van twee), namelijk:</p>
+<ul>
+<li><p><strong>Materieelopstelling 2</strong>, gekoppeld aan de voortzetting van <strong>Treinbeweging 1</strong> (vervoerbeweging, intercity);</p>
+</li>
+<li><p><strong>Materieelopstelling 3</strong>, ingezet in <strong>Treinbeweging 2</strong> van het type <strong>vervoerbeweging</strong> (stoptrein);</p>
+</li>
+<li><p><strong>Materieelopstelling 4</strong>, ingezet in <strong>Treinbeweging 3</strong> van het type <strong>rangeerbeweging</strong> (afrangeren).</p>
+</li>
+</ul>
+<p>Elke doelopstelling heeft een eigen <strong>materieelsamenstelling</strong>, voortkomend uit de materieeluitwisseling met handelingsoort <strong>‘splitsen’</strong>. De oorspronkelijke materieelopstelling fungeert hierbij als bron voor alle drie de nieuwe opstellingen.</p>
+<p><em>Gegevensuitwerking bij dit scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G1,G2,G3,G4</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>OTN002</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G5, G6</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>OTN003</td>
+<td>rangeerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G7, G8</td>
+</tr>
+</tbody></table>
+<p>Gebeurtenis</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>type</th>
+<th>vindtPlaatsOp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G1</td>
+<td>aankomst</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>vertrek</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G3</td>
+<td>doorkomst</td>
+<td>OP4</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>aankomst</td>
+<td>OP5</td>
+</tr>
+<tr>
+<td>G5</td>
+<td>vertrek</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G6</td>
+<td>aankomst</td>
+<td>OP4</td>
+</tr>
+<tr>
+<td>G7</td>
+<td>vertrek</td>
+<td>OP3</td>
+</tr>
+<tr>
+<td>G8</td>
+<td>aankomst</td>
+<td>OP6</td>
+</tr>
+</tbody></table>
+<p>Operationeel punt</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>naam</th>
+<th>type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP3</td>
+<td>Dienstregelpunt C</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP4</td>
+<td>Dienstregelpunt D</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP5</td>
+<td>Dienstregelpunt E</td>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<td>OP6</td>
+<td>Opstelgebied/-spoor A</td>
+<td>Opstel</td>
+</tr>
+</tbody></table>
+<p>Materieelopstelling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th align="right">datum</th>
+<th>aanvoerendeTreinbeweging</th>
+<th>afvoerendeTreinbeweging</th>
+<th>steltopMaterieelsamenstelling</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MO1</td>
+<td align="right">1-4-2026</td>
+<td>T1</td>
+<td>/T1</td>
+<td>MS1</td>
+</tr>
+<tr>
+<td>MO2</td>
+<td align="right">1-4-2026</td>
+<td>/T1</td>
+<td>T1</td>
+<td>MS2</td>
+</tr>
+<tr>
+<td>MO3</td>
+<td align="right">1-4-2026</td>
+<td>/T1</td>
+<td>T2</td>
+<td>MS3</td>
+</tr>
+<tr>
+<td>MO4</td>
+<td align="right">1-4-2026</td>
+<td>/T1</td>
+<td>T3</td>
+<td>MS4</td>
+</tr>
+</tbody></table>
+<p>Materieelsamenstelling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>materieel</th>
+<th>treinstel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MS1</td>
+<td>VIRM4+VIRM4</td>
+<td>9565, 9566, 9567</td>
+</tr>
+<tr>
+<td>MS2</td>
+<td>VIRM4</td>
+<td>9565</td>
+</tr>
+<tr>
+<td>MS3</td>
+<td>VIRM4</td>
+<td>9566</td>
+</tr>
+<tr>
+<td>MS4</td>
+<td>VIRM4</td>
+<td>9567</td>
+</tr>
+</tbody></table>
+<p>Materieeluitwisseling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>handelingsoort</th>
+<th>bronOpstelling</th>
+<th>doelOpstelling</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MU1</td>
+<td>splitsen</td>
+<td>MO1</td>
+<td>MO2, MO3, MO4</td>
+</tr>
+</tbody></table>
+</section><section id="splitsen-splitsen-combineren"><div class="header-wrapper"><h3 id="x2-11-splitsen-splitsen-combineren"><bdi class="secno">2.11 </bdi>Splitsen, Splitsen, Combineren</h3><a class="self-link" href="#splitsen-splitsen-combineren" aria-label="Permalink for Section 2.11"></a></div>
+<p>In dit scenario komen twee treinen, beide met de treinsamenstelling VIRM4+VIRM4, op een emplacement tot stilstand. Tijdens deze stilstand vindt materieeluitwisseling plaats:</p>
+<ul>
+<li><p>Splitsen: Bij Treinbeweging 1 (rood) wordt één VIRM4-treindeel afgekoppeld. De trein maakt kop en vertrekt onder hetzelfde treinnummer.</p>
+</li>
+<li><p>Splitsen: Bij Treinbeweging 2 (groen) wordt eveneens één VIRM4-treindeel afgekoppeld. De trein keert en vertrekt onder een nieuw treinnummer als Treinbeweging 3 (oranje).</p>
+</li>
+<li><p>Combineren: De afgekoppelde VIRM4-treindelen van Treinbeweging 1 en Treinbeweging 2 worden samengevoegd tot één nieuwe trein, die onder een nieuw treinnummer vertrekt als Treinbeweging 4 (paars).</p>
+</li>
+</ul>
+<blockquote>
+<p><img src="./media/image21.png" alt=""></p>
+</blockquote>
+<p><img src="./media/image23.svg" alt=""></p>
+</section><section id="locomotief-omlopen"><div class="header-wrapper"><h3 id="x2-12-locomotief-omlopen"><bdi class="secno">2.12 </bdi>Locomotief omlopen</h3><a class="self-link" href="#locomotief-omlopen" aria-label="Permalink for Section 2.12"></a></div>
+<p>In dit scenario wordt <strong>locomotief omlopen</strong> beschreven.</p>
+<p>Locomotief omlopen betekent dat een locomotief wordt losgekoppeld van een trein, via een rangeerbeweging naar de andere zijde van de trein wordt verplaatst en daar opnieuw wordt gekoppeld. Hierdoor kan dezelfde trein in tegengestelde richting vertrekken zonder dat de samenstelling van de wagons wijzigt.</p>
+<p>In dit scenario eindigt treinbeweging 1, een vervoerbeweging, met een aankomst. Na deze aankomst vinden activiteiten plaats, zoals de activiteit ‘kopmaken’ en de activiteit ‘locomotief omlopen’.</p>
+<p>Tijdens de materieelopstelling wordt de locomotief afgesplitst van de wagons. Hierdoor ontstaan twee materieelopstellingen:</p>
+<ul>
+<li><p>een materieelopstelling met de locomotief;</p>
+</li>
+<li><p>een materieelopstelling met de wagons.</p>
+</li>
+</ul>
+<p>De locomotief wordt vervolgens via een rangeerbeweging verplaatst naar de andere zijde van de wagons. Daarna worden locomotief en wagons opnieuw gecombineerd tot één materieelsamenstelling.</p>
+<p>Vanuit deze nieuwe materieelopstelling gaat vervolgens treinbeweging 1 door.</p>
+<p><img src="./media/image25.svg" alt=""></p>
+<p><em>Informatiekundig</em></p>
+<p>Dit scenario beschrijft het concept locomotief omlopen in samenhang met treinbewegingen, materieelopstellingen, materieeluitwisselingen en rangeerbewegingen.</p>
+<p>Treinbeweging 1, van het type vervoerbeweging, kent een gebeurtenis aankomst waarna activiteiten plaatsvinden van het type ‘kopmaken’ en ‘locomotief omlopen’.</p>
+<p>Treinbeweging 1 fungeert als aanvoerende treinbeweging voor materieelopstelling 1. Aan deze materieelopstelling is een materieelsamenstelling gekoppeld die bestaat uit een locomotief en wagons.</p>
+<p>Vanuit materieelopstelling 1 vindt een materieeluitwisseling plaats met handelingsoort splitsen. Daarbij ontstaan:</p>
+<ul>
+<li><p>materieelopstelling 2 met de wagons;</p>
+</li>
+<li><p>materieelopstelling 3 met uitsluitend de locomotief.</p>
+</li>
+</ul>
+<p>Materieelopstelling 3 wordt afgevoerd door een rangeerbeweging. Deze rangeerbeweging vormt de aanvoerende treinbeweging voor materieelopstelling 4, waarin de locomotief zich aan de andere zijde van de trein bevindt.</p>
+<p>Vervolgens vindt een materieeluitwisseling plaats met handelingsoort combineren, waarbij de locomotief uit materieelopstelling 4 en de wagons uit materieelopstelling 2 worden samengevoegd tot materieelopstelling 5.</p>
+<p>Vanuit materieelopstelling 5 gaat treinbeweging 1 door met een vertrekgebeurtenis.</p>
+<p><em>Gegevensuitwerking bij dit scenario</em></p>
+<p>Treinbeweging</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>treinnummer</th>
+<th>typeBeweging</th>
+<th align="right">datum</th>
+<th>bestaatUitGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>T1</td>
+<td>OTN001</td>
+<td>vervoerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G1, G4</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>OTN002</td>
+<td>rangeerbeweging</td>
+<td align="right">1-4-2026</td>
+<td>G2, G3</td>
+</tr>
+</tbody></table>
+<p>Gebeurtenis</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>type</th>
+<th>begintijd</th>
+<th>vindtPlaatsOp</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>G1</td>
+<td>aankomst</td>
+<td>VA 8:44am; UA: 8:48am</td>
+<td>OP1</td>
+</tr>
+<tr>
+<td>G2</td>
+<td>vertrek</td>
+<td>VV 9:00am; UV: 9:02am</td>
+<td>OP1</td>
+</tr>
+<tr>
+<td>G3</td>
+<td>aankomst</td>
+<td>VA 9:10am; UA: 9:15am</td>
+<td>OP1</td>
+</tr>
+<tr>
+<td>G4</td>
+<td>vertrek</td>
+<td>VV 9:15am; UV: 9:20am</td>
+<td>OP1</td>
+</tr>
+</tbody></table>
+<p>Activiteit</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>soort</th>
+<th>begintijd-eindtijd</th>
+<th>beginGebeurtenis</th>
+<th>eindGebeurtenis</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A1</td>
+<td>kopmaken</td>
+<td>8:45-8:48am</td>
+<td>G1</td>
+<td>G4</td>
+</tr>
+<tr>
+<td>A2</td>
+<td>locomotief afkoppelen</td>
+<td>8:45-8:48am</td>
+<td>G1</td>
+<td>G2</td>
+</tr>
+<tr>
+<td>A3</td>
+<td><strong>locomotief omlopen</strong></td>
+<td>9:00-9:15am</td>
+<td>G2</td>
+<td>G3</td>
+</tr>
+</tbody></table>
+<p>Operationeel punt</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>naam</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>OP3</td>
+<td>TRS-gebied/-spoor A</td>
+<td>Gebied</td>
+</tr>
+</tbody></table>
+<p>Materieelopstelling</p>
+<table>
+<colgroup>
+<col style="width: 12%">
+<col style="width: 10%">
+<col style="width: 25%">
+<col style="width: 24%">
+<col style="width: 27%">
+</colgroup>
+<thead>
+<tr>
+<th>identificatie</th>
+<th style="text-align: right;">datum</th>
+<th><p>aanvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>afvoerende</p>
+<p>Treinbeweging</p></th>
+<th><p>steltOp</p>
+<p>Materieelsamenstelling</p></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MO1</td>
+<td style="text-align: right;"><em>1-4-2026</em></td>
+<td>T1</td>
+<td>T2</td>
+<td>MS1</td>
+</tr>
+<tr>
+<td>MO2</td>
+<td style="text-align: right;"><em>1-4-2026</em></td>
+<td>T1</td>
+<td>T1</td>
+<td>MS2</td>
+</tr>
+<tr>
+<td>MO3</td>
+<td style="text-align: right;"><em>1-4-2026</em></td>
+<td>T1</td>
+<td>T2</td>
+<td>MS3</td>
+</tr>
+<tr>
+<td>MO4</td>
+<td style="text-align: right;"><em>1-4-2026</em></td>
+<td>T2</td>
+<td>T1</td>
+<td>MS3</td>
+</tr>
+<tr>
+<td>MO5</td>
+<td style="text-align: right;"><em>1-4-2026</em></td>
+<td>T1</td>
+<td>T1</td>
+<td>MS4</td>
+</tr>
+</tbody>
+</table><p>Materieelsamenstelling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>materieel</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MS1</td>
+<td>Elek. Loc + Wagons</td>
+</tr>
+<tr>
+<td>MS2</td>
+<td>Wagons</td>
+</tr>
+<tr>
+<td>MS3</td>
+<td>Elek. Loc</td>
+</tr>
+<tr>
+<td>MS4</td>
+<td>Wagons + Elek. Loc</td>
+</tr>
+</tbody></table>
+<p>Materieeluitwisseling</p>
+<table>
+<thead>
+<tr>
+<th>identificatie</th>
+<th>handelingsoort</th>
+<th>bronOpstelling</th>
+<th>doelOpstelling</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>MU1</td>
+<td><strong>splitsen</strong></td>
+<td>MO1</td>
+<td>MO2, MO3</td>
+</tr>
+<tr>
+<td>MU2</td>
+<td><strong>combineren</strong></td>
+<td>MO2, MO4</td>
+<td>MO5</td>
+</tr>
+</tbody></table>
+</section><section id="uiteennemen-c-q-splitsen-van-een-binnenkomende-goederentrein"><div class="header-wrapper"><h3 id="x2-13-uiteennemen-c-q-splitsen-van-een-binnenkomende-goederentrein"><bdi class="secno">2.13 </bdi>Uiteennemen c.q. splitsen van een binnenkomende goederentrein</h3><a class="self-link" href="#uiteennemen-c-q-splitsen-van-een-binnenkomende-goederentrein" aria-label="Permalink for Section 2.13"></a></div>
+<p>Een internationale goederentrein komt aan op een terminalspoor. Na aankomst wordt de aanvoerende locomotief afgekoppeld en vertrekt deze. Vervolgens wordt de trein in drie delen gesplitst: een voorste deel, een middendeel en een achterste deel.</p>
+<p>De drie treindelen verlaten het spoor niet tegelijkertijd. Achtereenvolgens wordt eerst het voorste deel afgevoerd, daarna het achterste deel en tenslotte het middendeel. Voor elk treindeel wordt een afzonderlijke afvoerende treinbeweging uitgevoerd.</p>
+<p>Gedurende dit proces verandert de samenstelling van het materieel op het spoor. Direct na de aankomst bevindt de volledige trein zich nog op het spoor. Na het splitsen ontstaan drie afzonderlijke treindelen die onafhankelijk van elkaar kunnen worden weggevoerd. Naarmate de afzonderlijke delen vertrekken, neemt de spoorbezetting af totdat uiteindelijk ook het laatste deel is afgevoerd en het spoor weer vrij is.</p>
+<p>Het scenario laat zien dat spoorbezetting niet alleen wordt bepaald door aankomsten en vertrekken van complete treinen, maar vooral door de aanwezigheid van materieel op het spoor gedurende de tussenliggende rangeer-, splits- en combineeractiviteiten.</p>
+<p>Een bijzonder geval ontstaat wanneer de locomotief voor het afvoeren van het middendeel niet arriveert. In dat geval vertrekken het voorste en achterste deel wel, maar blijft het middendeel achter op het spoor. Hierdoor blijft een spoorbezetting bestaan, ondanks het feit dat een groot deel van de oorspronkelijke trein al is afgevoerd.</p>
+<p><em><strong>Informatiekundig</strong></em></p>
+<p>De aankomst van de internationale trein resulteert in één materieelopstelling. Door de materieeluitwisseling <em>splitsen</em> ontstaan vervolgens vier nieuwe materieelopstellingen: de loc, het voorste, middelste en achterste treindeel. Elk van deze materieelopstellingen vormt de basis voor een afzonderlijke afvoerende treinbeweging.</p>
+<p>Omdat alle objecten via relaties met elkaar verbonden zijn, kan de volledige keten van oorzaak en gevolg worden gevolgd:</p>
+<ul>
+<li><p>aankomst van de trein;</p>
+</li>
+<li><p>vorming van een materieelopstelling;</p>
+</li>
+<li><p>splitsing in drie materieelopstellingen;</p>
+</li>
+<li><p>afzonderlijke afvoerende treinbewegingen;</p>
+</li>
+<li><p>verdwijnen van de betreffende materieelopstellingen van het spoor.</p>
+</li>
+</ul>
+<p>Hierdoor kan ook worden afgeleid welke materieelopstellingen nog aanwezig zijn wanneer een geplande afvoer niet plaatsvindt.</p>
+<p>Wanneer de afvoerende locomotief voor het middendeel niet arriveert, ontbreekt de bijbehorende afvoerende treinbeweging. De materieelopstelling van het middendeel wordt daardoor niet afgevoerd en blijft bestaan.</p>
+<p>Doordat de materieelopstelling nog aanwezig is en geen opvolgende afvoerrelatie heeft, kan worden vastgesteld dat het betreffende treindeel nog op het spoor staat. De resterende spoorbezetting hoeft daarbij niet expliciet te worden geregistreerd; zij kan worden afgeleid uit de samenhang tussen:</p>
+<ul>
+<li><p>treinbewegingen;</p>
+</li>
+<li><p>materieelopstellingen;</p>
+</li>
+<li><p>materieeluitwisselingen;</p>
+</li>
+<li><p>aankomst- en vertrekgebeurtenissen.</p>
+</li>
+</ul>
+<p>Het model maakt daarmee zichtbaar dat een ontbrekende afvoerende treinbeweging direct leidt tot een resterende materieelopstelling en dus tot een blijvende spoorbezetting. Hierdoor kunnen operationele situaties, zoals achtergebleven treindelen of onverwachte bezettingen van sporen, op basis van de geregistreerde relaties automatisch worden vastgesteld.</p>
+<p><img src="./media/image26.png" alt=""></p>
+<p><img src="./media/image28.svg" alt=""></p>
+</section><section id="reizigerstrein-met-opstellen-vervoer-en-onderhoud"><div class="header-wrapper"><h3 id="x2-14-reizigerstrein-met-opstellen-vervoer-en-onderhoud"><bdi class="secno">2.14 </bdi>Reizigerstrein met opstellen, vervoer en onderhoud</h3><a class="self-link" href="#reizigerstrein-met-opstellen-vervoer-en-onderhoud" aria-label="Permalink for Section 2.14"></a></div>
+<p><img src="./media/image29.png" alt="">Dit scenario beschrijft de volledige levenscyclus van een reizigerstrein vanaf het opstellen van materieel tot en met het uitvoeren van onderhoudsactiviteiten. Het materieel staat aanvankelijk opgesteld in een opstelgebied en wordt via een rangeerbeweging naar het perron gebracht. Vervolgens wordt een treinbeweging uitgevoerd waarbij reizigers worden vervoerd tussen vertrek en aankomst, eventueel met geplande tussenstops langs perrons. Na aankomst ontstaat een nieuwe materieelopstelling, van waaruit het materieel opnieuw kan worden gerangeerd voor operationele activiteiten zoals reinigen, wassen, repareren of opnieuw opstellen.</p>
+<p>Het scenario laat zien hoe treinbewegingen, materieelopstellingen, materieelsamenstellingen, materieeluitwisselingen en activiteiten gezamenlijk de volledige logistieke levenscyclus van een trein beschrijven. Daarnaast illustreert het de afwisseling tussen het gebruik van infrastructuurcapaciteit voor rijden (treinbewegingen) en voor stilstaan (materieelopstellingen), waarbij het materieel gedurende zijn levenscyclus meerdere malen van functie en locatie kan veranderen.</p>
+<p><img src="./media/image31.svg" alt=""></p>
+</section></section>
+
+
+ 
+
+
+
+
+
+
+
+
+<section id="tof">
+
+
+
+
+
+
+</section><p role="navigation" id="back-to-top">
+    <a href="#title"><abbr title="Terug naar boven">↑</abbr></a>
+  </p><script id="respec-dfn-panel">(() => {
+// @ts-check
+if (document.respec) {
+  document.respec.ready.then(setupPanel);
+} else {
+  setupPanel();
+}
+
+function setupPanel() {
+  const listener = panelListener();
+  document.body.addEventListener("keydown", listener);
+  document.body.addEventListener("click", listener);
+}
+
+function panelListener() {
+  /** @type {HTMLElement | null} */
+  let panel = null;
+  /**
+   * @param {KeyboardEvent|MouseEvent} event
+   */
+  return event => {
+    const { target, type } = event;
+
+    if (!(target instanceof HTMLElement)) return;
+
+    // For keys, we only care about Enter key to activate the panel
+    // otherwise it's activated via a click.
+    if (
+      type === "keydown" &&
+      /** @type {KeyboardEvent} */ (event).key !== "Enter"
+    )
+      return;
+
+    const action = deriveAction(event);
+
+    switch (action) {
+      case "show": {
+        hidePanel(panel);
+        /** @type {HTMLElement | null} */
+        const dfn = target.closest("dfn, .index-term");
+        if (!dfn?.id) break;
+        panel = document.getElementById(`dfn-panel-for-${dfn.id}`);
+        if (!panel) break;
+        const coords = deriveCoordinates(
+          /** @type {MouseEvent|KeyboardEvent} */ (event)
+        );
+        displayPanel(dfn, panel, coords);
+        break;
+      }
+      case "dock": {
+        if (panel) {
+          panel.style.left = "";
+          panel.style.top = "";
+          panel.classList.add("docked");
+        }
+        break;
+      }
+      case "hide": {
+        hidePanel(panel);
+        panel = null;
+        break;
+      }
+    }
+  };
+}
+
+/**
+ * @param {MouseEvent|KeyboardEvent} event
+ */
+function deriveCoordinates(event) {
+  const target = /** @type HTMLElement */ (event.target);
+
+  // We prevent synthetic AT clicks from putting
+  // the dialog in a weird place. The AT events sometimes
+  // lack coordinates, so they have clientX/Y = 0
+  const rect = target.getBoundingClientRect();
+  if (
+    event instanceof MouseEvent &&
+    event.clientX >= rect.left &&
+    event.clientY >= rect.top
+  ) {
+    // The event probably happened inside the bounding rect...
+    return { x: event.clientX, y: event.clientY };
+  }
+
+  // Offset to the middle of the element
+  const x = rect.x + rect.width / 2;
+  // Placed at the bottom of the element
+  const y = rect.y + rect.height;
+  return { x, y };
+}
+
+/**
+ * @param {Event} event
+ */
+function deriveAction(event) {
+  const target = /** @type {HTMLElement} */ (event.target);
+  const hitALink = !!target.closest("a");
+  if (target.closest("dfn:not([data-cite]), .index-term")) {
+    return hitALink ? "none" : "show";
+  }
+  if (target.closest(".dfn-panel")) {
+    if (hitALink) {
+      return target.classList.contains("self-link") ? "hide" : "dock";
+    }
+
+    const panel = /** @type {HTMLElement} */ (target.closest(".dfn-panel"));
+    return panel.classList.contains("docked") ? "hide" : "none";
+  }
+  if (document.querySelector(".dfn-panel:not([hidden])")) {
+    return "hide";
+  }
+  return "none";
+}
+
+/**
+ * @param {HTMLElement} dfn
+ * @param {HTMLElement} panel
+ * @param {{ x: number, y: number }} clickPosition
+ */
+function displayPanel(dfn, panel, { x, y }) {
+  panel.hidden = false;
+  // distance (px) between edge of panel and the pointing triangle (caret)
+  const MARGIN = 20;
+
+  const dfnRects = dfn.getClientRects();
+  // Find the `top` offset when the `dfn` can be spread across multiple lines
+  let closestTop = 0;
+  let minDiff = Infinity;
+  for (const rect of dfnRects) {
+    const { top, bottom } = rect;
+    const diffFromClickY = Math.abs((top + bottom) / 2 - y);
+    if (diffFromClickY < minDiff) {
+      minDiff = diffFromClickY;
+      closestTop = top;
+    }
+  }
+
+  const top = window.scrollY + closestTop + dfnRects[0].height;
+  const left = x - MARGIN;
+  panel.style.left = `${left}px`;
+  panel.style.top = `${top}px`;
+
+  // Find if the panel is flowing out of the window
+  const panelRect = panel.getBoundingClientRect();
+  const SCREEN_WIDTH = Math.min(window.innerWidth, window.screen.width);
+  if (panelRect.right > SCREEN_WIDTH) {
+    const newLeft = Math.max(MARGIN, x + MARGIN - panelRect.width);
+    const newCaretOffset = left - newLeft;
+    panel.style.left = `${newLeft}px`;
+    /** @type {HTMLElement | null} */
+    const caret = panel.querySelector(".caret");
+    if (caret) caret.style.left = `${newCaretOffset}px`;
+  }
+
+  // As it's a dialog, we trap focus.
+  // TODO: when <dialog> becomes a implemented, we should really
+  // use that.
+  trapFocus(panel, dfn);
+}
+
+/**
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function trapFocus(panel, dfn) {
+  /** @type NodeListOf<HTMLAnchorElement> elements */
+  const anchors = panel.querySelectorAll("a[href]");
+  // No need to trap focus
+  if (!anchors.length) return;
+
+  // Move focus to first anchor element
+  const first = anchors.item(0);
+  first.focus();
+
+  const trapListener = createTrapListener(anchors, panel, dfn);
+  panel.addEventListener("keydown", trapListener);
+
+  // Hiding the panel releases the trap
+  const mo = new MutationObserver(records => {
+    const [record] = records;
+    const target = /** @type HTMLElement */ (record.target);
+    if (target.hidden) {
+      panel.removeEventListener("keydown", trapListener);
+      mo.disconnect();
+    }
+  });
+  mo.observe(panel, { attributes: true, attributeFilter: ["hidden"] });
+}
+
+/**
+ *
+ * @param {NodeListOf<HTMLAnchorElement>} anchors
+ * @param {HTMLElement} panel
+ * @param {HTMLElement} dfn
+ * @returns
+ */
+function createTrapListener(anchors, panel, dfn) {
+  const lastIndex = anchors.length - 1;
+  let currentIndex = 0;
+  /**
+   * @param {KeyboardEvent} event
+   */
+  return event => {
+    switch (event.key) {
+      // Hitting "Tab" traps us in a nice loop around elements.
+      case "Tab": {
+        event.preventDefault();
+        currentIndex += event.shiftKey ? -1 : +1;
+        if (currentIndex < 0) {
+          currentIndex = lastIndex;
+        } else if (currentIndex > lastIndex) {
+          currentIndex = 0;
+        }
+        anchors.item(currentIndex).focus();
+        break;
+      }
+
+      // Hitting "Enter" on an anchor releases the trap.
+      case "Enter":
+        hidePanel(panel);
+        break;
+
+      // Hitting "Escape" returns focus to dfn.
+      case "Escape":
+        hidePanel(panel);
+        dfn.focus();
+        return;
+    }
+  };
+}
+
+/** @param {HTMLElement | null} panel */
+function hidePanel(panel) {
+  if (!panel) return;
+  panel.hidden = true;
+  panel.classList.remove("docked");
+}
+})()</script><div class="sidelabel">ProRail Praktijkrichtlijn - Consultatieversie</div><script src="https://gitdocumentatie.logius.nl/publicatie/respec/fixup.js"></script></body></html>
