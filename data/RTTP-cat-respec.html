@@ -1,0 +1,6527 @@
+<section xmlns:mim="http://www.geostandaarden.nl/mim/mim-core/1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mim-ref="http://www.geostandaarden.nl/mim/mim-ref/1.0" xmlns:mim-ext="http://www.geostandaarden.nl/mim/mim-ext/1.0" id="cat" class="normative"><h2>Gegevensdefinitie</h2>
+<section id="overzicht"><h3>Overzicht informatiemodel</h3>
+<figure><pre class="diagram mermaid">
+		
+		classDiagram	
+		direction TB
+		
+class Activiteit			
+	    Gebeurtenis &lt;-- Activiteit			
+			Gebeurtenis &lt;-- Activiteit			
+			click Activiteit href "#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa" "Activiteit"
+	
+class Dienstregelpunt			
+	    OperationeleLocatie &lt;|-- Dienstregelpunt			
+			click Dienstregelpunt href "#U184d0a92-1ac5-4e52-b7c2-cbaabbed6e46" "Dienstregelpunt"
+	
+class Gebeurtenis			
+	    
+	
+	class Gebeurtenisvolgorde			
+	    click Gebeurtenisvolgorde href "#U0720a309-ea44-4400-a1a8-478abe2c0318" "Gebeurtenisvolgorde"
+	Gebeurtenis &lt;-- Gebeurtenisvolgorde			
+			Gebeurtenisvolgorde &gt;-- Gebeurtenis			
+			Locatie &lt;-- Gebeurtenis			
+			click Gebeurtenis href "#Udc571835-5e18-4656-96c0-b51ce65bed71" "Gebeurtenis"
+	
+class Gebied			
+	    OperationeleLocatie &lt;|-- Gebied			
+			click Gebied href "#U73d89a4c-f8bc-4673-bae5-a2118ee95f71" "Gebied"
+	
+class InfraGebruiksdoel			
+	    click InfraGebruiksdoel href "#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5" "InfraGebruiksdoel"
+	
+class InfraUitvoeringsmiddel			
+	    InfraGebruiksdoel &lt;-- InfraUitvoeringsmiddel			
+			click InfraUitvoeringsmiddel href "#Uc066c964-03d9-4829-80b8-dcecde688b82" "InfraUitvoeringsmiddel"
+	
+class Infracapaciteitseenheid			
+	    click Infracapaciteitseenheid href "#Ub4ada878-801e-46df-b6f6-5fadbe94571d" "Infracapaciteitseenheid"
+	
+class Locatie			
+	    click Locatie href "#U0a8bae27-fd03-42ba-bf31-e74a54560d09" "Locatie"
+	
+class Materieelopstelling			
+	    InfraGebruiksdoel &lt;|-- Materieelopstelling			
+			
+	
+	class Materieeluitwisseling			
+	    click Materieeluitwisseling href "#Uf2afbcaa-feb2-4c02-9a04-bae943c427da" "Materieeluitwisseling"
+	Materieelopstelling &lt;-- Materieeluitwisseling			
+			Materieeluitwisseling &gt;-- Materieelopstelling			
+			Treinbeweging &lt;-- Materieelopstelling			
+			Treinbeweging &lt;-- Materieelopstelling			
+			Materieelsamenstelling &lt;-- Materieelopstelling			
+			click Materieelopstelling href "#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751" "Materieelopstelling"
+	
+class Materieelsamenstelling			
+	    click Materieelsamenstelling href "#Udfa001ee-e823-4bf1-8f33-a309392b962c" "Materieelsamenstelling"
+	
+class Meetpunt			
+	    Locatie &lt;|-- Meetpunt			
+			click Meetpunt href "#U887b3b2a-4e4a-4262-89f8-f332c503580a" "Meetpunt"
+	
+class OperationeleLocatie			
+	    Locatie &lt;|-- OperationeleLocatie			
+			click OperationeleLocatie href "#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" "OperationeleLocatie"
+	
+class Opstelspoor			
+	    Spoor &lt;|-- Opstelspoor			
+			click Opstelspoor href "#U401e3616-1e27-4d9f-b016-a59c7d51f603" "Opstelspoor"
+	
+class Overdrachtspunt			
+	    OperationeleLocatie &lt;|-- Overdrachtspunt			
+			click Overdrachtspunt href "#Ua0f1e891-8071-4c82-a253-e5328dd2a38e" "Overdrachtspunt"
+	
+class Perronspoor			
+	    Spoor &lt;|-- Perronspoor			
+			click Perronspoor href "#U6a92ee59-74ac-4e7f-9e37-8d2bd61d2bd9" "Perronspoor"
+	
+class Rijactiviteit			
+	    Activiteit &lt;|-- Rijactiviteit			
+			click Rijactiviteit href "#U1c080acd-fde9-4e98-bf5b-feda1834816d" "Rijactiviteit"
+	
+class Rijweginstructie			
+	    InfraUitvoeringsmiddel &lt;|-- Rijweginstructie			
+			Route &lt;-- Rijweginstructie			
+			Treinbeweging &lt;-- Rijweginstructie			
+			click Rijweginstructie href "#U46fa23bd-364f-4fb7-9766-7cea0aabbf1f" "Rijweginstructie"
+	
+class Route			
+	    Infracapaciteitseenheid &lt;-- Route			
+			click Route href "#Uca9eaa96-4a76-4572-b58b-725c1e4d1197" "Route"
+	
+class Slot			
+	    Toestemming &lt;|-- Slot			
+			click Slot href "#Uaf277e92-cba6-4df4-9810-06ce5e2f5dc8" "Slot"
+	
+class Spoor			
+	    OperationeleLocatie &lt;|-- Spoor			
+			click Spoor href "#U54981b20-0ba4-4dd7-b6a3-f7343748e5b9" "Spoor"
+	
+class Stopactiviteit			
+	    Activiteit &lt;|-- Stopactiviteit			
+			click Stopactiviteit href "#Ucb80813a-51cb-440b-8fad-6c91d2244ea9" "Stopactiviteit"
+	
+class Toestemming			
+	    InfraUitvoeringsmiddel &lt;|-- Toestemming			
+			click Toestemming href "#U6aa03c6c-589d-4e84-beef-0daa52eb44ea" "Toestemming"
+	
+class Treinbeweging			
+	    InfraGebruiksdoel &lt;|-- Treinbeweging			
+			Gebeurtenis &lt;-- Treinbeweging			
+			click Treinbeweging href "#U51824e05-fc15-4638-a3ed-5cae68ce634b" "Treinbeweging"
+	
+class VolumeInzet			
+	    InfraUitvoeringsmiddel &lt;|-- VolumeInzet			
+			click VolumeInzet href "#U9217d8a2-0604-4690-8ab3-2e7848530576" "VolumeInzet"
+	
+class Vrijgave			
+	    Toestemming &lt;|-- Vrijgave			
+			Vrijgavegebied &lt;-- Vrijgave			
+			click Vrijgave href "#U32454a87-4bae-4bfc-b269-975cbda9fbdd" "Vrijgave"
+	
+class Vrijgavegebied			
+	    Infracapaciteitseenheid &lt;-- Vrijgavegebied			
+			click Vrijgavegebied href "#Uebb6afb8-3844-45a6-a6a8-925caccab021" "Vrijgavegebied"
+	</pre>
+<figcaption>Klassendiagram domein </figcaption></figure></section><section id="objecttypen"><h3>Objecttypen</h3>
+<section id="Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa"><h4>Activiteit</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Activiteit:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Activiteit {
+	  +identificatie : CharacterString [1]}
+	  
+	class Activiteit {
+	  +begintijd : TijdOpLocatie [0..*]}
+	  
+	class Activiteit {
+	  +eindtijd : TijdOpLocatie [0..*]}
+	  Activiteit --&gt; "1 begingebeurtenis"  Gebeurtenis : begint bij
+		class Gebeurtenis{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Gebeurtenis href "#Udc571835-5e18-4656-96c0-b51ce65bed71" "Gebeurtenis"
+		Activiteit --&gt; "1 eindgebeurtenis"  Gebeurtenis : eindigt bij
+		class Gebeurtenis{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Gebeurtenis href "#Udc571835-5e18-4656-96c0-b51ce65bed71" "Gebeurtenis"
+		</pre>
+<figcaption>Klassendiagram Activiteit</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Activiteit</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>Trainactivity; Treinoperatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een werkzaamheid, gebruiksdoel of operationele handeling die gedurende een tijdsinterval plaatsvindt tussen een begin- en eindgebeurtenis.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Activiteiten beschrijven wat er gebeurt tussen twee gebeurtenissen, zoals reizigers vervoeren, commercieel stoppen, machinist wisselen, rangeren, keren, locomotief omlopen of het koppelen en ontkoppelen van materieel.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Ja
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U43b03a98-75b2-44f0-b5d0-7928913c6d6f">identificatie</a></td>
+<td>Unieke aanduiding van een Activiteit.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U490e3763-9257-44f4-aec0-744a257e0329">begintijd</a></td>
+<td></td>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+<td>0..*</td>
+</tr>
+<tr>
+<td><a href="#Uad4e2d9d-3bd4-44f8-aa4a-e9641d2c0613">eindtijd</a></td>
+<td></td>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+<td>0..*</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U8df64324-ac46-418a-87e8-425167f8ce39">begint bij</a></td>
+<td>Activiteit begint bij één begingebeurtenis.</td>
+<td><a href="#Udc571835-5e18-4656-96c0-b51ce65bed71">Gebeurtenis</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Uce3ae398-ef2f-4e84-a97f-1b69e09ce19e">eindigt bij</a></td>
+<td>Activiteit eindigt bij één eindgebeurtenis.</td>
+<td><a href="#Udc571835-5e18-4656-96c0-b51ce65bed71">Gebeurtenis</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="U184d0a92-1ac5-4e52-b7c2-cbaabbed6e46"><h4>Dienstregelpunt</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class OperationeleLocatie:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	OperationeleLocatie &lt;|-- Dienstregelpunt
+		click OperationeleLocatie href "#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" "OperationeleLocatie"
+		class Dienstregelpunt{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Dienstregelpunt {
+	  +vlakgeometrie : GM_Surface [0..1]}
+	  </pre>
+<figcaption>Klassendiagram Dienstregelpunt</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Dienstregelpunt</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een primair gebied dat een beperkt, aaneengesloten en eenduidig begrensd deel van de railinfrastructuur vormt en dat een functie vervult bij het opzetten en vastleggen van de dienstregeling. </td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>OperationeleLocatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U184d0a92-1ac5-4e52-b7c2-cbaabbed6e46">Dienstregelpunt</a> is een subtype van <a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U3a1b03a4-46eb-4de4-bc0b-dd3d29231b0c">vlakgeometrie</a></td>
+<td></td>
+<td><a href="#Ueebfcc79-3ec5-4dd4-80df-d558ab8ccf17">GM_Surface</a></td>
+<td>0..1</td>
+</tr>
+</table></section><section id="Udc571835-5e18-4656-96c0-b51ce65bed71"><h4>Gebeurtenis</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Gebeurtenis{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Gebeurtenis {
+	  +identificatie : CharacterString [1]}
+	  
+	class Gebeurtenis {
+	  +type : TypeGebeurtenis [1]}
+	  
+	class Gebeurtenis {
+	  +vertrekgereedgemeld : Boolean [0..1]}
+	  
+	class Gebeurtenis {
+	  +tijd : TijdOpLocatie [1..*]}
+	  
+	  
+	  class TijdOpLocatie {
+	  &lt;&lt;Gegevensgroeptype&gt;&gt;    
+		     
+	  }
+		
+	  click TijdOpLocatie href "#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63" "TijdOpLocatie"
+	Gebeurtenis  "1 voorgaandeGebeurtenis" --&gt; "1 volgendeGebeurtenis"  Gebeurtenis : Gebeurtenisvolgorde
+		class Gebeurtenis{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Gebeurtenis href "#Udc571835-5e18-4656-96c0-b51ce65bed71" "Gebeurtenis"
+		Gebeurtenis --&gt; "1..* locatie"  Locatie : vindt plaats op
+		class Locatie:::abstractObject{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Locatie href "#U0a8bae27-fd03-42ba-bf31-e74a54560d09" "Locatie"
+		</pre>
+<figcaption>Klassendiagram Gebeurtenis</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Gebeurtenis</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>OperationalTrain</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een gepland moment binnen een treinbeweging dat plaatsvindt op een operationele locatie en bijdraagt aan het beschrijven van het volgordelijke verloop van de treinbeweging.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Een gebeurtenis representeert een vertrek, doorkomst of aankomst van een treinbeweging. Aan een gebeurtenis zijn één of meer tijdstippen gekoppeld. Gebeurtenissen begrenzen activiteiten en leggen vast waar en wanneer een treinbeweging zich bevindt.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Uba3a4c3d-7ee7-45cd-beac-0e8f58c7fb6b">identificatie</a></td>
+<td>Unieke aanduiding van een Gebeurtenis</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U7ed4cfd6-2a19-4ccd-86ae-20b03c136868">type</a></td>
+<td>Een aanduiding waarmee de aard van een Gebeurtenis wordt aangegeven</td>
+<td><a href="#U8336ae34-6d92-4858-8964-19a2e9393f47">TypeGebeurtenis</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U01833926-f906-47f4-9d08-3ed20e98a102">vertrekgereedgemeld</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">Boolean</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#U286badda-f2db-4c1a-ae27-3850e93c6a60">tijd</a></td>
+<td></td>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+<td>1..*</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U643d1f21-7a06-4962-a202-aac085d76f5b">Gebeurtenisvolgorde</a></td>
+<td>Gerelateerde Gebeurtenis, die voorafgaat aan de volgende gebeurtenis.</td>
+<td><a href="#Udc571835-5e18-4656-96c0-b51ce65bed71">Gebeurtenis</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Uc32a80bd-c692-4650-bc12-70bccd65ea76">vindt plaats op</a></td>
+<td>Gebeurtenis vindt plaats op één of meer Locaties.</td>
+<td><a href="#U0a8bae27-fd03-42ba-bf31-e74a54560d09">Locatie</a></td>
+<td>1..*</td>
+</tr>
+</table></section><section id="U73d89a4c-f8bc-4673-bae5-a2118ee95f71"><h4>Gebied</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class OperationeleLocatie:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	OperationeleLocatie &lt;|-- Gebied
+		click OperationeleLocatie href "#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" "OperationeleLocatie"
+		class Gebied{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Gebied {
+	  +vlakgeometrie : GM_Surface [0..1]}
+	  </pre>
+<figcaption>Klassendiagram Gebied</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Gebied</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>OperationeleLocatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U73d89a4c-f8bc-4673-bae5-a2118ee95f71">Gebied</a> is een subtype van <a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ub1b8489c-cd3f-4736-9735-771ed9c2e7ac">vlakgeometrie</a></td>
+<td></td>
+<td><a href="#Ueebfcc79-3ec5-4dd4-80df-d558ab8ccf17">GM_Surface</a></td>
+<td>0..1</td>
+</tr>
+</table></section><section id="Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5"><h4>InfraGebruiksdoel</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class InfraGebruiksdoel:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class InfraGebruiksdoel {
+	  +datum : Day [1]}
+	  </pre>
+<figcaption>Klassendiagram InfraGebruiksdoel</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>InfraGebruiksdoel</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Het doel waarvoor railinfrastructuur wordt ingezet of gereserveerd binnen een actueel verkeersplan.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td> Het geeft aan waarom infrastructuur nodig is, onafhankelijk van de wijze van inzet (bepaald of onbepaald) en zonder technische details over routes of rijwegen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Ja
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U55787f00-2065-4c90-9c0c-1877209534de">datum</a></td>
+<td>Tijdstip van de treinbeweging.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">Day</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="Uc066c964-03d9-4829-80b8-dcecde688b82"><h4>InfraUitvoeringsmiddel</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class InfraUitvoeringsmiddel:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class InfraUitvoeringsmiddel {
+	  +identificatie : CharacterString [1]}
+	  
+	class InfraUitvoeringsmiddel {
+	  +begintijd : TijdOpLocatie [1]}
+	  
+	class InfraUitvoeringsmiddel {
+	  +eindtijd : TijdOpLocatie [1]}
+	  InfraUitvoeringsmiddel --&gt; "1..* infragebruiksdoel"  InfraGebruiksdoel : wordt ingezet ten behoeve van
+		class InfraGebruiksdoel:::abstractObject{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click InfraGebruiksdoel href "#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5" "InfraGebruiksdoel"
+		</pre>
+<figcaption>Klassendiagram InfraUitvoeringsmiddel</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>InfraUitvoeringsmiddel</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Middel waarmee de uitvoering van het plan wordt gerealiseerd.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Ja
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Uaa39c21a-8c69-4db5-8760-c8df7338d763">identificatie</a></td>
+<td>Unieke aanduiding van een InfraUitvoeringsmiddel.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Uc308fba2-665f-437a-ad7b-6454a4d4830d">begintijd</a></td>
+<td>Tijdstip waarop het infrauitvoeringsmiddel van kracht wordt of kan worden toegepast.</td>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U090f2e93-1ead-4be3-956d-ef5edd63057f">eindtijd</a></td>
+<td>Tijdstip waarop het infrauitvoeringsmiddel niet langer van kracht is of kan worden toegepast.</td>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+<td>1</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U0092d851-e3e3-4001-8fec-4ff80f333b36">wordt ingezet ten behoeve van</a></td>
+<td>Één of meer InfraUitvoeringsmiddelen worden ingezet ten behoeve van één of meer InfraGebruiksdoelen.</td>
+<td><a href="#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5">InfraGebruiksdoel</a></td>
+<td>1..*</td>
+</tr>
+</table></section><section id="Ub4ada878-801e-46df-b6f6-5fadbe94571d"><h4>Infracapaciteitseenheid</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Infracapaciteitseenheid:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			</pre>
+<figcaption>Klassendiagram Infracapaciteitseenheid</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Infracapaciteitseenheid</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Abstract objecttype voor de beschrijving van onderdelen van de infrastructuur die kunnen worden gebruikt bij de afbakening van routes, gebieden en capaciteitsgebruik.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Ja
+			</td>
+</tr>
+</tbody>
+</table></section><section id="U0a8bae27-fd03-42ba-bf31-e74a54560d09"><h4>Locatie</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Locatie:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Locatie {
+	  +identificatie : CharacterString [1]}
+	  
+	class Locatie {
+	  +geometrie : GM_Point [1]}
+	  </pre>
+<figcaption>Klassendiagram Locatie</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Locatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een plaats, een geografisch punt, binnen of buiten het spoorwegnet, dat moet worden geïdentificeerd voor operationele, technische, administratieve of statistische doeleinden.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Dit kan zowel een spoorweglocatie zijn als een locatie van een klant van een vervoerder (RU).
+Locaties kunnen logisch of fysiek zijn, bijvoorbeeld:
+
+- stations
+- rangeerterreinen
+- haltes
+- terminals of laadpunten
+- magazijnen
+- onderhoudswerkplaatsen
+- overslag- of transitpunten
+- overdrachtspunten en wisselpunten
+- aansluitsporen van klanten
+- reisbureaus
+- verkooppunten
+- sporen (bijvoorbeeld: spoor X
+
+Een locatie kan ook een deel of sectie van dergelijke plaatsen vertegenwoordigen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Ja
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U39c10596-fd99-420c-932a-cbcd281080f5">identificatie</a></td>
+<td>Unieke aanduiding van een Locatie.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Ub34ce562-662c-47b5-ad94-8b960a5e0d53">geometrie</a></td>
+<td></td>
+<td><a href="#U662d3618-ee94-442d-8159-0644baab2e9f">GM_Point</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751"><h4>Materieelopstelling</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class InfraGebruiksdoel:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	InfraGebruiksdoel &lt;|-- Materieelopstelling
+		click InfraGebruiksdoel href "#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5" "InfraGebruiksdoel"
+		class Materieelopstelling{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Materieelopstelling {
+	  +identificatie : CharacterString [1]}
+	  
+	class Materieelopstelling {
+	  +type : TypeOpstelling [1]}
+	  Materieelopstelling  "1..* bronopstelling" --&gt; "1..* doelopstelling"  Materieelopstelling : Materieeluitwisseling
+		class Materieelopstelling{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Materieelopstelling href "#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751" "Materieelopstelling"
+		Materieelopstelling --&gt; "1 aanvoerendeBeweging"  Treinbeweging : ontstaat uit
+		class Treinbeweging{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Treinbeweging href "#U51824e05-fc15-4638-a3ed-5cae68ce634b" "Treinbeweging"
+		Materieelopstelling --&gt; "1 afvoerendeBeweging"  Treinbeweging : eindigt door
+		class Treinbeweging{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Treinbeweging href "#U51824e05-fc15-4638-a3ed-5cae68ce634b" "Treinbeweging"
+		Materieelopstelling --&gt; "1 materieelsamenstelling"  Materieelsamenstelling : stelt op
+		class Materieelsamenstelling{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Materieelsamenstelling href "#Udfa001ee-e823-4bf1-8f33-a309392b962c" "Materieelsamenstelling"
+		</pre>
+<figcaption>Klassendiagram Materieelopstelling</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Materieelopstelling</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een operationele situatie waarin materieel gedurende een bepaalde periode op een operationele locatie gebruik maakt van infrastructuurcapaciteit.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kwaliteit</th>
+<td>in termen van volledigheid, actualiteit, nauwkeurigheid, consistentie</td>
+</tr>
+<tr>
+<th>Populatie</th>
+<td>Elke Materieelopstelling wordt gepland.</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>InfraGebruiksdoel</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5">InfraGebruiksdoel</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751">Materieelopstelling</a> is een subtype van <a href="#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5">InfraGebruiksdoel</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ue07b75e5-c1ac-4f56-bd4e-51a80a54a149">identificatie</a></td>
+<td>Unieke aanduiding van een InfraGebruiksdoel.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U9ed99ad3-3ce0-406e-be29-9696afebb967">type</a></td>
+<td>Samenstelling van het materieel dat onderdeel uitmaakt van een materieelopstelling.</td>
+<td><a href="#Ud70e4911-5f4e-4acd-8479-e9d4877e822c">TypeOpstelling</a></td>
+<td>1</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Uebf0b3ce-58b6-4ee7-bb42-e02366685af7">Materieeluitwisseling</a></td>
+<td>Gerelateerde materieelopstelling, van waaruit materieel wordt uitgewisseld met één of meer doelopstellingen.</td>
+<td><a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751">Materieelopstelling</a></td>
+<td>1..*</td>
+</tr>
+<tr>
+<td><a href="#Ubdc4e406-432e-4f19-b723-ff84c6aae100">ontstaat uit</a></td>
+<td>Materieelopstelling ontstaat uit één aanvoerende Treinbeweging.</td>
+<td><a href="#U51824e05-fc15-4638-a3ed-5cae68ce634b">Treinbeweging</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U29225762-adc2-4853-9290-35b3effa39ae">eindigt door</a></td>
+<td>Materieelopstelling eindigt door één afvoerende Treinbeweging.</td>
+<td><a href="#U51824e05-fc15-4638-a3ed-5cae68ce634b">Treinbeweging</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U605671e1-72d0-4faf-8601-262ffdeb42a6">stelt op</a></td>
+<td>Materieelopstelling stelt één Materieelsamenstelling op.</td>
+<td><a href="#Udfa001ee-e823-4bf1-8f33-a309392b962c">Materieelsamenstelling</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="Udfa001ee-e823-4bf1-8f33-a309392b962c"><h4>Materieelsamenstelling</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Materieelsamenstelling{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Materieelsamenstelling {
+	  +identificatie : CharacterString [1]}
+	  
+	class Materieelsamenstelling {
+	  +indicatieVeeOfPersonen : Boolean [1]}
+	  
+	class Materieelsamenstelling {
+	  +locomotief : Locomotief [0..*]}
+	  
+	  
+	  class Locomotief {
+	  &lt;&lt;Gegevensgroeptype&gt;&gt;    
+		     
+	  }
+		
+	  click Locomotief href "#U4ab8a0e5-62aa-415e-8133-e3acb58036f9" "Locomotief"
+	
+	class Materieelsamenstelling {
+	  +wagon : Wagon [0..*]}
+	  
+	  
+	  class Wagon {
+	  &lt;&lt;Gegevensgroeptype&gt;&gt;    
+		     
+	  }
+		
+	  click Wagon href "#U05704d5f-6a58-4120-8708-c7625452cb9c" "Wagon"
+	
+	class Materieelsamenstelling {
+	  +kenmerken : Treinkenmerken [1]}
+	  
+	  
+	  class Treinkenmerken {
+	  &lt;&lt;Gegevensgroeptype&gt;&gt;    
+		     
+	  }
+		
+	  click Treinkenmerken href "#U36de988e-5e44-4e91-913f-84dbc5281515" "Treinkenmerken"
+	</pre>
+<figcaption>Klassendiagram Materieelsamenstelling</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Materieelsamenstelling</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>TrainComposition</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>De wijze waarop locomotieven, treinstellen, rijtuigen en/of wagons tot één operationele eenheid zijn samengesteld.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Uf8d94c6c-6fd1-420b-bea8-ea806ea09ae3">identificatie</a></td>
+<td>Unieke aanduiding van een Materieelsamenstelling.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Ubb84bffa-5383-4951-95f3-3b6d59c53cf7">indicatieVeeOfPersonen</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">Boolean</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Ub9321115-1e9f-483a-9c50-f182cea7036d">locomotief</a></td>
+<td></td>
+<td><a href="#U4ab8a0e5-62aa-415e-8133-e3acb58036f9">Locomotief</a></td>
+<td>0..*</td>
+</tr>
+<tr>
+<td><a href="#Uee476b86-947d-4f8d-829e-5385a3ecfd94">wagon</a></td>
+<td></td>
+<td><a href="#U05704d5f-6a58-4120-8708-c7625452cb9c">Wagon</a></td>
+<td>0..*</td>
+</tr>
+<tr>
+<td><a href="#U11d15023-46d0-4364-90bc-b289fe92a234">kenmerken</a></td>
+<td></td>
+<td><a href="#U36de988e-5e44-4e91-913f-84dbc5281515">Treinkenmerken</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="U887b3b2a-4e4a-4262-89f8-f332c503580a"><h4>Meetpunt</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Locatie:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	Locatie &lt;|-- Meetpunt
+		click Locatie href "#U0a8bae27-fd03-42ba-bf31-e74a54560d09" "Locatie"
+		class Meetpunt{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Meetpunt {
+	  +type : TypeMeetpunt [1]}
+	  </pre>
+<figcaption>Klassendiagram Meetpunt</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Meetpunt</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>TimingPoint</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een locatie waarvoor gebeurtenissen in de planning of uitvoering van treinverkeer kunnen worden geregistreerd, geobserveerd, berekend of voorspeld, teneinde treinbewegingen, punctualiteit, doorstroming en capaciteitsgebruik te volgen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>Locatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#U0a8bae27-fd03-42ba-bf31-e74a54560d09">Locatie</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U887b3b2a-4e4a-4262-89f8-f332c503580a">Meetpunt</a> is een subtype van <a href="#U0a8bae27-fd03-42ba-bf31-e74a54560d09">Locatie</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ua152895a-0647-4748-ac72-a49117acf560">type</a></td>
+<td></td>
+<td><a href="#U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="Ud6762cf8-dccf-4a77-a400-d0dcd70a21da"><h4>OperationeleLocatie</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Locatie:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	Locatie &lt;|-- OperationeleLocatie
+		click Locatie href "#U0a8bae27-fd03-42ba-bf31-e74a54560d09" "Locatie"
+		class OperationeleLocatie:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class OperationeleLocatie {
+	  +primaireLocatiecode : CharacterString [1]}
+	  
+	class OperationeleLocatie {
+	  +subLocatiecode : CharacterString [0..1]}
+	  </pre>
+<figcaption>Klassendiagram OperationeleLocatie</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>OperationeleLocatie</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>OperationalPoint, PlannedJourneyLocation</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Any operation point along a train journey</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Ja
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>Locatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#U0a8bae27-fd03-42ba-bf31-e74a54560d09">Locatie</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a> is een subtype van <a href="#U0a8bae27-fd03-42ba-bf31-e74a54560d09">Locatie</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U0b6afe1f-566d-46f0-87f9-295d43a81a70">primaireLocatiecode</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U3b63546f-78ae-468b-a35f-8b6cad6b8945">subLocatiecode</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>0..1</td>
+</tr>
+</table></section><section id="U401e3616-1e27-4d9f-b016-a59c7d51f603"><h4>Opstelspoor</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Spoor:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	Spoor &lt;|-- Opstelspoor
+		click Spoor href "#U54981b20-0ba4-4dd7-b6a3-f7343748e5b9" "Spoor"
+		class Opstelspoor{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			</pre>
+<figcaption>Klassendiagram Opstelspoor</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Opstelspoor</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>Spoor</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#U54981b20-0ba4-4dd7-b6a3-f7343748e5b9">Spoor</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U401e3616-1e27-4d9f-b016-a59c7d51f603">Opstelspoor</a> is een subtype van <a href="#U54981b20-0ba4-4dd7-b6a3-f7343748e5b9">Spoor</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="Ua0f1e891-8071-4c82-a253-e5328dd2a38e"><h4>Overdrachtspunt</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class OperationeleLocatie:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	OperationeleLocatie &lt;|-- Overdrachtspunt
+		click OperationeleLocatie href "#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" "OperationeleLocatie"
+		class Overdrachtspunt{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			</pre>
+<figcaption>Klassendiagram Overdrachtspunt</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Overdrachtspunt</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>Handover Point</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Operationele locatie waar de verantwoordelijkheid voor een trein, treinbeweging, vervoersproces of materieel wordt overgedragen tussen betrokken partijen of processen.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Een overdrachtspunt is geen specifiek type infrastructuur, maar een rol die een operationele locatie vervult. Afhankelijk van de situatie kan een overdrachtspunt bijvoorbeeld een station, emplacement, terminal, werkplaats of ander operationeel punt zijn. Op een overdrachtspunt vindt een overdracht plaats tussen organisaties, processen of operationele verantwoordelijkheden.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>OperationeleLocatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#Ua0f1e891-8071-4c82-a253-e5328dd2a38e">Overdrachtspunt</a> is een subtype van <a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U6a92ee59-74ac-4e7f-9e37-8d2bd61d2bd9"><h4>Perronspoor</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Spoor:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	Spoor &lt;|-- Perronspoor
+		click Spoor href "#U54981b20-0ba4-4dd7-b6a3-f7343748e5b9" "Spoor"
+		class Perronspoor{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			</pre>
+<figcaption>Klassendiagram Perronspoor</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Perronspoor</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>Spoor</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#U54981b20-0ba4-4dd7-b6a3-f7343748e5b9">Spoor</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U6a92ee59-74ac-4e7f-9e37-8d2bd61d2bd9">Perronspoor</a> is een subtype van <a href="#U54981b20-0ba4-4dd7-b6a3-f7343748e5b9">Spoor</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U1c080acd-fde9-4e98-bf5b-feda1834816d"><h4>Rijactiviteit</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Activiteit:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	Activiteit &lt;|-- Rijactiviteit
+		click Activiteit href "#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa" "Activiteit"
+		class Rijactiviteit{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Rijactiviteit {
+	  +treinsoort : Rijkarakteristiek [1]}
+	  
+	class Rijactiviteit {
+	  +activiteitsoort : SoortRijactiviteit [0..1]}
+	  </pre>
+<figcaption>Klassendiagram Rijactiviteit</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Rijactiviteit</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>voorheen: Bewegingsactiviteit</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Activiteit waarbij een voertuig, trein of ander verkeersobject zich over infrastructuur verplaatst en daarbij infrastructuurcapaciteit benut.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Een bewegingsactiviteit wordt gekenmerkt door het gebruik van infrastructuurcapaciteit en kan worden beschreven met rijkarakteristieken en andere specifieke kenmerken voor dat deel van de beweging.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>Activiteit</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa">Activiteit</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U1c080acd-fde9-4e98-bf5b-feda1834816d">Rijactiviteit</a> is een subtype van <a href="#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa">Activiteit</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ufd7b6373-f493-4152-902b-aff9beee3fcf">treinsoort</a></td>
+<td>De treinsoort waarmee de bewegingsactiviteit wordt uitgevoerd.</td>
+<td><a href="#Uf5bddf99-dd6b-43dd-9909-fe4dfbbb0dd3">Rijkarakteristiek</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U11288899-25e7-4dc4-b93e-5d19c1e62aa2">activiteitsoort</a></td>
+<td>Classificatie van een activiteit naar haar aard of functie.</td>
+<td><a href="#U7cc99c65-b26e-463b-9f21-ec7bbe42134b">SoortRijactiviteit</a></td>
+<td>0..1</td>
+</tr>
+</table></section><section id="U46fa23bd-364f-4fb7-9766-7cea0aabbf1f"><h4>Rijweginstructie</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class InfraUitvoeringsmiddel:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	InfraUitvoeringsmiddel &lt;|-- Rijweginstructie
+		click InfraUitvoeringsmiddel href "#Uc066c964-03d9-4829-80b8-dcecde688b82" "InfraUitvoeringsmiddel"
+		class Rijweginstructie{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Rijweginstructie {
+	  +instructie : Instructie [0..*]}
+	  
+	class Rijweginstructie {
+	  +bijzonderheid : CharacterString [0..*]}
+	  Rijweginstructie --&gt; "1 route"  Route : bevat
+		class Route{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Route href "#Uca9eaa96-4a76-4572-b58b-725c1e4d1197" "Route"
+		Rijweginstructie --&gt; "1 treinbeweging"  Treinbeweging : realiseert
+		class Treinbeweging{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Treinbeweging href "#U51824e05-fc15-4638-a3ed-5cae68ce634b" "Treinbeweging"
+		</pre>
+<figcaption>Klassendiagram Rijweginstructie</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Rijweginstructie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Rijweginstructie is de inzet van infra t.b.v. een specifieke rijweg op een bepaalde tijd aan de hand van nul of meer aanwijzingen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>InfraUitvoeringsmiddel</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Uc066c964-03d9-4829-80b8-dcecde688b82">InfraUitvoeringsmiddel</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U46fa23bd-364f-4fb7-9766-7cea0aabbf1f">Rijweginstructie</a> is een subtype van <a href="#Uc066c964-03d9-4829-80b8-dcecde688b82">InfraUitvoeringsmiddel</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U790f2c7b-c44c-4356-8722-c0486d484e93">instructie</a></td>
+<td></td>
+<td><a href="#U20c5880c-f71a-42d3-8628-c823b8902544">Instructie</a></td>
+<td>0..*</td>
+</tr>
+<tr>
+<td><a href="#U46e9c6b9-f31b-4d6c-8a8b-2cfe3bf2e022">bijzonderheid</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>0..*</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ufba42d5a-e3f8-4f1b-b0fa-39a3098563cf">bevat</a></td>
+<td>Rijweginstructie bevat één Route.</td>
+<td><a href="#Uca9eaa96-4a76-4572-b58b-725c1e4d1197">Route</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U104f029d-fb2e-44ae-bf26-98a0ffa0563b">realiseert</a></td>
+<td>Één of meer Rijweginstructie realiseert een Treinbeweging.</td>
+<td><a href="#U51824e05-fc15-4638-a3ed-5cae68ce634b">Treinbeweging</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="Uca9eaa96-4a76-4572-b58b-725c1e4d1197"><h4>Route</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Route{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Route {
+	  +identificatie : CharacterString [1]}
+	  
+	class Route {
+	  +dwangnummer : CharacterString [1]}
+	  Route --&gt; "1..* infracapaciteitseenheid"  Infracapaciteitseenheid : is samengesteld uit
+		class Infracapaciteitseenheid:::abstractObject{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Infracapaciteitseenheid href "#Ub4ada878-801e-46df-b6f6-5fadbe94571d" "Infracapaciteitseenheid"
+		</pre>
+<figcaption>Klassendiagram Route</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Route</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Route is een topologische precisering van een rijweg die naast het van-spoor en naar-spoor ook aangeeft via welke wissels.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>BOM Logistiek</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U811054fb-35a4-4a1b-a89d-52f6fcd477d2">identificatie</a></td>
+<td>Unieke aanduiding van een Route.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U5b4bcf8b-bf5c-4d91-9da7-140cc77941a6">dwangnummer</a></td>
+<td>Waarde waarmee de voorkeurs- of afhandelingsvolgorde van een route wordt vastgelegd.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ue9561808-b566-46ee-81af-ddb7fe748b09">is samengesteld uit</a></td>
+<td>Route is samengesteld uit één of meer Infracapaciteitseenheden.</td>
+<td><a href="#Ub4ada878-801e-46df-b6f6-5fadbe94571d">Infracapaciteitseenheid</a></td>
+<td>1..*</td>
+</tr>
+</table></section><section id="Uaf277e92-cba6-4df4-9810-06ce5e2f5dc8"><h4>Slot</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Toestemming:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	Toestemming &lt;|-- Slot
+		click Toestemming href "#U6aa03c6c-589d-4e84-beef-0daa52eb44ea" "Toestemming"
+		class Slot{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Slot {
+	  +identificatie : CharacterString [1]}
+	  </pre>
+<figcaption>Klassendiagram Slot</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Slot</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>Gebiedstoestemming, TijdRuimteSlot</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een in tijd en ruimte aaneengesloten samenstel van één of meer infracapaciteitseenheden, dat ruimte biedt aan een geldig infragebruiksdoel van de spoorweginfrastructuur’. </td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>Spoorse begrippen</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Spoorse begrippen</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>Toestemming</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#U6aa03c6c-589d-4e84-beef-0daa52eb44ea">Toestemming</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#Uaf277e92-cba6-4df4-9810-06ce5e2f5dc8">Slot</a> is een subtype van <a href="#U6aa03c6c-589d-4e84-beef-0daa52eb44ea">Toestemming</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U2c4a7f7f-c8f1-472d-a324-b83861f5a141">identificatie</a></td>
+<td>Unieke aanduiding van een Slot.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table><tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr></table></section><section id="U54981b20-0ba4-4dd7-b6a3-f7343748e5b9"><h4>Spoor</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class OperationeleLocatie:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	OperationeleLocatie &lt;|-- Spoor
+		click OperationeleLocatie href "#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da" "OperationeleLocatie"
+		class Spoor:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			</pre>
+<figcaption>Klassendiagram Spoor</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Spoor</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Ja
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>OperationeleLocatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U54981b20-0ba4-4dd7-b6a3-f7343748e5b9">Spoor</a> is een subtype van <a href="#Ud6762cf8-dccf-4a77-a400-d0dcd70a21da">OperationeleLocatie</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="Ucb80813a-51cb-440b-8fad-6c91d2244ea9"><h4>Stopactiviteit</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Activiteit:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	Activiteit &lt;|-- Stopactiviteit
+		click Activiteit href "#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa" "Activiteit"
+		class Stopactiviteit{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Stopactiviteit {
+	  +activiteitsoort : SoortStopactiviteit [1]}
+	  </pre>
+<figcaption>Klassendiagram Stopactiviteit</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Stopactiviteit</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>Werkactiviteit</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Activiteit die binnen een treinbeweging wordt uitgevoerd ten behoeve van de voorbereiding, ondersteuning of afronding van de exploitatie van een trein, zonder dat daarbij sprake is van een verplaatsing over infrastructuur.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Stopactiviteiten vinden plaats binnen één treinbeweging. Activiteiten die betrekking hebben op de overgang van materieel tussen treinbewegingen worden gemodelleerd als materieeluitwisseling en niet als stopactiviteit.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>Activiteit</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa">Activiteit</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#Ucb80813a-51cb-440b-8fad-6c91d2244ea9">Stopactiviteit</a> is een subtype van <a href="#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa">Activiteit</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U1a1e7000-6be3-4c02-b830-529969252b4a">activiteitsoort</a></td>
+<td>Classificatie van een activiteit naar haar aard of functie.</td>
+<td><a href="#Ud456c192-64be-4131-831d-ca631c143ffc">SoortStopactiviteit</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="U6aa03c6c-589d-4e84-beef-0daa52eb44ea"><h4>Toestemming</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class InfraUitvoeringsmiddel:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	InfraUitvoeringsmiddel &lt;|-- Toestemming
+		click InfraUitvoeringsmiddel href "#Uc066c964-03d9-4829-80b8-dcecde688b82" "InfraUitvoeringsmiddel"
+		class Toestemming:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			</pre>
+<figcaption>Klassendiagram Toestemming</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Toestemming</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Abstract objecttype dat de bevoegdheid of het recht vastlegt om een handeling of gebruik van infrastructuur onder bepaalde voorwaarden uit te voeren.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Ja
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>InfraUitvoeringsmiddel</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Uc066c964-03d9-4829-80b8-dcecde688b82">InfraUitvoeringsmiddel</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U6aa03c6c-589d-4e84-beef-0daa52eb44ea">Toestemming</a> is een subtype van <a href="#Uc066c964-03d9-4829-80b8-dcecde688b82">InfraUitvoeringsmiddel</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U51824e05-fc15-4638-a3ed-5cae68ce634b"><h4>Treinbeweging</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class InfraGebruiksdoel:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	InfraGebruiksdoel &lt;|-- Treinbeweging
+		click InfraGebruiksdoel href "#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5" "InfraGebruiksdoel"
+		class Treinbeweging{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Treinbeweging {
+	  +identificatie : Treinidentificatie [1]}
+	  
+	class Treinbeweging {
+	  +typeBeweging : TypeTreinbeweging [1]}
+	  Treinbeweging --&gt; "1..* gebeurtenis"  Gebeurtenis : bestaat uit  
+		class Gebeurtenis{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Gebeurtenis href "#Udc571835-5e18-4656-96c0-b51ce65bed71" "Gebeurtenis"
+		</pre>
+<figcaption>Klassendiagram Treinbeweging</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Treinbeweging</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gepland gebruik van infrastructuurcapaciteit voor het uitvoeren van een treinrit.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Een treinbeweging beschrijft het verplaatsen van materieel over de infrastructuur en bestaat uit één of meer gebeurtenissen op operationele locaties.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kwaliteit</th>
+<td>in termen van volledigheid, actualiteit, nauwkeurigheid, consistentie</td>
+</tr>
+<tr>
+<th>Populatie</th>
+<td>Elke Treinbeweging wordt gepland</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>InfraGebruiksdoel</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5">InfraGebruiksdoel</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U51824e05-fc15-4638-a3ed-5cae68ce634b">Treinbeweging</a> is een subtype van <a href="#Uc800522b-55fb-4e8c-b6b2-f9a5a7dfc3d5">InfraGebruiksdoel</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ua7900b7d-c802-4f10-b846-ed6424c668a0">identificatie</a></td>
+<td>Unieke aanduiding van een Treinbeweging.</td>
+<td><a href="#U0683bd4d-5788-41fb-b532-fd5435d3be81">Treinidentificatie</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Ub92a70bd-2cb3-44e9-b1f5-6fb3cd1a4634">typeBeweging</a></td>
+<td></td>
+<td><a href="#U9d6733a9-7359-4418-ac20-b51619db7df6">TypeTreinbeweging</a></td>
+<td>1</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ua10567fb-5375-4774-8146-6b680f5c9b51">bestaat uit  </a></td>
+<td>Treinbeweging bestaat uit één of meer Gebeurtenissen.</td>
+<td><a href="#Udc571835-5e18-4656-96c0-b51ce65bed71">Gebeurtenis</a></td>
+<td>1..*</td>
+</tr>
+</table></section><section id="U9217d8a2-0604-4690-8ab3-2e7848530576"><h4>VolumeInzet</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class InfraUitvoeringsmiddel:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	InfraUitvoeringsmiddel &lt;|-- VolumeInzet
+		click InfraUitvoeringsmiddel href "#Uc066c964-03d9-4829-80b8-dcecde688b82" "InfraUitvoeringsmiddel"
+		class VolumeInzet{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			</pre>
+<figcaption>Klassendiagram VolumeInzet</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>VolumeInzet</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>VolumeInfraInzet</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>De infrainzet voor een samenhangend geheel van infradelen voor langere, soms nader te bepalen tijdsduur.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>“Volume” bestaat uit de combinatie van een (groter) deel van de betrokken infrastructuur en een (langer) tijdsbestek waarin die infrastructuur bezet gehouden wordt. Het tijdsbestek is tenminste 4 weken. (bron: Spoorse begrippen)</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>Begrippenkader NCBG</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Spoorse begrippen</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>InfraUitvoeringsmiddel</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#Uc066c964-03d9-4829-80b8-dcecde688b82">InfraUitvoeringsmiddel</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U9217d8a2-0604-4690-8ab3-2e7848530576">VolumeInzet</a> is een subtype van <a href="#Uc066c964-03d9-4829-80b8-dcecde688b82">InfraUitvoeringsmiddel</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U32454a87-4bae-4bfc-b269-975cbda9fbdd"><h4>Vrijgave</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Toestemming:::abstractObject{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+	Toestemming &lt;|-- Vrijgave
+		click Toestemming href "#U6aa03c6c-589d-4e84-beef-0daa52eb44ea" "Toestemming"
+		class Vrijgave{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Vrijgave {
+	  +type : TypeVrijgave [1]}
+	  Vrijgave --&gt; "1 vrijgavegebied"  Vrijgavegebied : is verleend binnen
+		class Vrijgavegebied{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Vrijgavegebied href "#Uebb6afb8-3844-45a6-a6a8-925caccab021" "Vrijgavegebied"
+		</pre>
+<figcaption>Klassendiagram Vrijgave</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Vrijgave</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>VrijgaveRangeren</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Het na keuring verlof geven om het uit te voeren, te verkopen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>Spoorse begrippen</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Spoorse begrippen</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht generalisaties</h5>
+<h6>Toestemming</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Supertype</th>
+<td><a href="#U6aa03c6c-589d-4e84-beef-0daa52eb44ea">Toestemming</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>
+<a href="#U32454a87-4bae-4bfc-b269-975cbda9fbdd">Vrijgave</a> is een subtype van <a href="#U6aa03c6c-589d-4e84-beef-0daa52eb44ea">Toestemming</a>
+</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Uea273b8c-eb55-4488-befd-833163dd2184">type</a></td>
+<td></td>
+<td><a href="#Uc87fbb26-64be-48f3-a58d-028d640c782b">TypeVrijgave</a></td>
+<td>1</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Udca3c01d-bed7-4084-b8f8-8fe80fa0fe1a">is verleend binnen</a></td>
+<td>Vrijgave is verleend binnen Vrijgavegebied.</td>
+<td><a href="#Uebb6afb8-3844-45a6-a6a8-925caccab021">Vrijgavegebied</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="Uebb6afb8-3844-45a6-a6a8-925caccab021"><h4>Vrijgavegebied</h4>
+<figure><pre class="diagram mermaid">
+		classDiagram		   
+		   class Vrijgavegebied{
+		   		&lt;&lt;Objecttype&gt;&gt;       
+		    }
+			
+	class Vrijgavegebied {
+	  +identificatie : CharacterString [1]}
+	  Vrijgavegebied --&gt; "1..* infracapaciteitseenheid"  Infracapaciteitseenheid : bestaat uit
+		class Infracapaciteitseenheid:::abstractObject{
+					&lt;&lt;Objecttype&gt;&gt;       
+				}
+		click Infracapaciteitseenheid href "#Ub4ada878-801e-46df-b6f6-5fadbe94571d" "Infracapaciteitseenheid"
+		</pre>
+<figcaption>Klassendiagram Vrijgavegebied</figcaption></figure><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Vrijgavegebied</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>VrijgaveRangeergebied</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een gebied dat (tijdelijk) onttrokken is aan de ter plaatse gangbare beveiliging en bediening en dat bedoeld is om beschikbaar te zijn voor het uitvoeren van activiteiten door infragebruikers, afgeschermd van de reguliere treindienst. </td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>Spoorse begrippen</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Spoorse begrippen</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-206</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U926bc4cf-2b47-4366-b424-c7bb9dc72fc5">identificatie</a></td>
+<td>Unieke aanduiding van een Vrijgavegebied.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+</table>
+<h5>Overzicht relaties</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Doel</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U8a584621-9583-4e54-af79-fa95e30dfc45">bestaat uit</a></td>
+<td>Infracapiteitseenheid bestaat uit één of meer Infracapaciteitseenheden.</td>
+<td><a href="#Ub4ada878-801e-46df-b6f6-5fadbe94571d">Infracapaciteitseenheid</a></td>
+<td>1..*</td>
+</tr>
+</table></section></section><section id="gegevensgroeptypen"><h3>Gegevensgroeptypen</h3>
+<section id="Ue7875566-059c-4121-ad49-fc6719c86769"><h4>GeplandeTreinkenmerken</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>GeplandeTreinkenmerken</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Train relevant data for a planning period</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Train relevant data for a planning period</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ue9103afe-8b0f-45d3-960e-abdae720e6c1">treintype</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#Udb0914d3-f16e-4b26-8c29-b63aec2a2764">verkeerstype</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#U31483545-2476-414f-8209-d54cd509ddf4">duwtrektrein</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#U25aaa673-1a43-4a68-b47f-6daaca9a514a">diensttype</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#U15f2e216-392c-4eaf-ad05-3a201ddbaf79">commercieelVerkeerstype</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#Ub75ed1eb-0f98-4284-a857-0c1aa30c5678">indicatieGevaarlijkeStoffen</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">Boolean</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#U0e0caab9-c7b9-4760-966c-f88baa5985e3">profielGecombineerdVervoer</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#U321572e0-9134-4ebe-8b20-4cab22e98977">buitenProfiel</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#U2b951f1e-b06e-4a7e-87da-f09913ca9526">technischeKenmerken</a></td>
+<td></td>
+<td><a href="#U3008ff32-6c29-4bc2-b5f8-4d5dfeeccefa">TechnischeKenmerkenGeplandeTrein</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="U4ab8a0e5-62aa-415e-8133-e3acb58036f9"><h4>Locomotief</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Locomotief</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Definieert het daadwerkelijke type, het aantal en de wijze van inzet van een tractie‑eenheid van de goederentrein.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Definieert het daadwerkelijke type, het aantal en de wijze van inzet van een tractie‑eenheid van de goederentrein.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U584b5846-1655-48e6-bda3-aa0410674a22">tractie</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="U3008ff32-6c29-4bc2-b5f8-4d5dfeeccefa"><h4>TechnischeKenmerkenGeplandeTrein</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>TechnischeKenmerkenGeplandeTrein</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table></section><section id="Ufa4f49d6-ad73-401c-a16e-dd710cb0931e"><h4>TechnischeTreinkenmerken</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>TechnischeTreinkenmerken</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Verzameling van gegevens van Technische treinkenmerken.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Verzameling van gegevens van Technische treinkenmerken.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U83964fcf-ea2c-410c-9755-ee61ea1718c9">type</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U036d10dc-4721-4ce1-88dd-1453793cf1c1">gewicht</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U6a361303-cf1f-4a52-be7b-2df4f4e64a70">lengte</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Ud0011690-f6cb-484d-b9cc-feb1032d7997">CCsysteem</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U6958f207-812f-4963-b547-e0143bb639ab">radiosysteeem</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U0322e45a-e996-4a88-8757-9cf5bc044a19">maximum_snelheid</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U7cd71ba1-1521-4a5d-819c-da31aa7537ce">maximale_aslast</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U94e14e1a-0436-4c3a-b2a0-48a6ea633394">remtype</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U6d3c8684-969d-48dd-a791-69e66c18f2ed">remratio</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Ub58b1801-c34b-4c4e-8ae1-cede32501cb7">remgewicht</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U49913056-8851-486f-a4fb-7b10cf4ba691">aantalvoertuigen</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U467f186d-da85-48f6-bf9a-a3c2998b90e4">aantalassen</a></td>
+<td></td>
+<td><a href="#"></a></td>
+<td>1</td>
+</tr>
+</table></section><section id="U7a5f0cf6-ae02-4450-ae37-8aaab0baab63"><h4>TijdOpLocatie</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>TijdOpLocatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gegevensgroeptype waarin de tijdsaanduidingen van een gebeurtenis op een specifieke operationele locatie zijn vastgelegd.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Gegevensgroeptype waarin de tijdsaanduidingen van een gebeurtenis op een specifieke operationele locatie zijn vastgelegd.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ua3daf3e3-a390-4b16-8cbc-286b4a72bf73">tijdclassificatie</a></td>
+<td>Aanduiding van het soort tijd.</td>
+<td><a href="#U76c7442c-722a-4d6a-9b87-34dbe697992b">Tijdclassificatie</a></td>
+<td>0..1</td>
+</tr>
+<tr>
+<td><a href="#Uda5b8500-75f7-497d-bd36-7c75906d4f80">tijd</a></td>
+<td>Tijdstip.</td>
+<td><a href="#U43a947a8-1b66-489d-a09e-25f6b56838cd">Tijd</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Ud4a06162-feaa-40da-9ff9-2322e3c6dc1a">dagverschuiving</a></td>
+<td>Verschuiving in hele dagen.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">Integer</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="U0683bd4d-5788-41fb-b532-fd5435d3be81"><h4>Treinidentificatie</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Treinidentificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Verzameling identificerende kenmerken waarmee een trein of treinbeweging uniek kan worden herkend binnen operationele en informatiekundige processen.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Een treinidentificatie bevat één of meer identificerende kenmerken waarmee een trein of treinbeweging gedurende zijn levenscyclus kan worden herkend en gevolgd. Hieronder vallen zowel stabiele identificaties, zoals een TrainID, als operationele identificaties, zoals een Operational Train Number (OTN).</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Verzameling identificerende kenmerken waarmee een trein of treinbeweging uniek kan worden herkend binnen operationele en informatiekundige processen.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#Ud091e9c5-1888-49d6-a9fe-9fc3a0a3e6bc">identificatie</a></td>
+<td>Een unieke identificatie van een trein binnen het TAF/TAP-TSI-kader.</td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U410645a2-846c-4178-95bd-f3a790afc50d">treinnummer</a></td>
+<td>Het nummer waaronder een trein operationeel wordt uitgevoerd en herkend tijdens (delen van) zijn rit. </td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">CharacterString</a></td>
+<td>1..*</td>
+</tr>
+</table></section><section id="U36de988e-5e44-4e91-913f-84dbc5281515"><h4>Treinkenmerken</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Treinkenmerken</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht attributen</h5>
+<table>
+<tr>
+<th>Naam</th>
+<th>Definitie</th>
+<th>Type</th>
+<th>Kard</th>
+</tr>
+<tr>
+<td><a href="#U745c223d-f292-4d94-9b96-3a62c902f741">indicatieUitzonderlijkProfiel</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">Boolean</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#Uad3a1311-6f63-4db8-a371-c963c395201b">indicatieGevaarlijkeStoffen</a></td>
+<td></td>
+<td><a href="https://docs.geostandaarden.nl/mim/mim/#primitief-datatype-1" target="_blank">Boolean</a></td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#U6fcdc8f4-2663-43ef-ae0f-3ddf5e5874e0">technischeKenmerken</a></td>
+<td></td>
+<td><a href="#Ufa4f49d6-ad73-401c-a16e-dd710cb0931e">TechnischeTreinkenmerken</a></td>
+<td>1</td>
+</tr>
+</table></section><section id="U05704d5f-6a58-4120-8708-c7625452cb9c"><h4>Wagon</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Wagon</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Verzameling van gegevens van de Wagon.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>Verzameling van gegevens van de Wagon.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Indicatie abstract object</th>
+<td>
+			  Nee
+			</td>
+</tr>
+</tbody>
+</table></section></section><section id="datatypen"><h3>Datatypen</h3>
+<section id="primitieve-datatypen"><h4>Primitieve datatypen</h4></section><section id="enumeraties"><h4>Enumeraties</h4>
+<section id="U20c5880c-f71a-42d3-8628-c823b8902544"><h4>Instructie</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Instructie</td>
+</tr>		
+&gt;
+		<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht waarden</h5>
+<table>
+<tr>
+<th>Waarde</th>
+<th>Definitie</th>
+</tr>
+<tr>
+<td><a href="#U878326c0-1bf1-46ab-bb54-6b7d6e36a260">roestrijden</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Ub6a58b97-c297-48cb-b432-eed3626fe716">rijden op zicht</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#U454f0927-d907-4424-b2fa-e6ca65f7632b">goederencriterium</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#U64a3dab6-bb36-48a2-9700-106d8faeaf7d">dieseltractie</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Uc136cb46-91fa-4297-87dd-932b15af0f4b">herfstcriterium</a></td>
+<td></td>
+</tr>
+</table></section><section id="U7cc99c65-b26e-463b-9f21-ec7bbe42134b"><h4>SoortRijactiviteit</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>SoortRijactiviteit</td>
+</tr>		
+&gt;
+		<tr>
+<th>Definitie</th>
+<td>Waardenverzameling voor soorten Rijactiviteit.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht waarden</h5>
+<table>
+<tr>
+<th>Waarde</th>
+<th>Definitie</th>
+</tr>
+<tr>
+<td><a href="#U199af993-c8b8-42c0-844d-3b3097a0b77d">rangeren</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#U84bee097-abeb-42d7-b006-b8468d6a3939">rangeerdienst uitvoeren</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#U23d04c1e-6b03-4055-920f-f4f7299cb18d">terminaldienst verlenen</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#U9174cbb5-f47c-41cb-876d-375bbe8d62b4">locomotief omlopen</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Ue5e2c01b-d856-4b81-ac0c-d41d801ea523">meerijden met andere trein</a></td>
+<td></td>
+</tr>
+</table></section><section id="U8336ae34-6d92-4858-8964-19a2e9393f47"><h4>TypeGebeurtenis</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>TypeGebeurtenis</td>
+</tr>		
+&gt;
+		<tr>
+<th>Definitie</th>
+<td>Waardenverzameling voor typen Gebeurtenis.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht waarden</h5>
+<table>
+<tr>
+<th>Waarde</th>
+<th>Definitie</th>
+</tr>
+<tr>
+<td><a href="#U8a224b27-1d28-4b96-ac5e-0992c0a0717a">aankomst</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#U093c0c2f-837a-408b-83e6-5264f2ef230f">doorkomst</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Ub32afc1b-20d4-4bb6-8d5b-d752c48da891">vertrek</a></td>
+<td></td>
+</tr>
+</table></section><section id="U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e"><h4>TypeMeetpunt</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>TypeMeetpunt</td>
+</tr>		
+&gt;
+		<tr>
+<th>Definitie</th>
+<td>sectielasassentellergrensbalisegroepdetectiepuntseinwisselvirtueel meetpunt</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht waarden</h5>
+<table>
+<tr>
+<th>Waarde</th>
+<th>Definitie</th>
+</tr>
+<tr>
+<td><a href="#U9c80a136-699a-4870-87a8-b63d23f171ab">assentellertelpunt</a></td>
+<td>https://otl.prorail.nl/otl/vigerend/Assenteller-Telpunt</td>
+</tr>
+<tr>
+<td><a href="#U77ec8185-380f-4726-b3b6-1c7c5766e5c1">balisegroep</a></td>
+<td>https://otl.prorail.nl/otl/vigerend/Balise-Groep</td>
+</tr>
+<tr>
+<td><a href="#U6c1d06c2-1ac0-4af5-b655-9cad6cb3b767">detectiepedaal</a></td>
+<td>https://otl.prorail.nl/otl/vigerend/Detectiepedaal</td>
+</tr>
+<tr>
+<td><a href="#Uff29c00c-e7f5-452e-afd4-e6fc663dce45">massadetectielus</a></td>
+<td>https://otl.prorail.nl/otl/vigerend/Massadetectielus</td>
+</tr>
+<tr>
+<td><a href="#Ua3b2ff4d-ac8a-4dc6-82c9-277e30e2c0ec">sectielas</a></td>
+<td>https://otl.prorail.nl/otl/vigerend/ES-Las</td>
+</tr>
+<tr>
+<td><a href="#U576e80f5-09a1-46ff-ac0b-0c2acb833e7b">virtueel meetpunt</a></td>
+<td></td>
+</tr>
+</table></section><section id="Ud70e4911-5f4e-4acd-8479-e9d4877e822c"><h4>TypeOpstelling</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>TypeOpstelling</td>
+</tr>		
+&gt;
+		<tr>
+<th>Definitie</th>
+<td>Een materieelopstelling waarbij materieel is opgesteld ten behoeve van operationele handelingen, zoals samenstellen, splitsen, combineren, keren of locomotief omlopen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht waarden</h5>
+<table>
+<tr>
+<th>Waarde</th>
+<th>Definitie</th>
+</tr>
+<tr>
+<td><a href="#Ufffbf8ea-bde7-4dd5-a2bc-faa7d23b3b8c">wachten</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Udb6f1f10-8e18-489b-910e-2950fbfba734">voertuig parkeren</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Ubb537f5c-0fde-48f0-8815-5bd1f29ba18f">operationele opstelling</a></td>
+<td></td>
+</tr>
+</table></section><section id="U9d6733a9-7359-4418-ac20-b51619db7df6"><h4>TypeTreinbeweging</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>TypeTreinbeweging</td>
+</tr>		
+&gt;
+		<tr>
+<th>Definitie</th>
+<td>Een treinrit met het oogmerk van vervoer, waarbij goederen, personen of materieel over het spoor worden verplaatst volgens een dienstregeling of gepland traject.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht waarden</h5>
+<table>
+<tr>
+<th>Waarde</th>
+<th>Definitie</th>
+</tr>
+<tr>
+<td><a href="#U445be15a-9fd8-4a0f-b8b3-fe66daf1aba9">vervoerbeweging</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#Ucba7278a-3823-4d88-a58e-e31235599aa3">rangeerbeweging</a></td>
+<td></td>
+</tr>
+<tr>
+<td><a href="#U24d8784c-18b3-4e46-b7fd-dfa691c5148d">terminalbeweging</a></td>
+<td></td>
+</tr>
+</table></section><section id="Uc87fbb26-64be-48f3-a58d-028d640c782b"><h4>TypeVrijgave</h4>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>TypeVrijgave</td>
+</tr>		
+&gt;
+		<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h5>Overzicht waarden</h5>
+<table>
+<tr>
+<th>Waarde</th>
+<th>Definitie</th>
+</tr>
+<tr>
+<td><a href="#Ua3670258-ff17-4d82-bc05-c7f63516969a">vrijgave rangeergebied</a></td>
+<td>https://otl.prorail.nl/otl/vigerend/Vrijgave-Rangeer-Gebied</td>
+</tr>
+</table></section></section></section><section id="attribuutdetails"><h3>Attribuut-, relatiesoort en enumeratiewaardedetails</h3>
+<section id="objecttypedetails"><h4>Objecttype details</h4>
+<section><h5>Activiteit</h5>
+<section id="U43b03a98-75b2-44f0-b5d0-7928913c6d6f"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een Activiteit.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U53648542-fdfd-4119-8496-d862d6a99937">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U490e3763-9257-44f4-aec0-744a257e0329"><h6>
+        Attribuutsoort details      
+        
+        begintijd</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>begintijd</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Begintijd mag niet eerder zijn dan de tijd van gebeurtenis</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..*</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="Uad4e2d9d-3bd4-44f8-aa4a-e9641d2c0613"><h6>
+        Attribuutsoort details      
+        
+        eindtijd</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>eindtijd</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Eindtijd mag niet later zijn dan het tijdstip van de eindgebeurtenis.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..*</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U8df64324-ac46-418a-87e8-425167f8ce39"><h6>
+        Relatiesoort details
+        
+        <a href="#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa">Activiteit</a>begint bij<a href="#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>begint bij</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Activiteit begint bij één begingebeurtenis.</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#Uef42fdcb-29d4-49e6-b9d0-5cef66e989f5">begingebeurtenis</a></td>
+</tr>
+</tbody>
+</table>
+<section id="Uef42fdcb-29d4-49e6-b9d0-5cef66e989f5"><h7>
+        Doelrelatierol details
+        begingebeurtenis</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>begingebeurtenis</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Gebeurtenis, waar de activiteit begint.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section id="Uce3ae398-ef2f-4e84-a97f-1b69e09ce19e"><h6>
+        Relatiesoort details
+        
+        <a href="#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa">Activiteit</a>eindigt bij<a href="#Uf9f1e05c-f917-468a-9cf8-7cdf7e81d1aa"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>eindigt bij</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Activiteit eindigt bij één eindgebeurtenis.</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#Ub14368a0-2ca9-41c8-aa62-dfb6bb946aea">eindgebeurtenis</a></td>
+</tr>
+</tbody>
+</table>
+<section id="Ub14368a0-2ca9-41c8-aa62-dfb6bb946aea"><h7>
+        Doelrelatierol details
+        eindgebeurtenis</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>eindgebeurtenis</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Gebeurtenis, waar de activiteit eindigt.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section></section><section><h5>Dienstregelpunt</h5>
+<section id="U3a1b03a4-46eb-4de4-bc0b-dd3d29231b0c"><h6>
+        Attribuutsoort details      
+        
+        vlakgeometrie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>vlakgeometrie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#Ueebfcc79-3ec5-4dd4-80df-d558ab8ccf17">GM_Surface</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..1</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>Gebeurtenis</h5>
+<section id="Uba3a4c3d-7ee7-45cd-beac-0e8f58c7fb6b"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een Gebeurtenis</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U53648542-fdfd-4119-8496-d862d6a99937">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Nee</td>
+</tr>
+</tbody>
+</table></section><section id="U7ed4cfd6-2a19-4ccd-86ae-20b03c136868"><h6>
+        Attribuutsoort details      
+        
+        type</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>type</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een aanduiding waarmee de aard van een Gebeurtenis wordt aangegeven</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ITM DienstregelInfraPlan en Uitvoering</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>IM RTTP</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U8336ae34-6d92-4858-8964-19a2e9393f47">TypeGebeurtenis</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U01833926-f906-47f4-9d08-3ed20e98a102"><h6>
+        Attribuutsoort details      
+        
+        vertrekgereedgemeld</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>vertrekgereedgemeld</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U324f0f00-e6f6-48ee-90a3-7d18aff70ec0">Boolean</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U643d1f21-7a06-4962-a202-aac085d76f5b"><h6>
+        Relatiesoort details
+        
+        <a href="#Udc571835-5e18-4656-96c0-b51ce65bed71">Gebeurtenis</a>Gebeurtenisvolgorde<a href="#Udc571835-5e18-4656-96c0-b51ce65bed71"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Gebeurtenisvolgorde</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>wordt opgevolgd door</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Gebeurtenis, die voorafgaat aan de volgende gebeurtenis.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Een gebeurtenisvolgorde legt de expliciete ordening vast tussen twee gebeurtenissen (bron en doel) die plaatsvinden op dezelfde operationele locatie. Deze volgorde representeert de volgorde van gebruik van infrastructuurcapaciteit en wordt toegepast in situaties waarin deze niet eenduidig uit tijdstippen kan worden afgeleid of expliciet moet worden vastgelegd voor planning en bijsturing. Constraint: bronGebeurtenis en doelGebeurtenis vinden plaats op dezelfde operationele locatie.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol bron</th>
+<td><a href="#U0de79b6f-9ff7-4680-bc4d-be4e02f65560">voorgaandeGebeurtenis</a></td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U0720a309-ea44-4400-a1a8-478abe2c0318">volgendeGebeurtenis</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U0de79b6f-9ff7-4680-bc4d-be4e02f65560"><h7>
+        Bronrelatierol details 
+        voorgaandeGebeurtenis</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>voorgaandeGebeurtenis</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Gebeurtenis, die voorafgaat aan de volgende gebeurtenis.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U0720a309-ea44-4400-a1a8-478abe2c0318"><h7>
+        Doelrelatierol details
+        volgendeGebeurtenis</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>volgendeGebeurtenis</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Gebeurtenis, die volgt op de voorgaande gebeurtenis.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section id="Uc32a80bd-c692-4650-bc12-70bccd65ea76"><h6>
+        Relatiesoort details
+        
+        <a href="#Udc571835-5e18-4656-96c0-b51ce65bed71">Gebeurtenis</a>vindt plaats op<a href="#Udc571835-5e18-4656-96c0-b51ce65bed71"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>vindt plaats op</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gebeurtenis vindt plaats op één of meer Locaties.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U42ede67c-e308-46ac-a62f-250c5f52e06e">locatie</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U42ede67c-e308-46ac-a62f-250c5f52e06e"><h7>
+        Doelrelatierol details
+        locatie</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>locatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Locatie, waar de gebeurtenis plaatsvindt.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section></section><section><h5>Gebied</h5>
+<section id="Ub1b8489c-cd3f-4736-9735-771ed9c2e7ac"><h6>
+        Attribuutsoort details      
+        
+        vlakgeometrie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>vlakgeometrie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#Ueebfcc79-3ec5-4dd4-80df-d558ab8ccf17">GM_Surface</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>InfraGebruiksdoel</h5>
+<section id="U55787f00-2065-4c90-9c0c-1877209534de"><h6>
+        Attribuutsoort details      
+        
+        datum</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>datum</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Tijdstip van de treinbeweging.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U6d9fd6dc-b198-4235-8b4d-51e6ed1dd7cd">Day</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Domein: patroon</th>
+<td>Datum</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>InfraUitvoeringsmiddel</h5>
+<section id="Uaa39c21a-8c69-4db5-8760-c8df7338d763"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een InfraUitvoeringsmiddel.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Nee</td>
+</tr>
+</tbody>
+</table></section><section id="Uc308fba2-665f-437a-ad7b-6454a4d4830d"><h6>
+        Attribuutsoort details      
+        
+        begintijd</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>begintijd</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Tijdstip waarop het infrauitvoeringsmiddel van kracht wordt of kan worden toegepast.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U090f2e93-1ead-4be3-956d-ef5edd63057f"><h6>
+        Attribuutsoort details      
+        
+        eindtijd</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>eindtijd</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Tijdstip waarop het infrauitvoeringsmiddel niet langer van kracht is of kan worden toegepast.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U7a5f0cf6-ae02-4450-ae37-8aaab0baab63">TijdOpLocatie</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U0092d851-e3e3-4001-8fec-4ff80f333b36"><h6>
+        Relatiesoort details
+        
+        <a href="#Uc066c964-03d9-4829-80b8-dcecde688b82">InfraUitvoeringsmiddel</a>wordt ingezet ten behoeve van<a href="#Uc066c964-03d9-4829-80b8-dcecde688b82"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>wordt ingezet ten behoeve van</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Één of meer InfraUitvoeringsmiddelen worden ingezet ten behoeve van één of meer InfraGebruiksdoelen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U34df50ea-31ce-46cd-875d-55b94381aa85">infragebruiksdoel</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U34df50ea-31ce-46cd-875d-55b94381aa85"><h7>
+        Doelrelatierol details
+        infragebruiksdoel</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>infragebruiksdoel</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde infragebruiksdoel, ten behoeve waarvan het Infrauitvoeringsmiddel wordt ingezet.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section></section><section><h5>Locatie</h5>
+<section id="U39c10596-fd99-420c-932a-cbcd281080f5"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een Locatie.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Nee</td>
+</tr>
+</tbody>
+</table></section><section id="Ub34ce562-662c-47b5-ad94-8b960a5e0d53"><h6>
+        Attribuutsoort details      
+        
+        geometrie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>geometrie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U662d3618-ee94-442d-8159-0644baab2e9f">GM_Point</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>Materieelopstelling</h5>
+<section id="Ue07b75e5-c1ac-4f56-bd4e-51a80a54a149"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een InfraGebruiksdoel.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Nee</td>
+</tr>
+</tbody>
+</table></section><section id="U9ed99ad3-3ce0-406e-be29-9696afebb967"><h6>
+        Attribuutsoort details      
+        
+        type</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>type</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Samenstelling van het materieel dat onderdeel uitmaakt van een materieelopstelling.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#Ud70e4911-5f4e-4acd-8479-e9d4877e822c">TypeOpstelling</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="Uebf0b3ce-58b6-4ee7-bb42-e02366685af7"><h6>
+        Relatiesoort details
+        
+        <a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751">Materieelopstelling</a>Materieeluitwisseling<a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>Materieeluitwisseling</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>Materieelrelatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde materieelopstelling, van waaruit materieel wordt uitgewisseld met één of meer doelopstellingen.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Materieeluitwisselingen beschrijven hoe materieelstromen zich tussen opeenvolgende materieelopstellingen verhouden. Voorbeelden zijn overgaan, splitsen, combineren en keren.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Relatierol bron</th>
+<td><a href="#U3aa7b769-ec87-4016-bf31-456e09cc5564">bronopstelling</a></td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#Uf2afbcaa-feb2-4c02-9a04-bae943c427da">doelopstelling</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U3aa7b769-ec87-4016-bf31-456e09cc5564"><h7>
+        Bronrelatierol details 
+        bronopstelling</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>bronopstelling</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>begin materieelopstelling</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde materieelopstelling, van waaruit materieel wordt uitgewisseld met één of meer doelopstellingen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="Uf2afbcaa-feb2-4c02-9a04-bae943c427da"><h7>
+        Doelrelatierol details
+        doelopstelling</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>doelopstelling</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>eind materieelopstelling</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Materieelopstelling, waarmee materieel wordt uitgewisseld met één of meer bronopstellingen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section id="Ubdc4e406-432e-4f19-b723-ff84c6aae100"><h6>
+        Relatiesoort details
+        
+        <a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751">Materieelopstelling</a>ontstaat uit<a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>ontstaat uit</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Materieelopstelling ontstaat uit één aanvoerende Treinbeweging.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U9023e23c-31eb-4404-98f0-bffe8ef67ae6">aanvoerendeBeweging</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U9023e23c-31eb-4404-98f0-bffe8ef67ae6"><h7>
+        Doelrelatierol details
+        aanvoerendeBeweging</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>aanvoerendeBeweging</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Treinbeweging, waaruit de materieelopstelling ontstaat.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section id="U29225762-adc2-4853-9290-35b3effa39ae"><h6>
+        Relatiesoort details
+        
+        <a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751">Materieelopstelling</a>eindigt door<a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>eindigt door</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Materieelopstelling eindigt door één afvoerende Treinbeweging.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U49c6d53b-39e2-418f-8b44-fc4d4fa89822">afvoerendeBeweging</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U49c6d53b-39e2-418f-8b44-fc4d4fa89822"><h7>
+        Doelrelatierol details
+        afvoerendeBeweging</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>afvoerendeBeweging</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Treinbeweging, waarmee de materieeopstelling eindigt.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section id="U605671e1-72d0-4faf-8601-262ffdeb42a6"><h6>
+        Relatiesoort details
+        
+        <a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751">Materieelopstelling</a>stelt op<a href="#Ue3283184-e3b6-4f5b-84b6-fe1f87b0e751"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>stelt op</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Materieelopstelling stelt één Materieelsamenstelling op.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U24afd675-e907-4f87-8248-540f478062ec">materieelsamenstelling</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U24afd675-e907-4f87-8248-540f478062ec"><h7>
+        Doelrelatierol details
+        materieelsamenstelling</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>materieelsamenstelling</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Materieelsamenstelling, die door de materieelosptelling wordt opgesteld.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section></section><section><h5>Materieelsamenstelling</h5>
+<section id="Uf8d94c6c-6fd1-420b-bea8-ea806ea09ae3"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een Materieelsamenstelling.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Nee</td>
+</tr>
+</tbody>
+</table></section><section id="Ubb84bffa-5383-4951-95f3-3b6d59c53cf7"><h6>
+        Attribuutsoort details      
+        
+        indicatieVeeOfPersonen</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>indicatieVeeOfPersonen</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>LivestockOrPeopleIndicator</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U324f0f00-e6f6-48ee-90a3-7d18aff70ec0">Boolean</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>Meetpunt</h5>
+<section id="Ua152895a-0647-4748-ac72-a49117acf560"><h6>
+        Attribuutsoort details      
+        
+        type</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>type</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>OperationeleLocatie</h5>
+<section id="U0b6afe1f-566d-46f0-87f9-295d43a81a70"><h6>
+        Attribuutsoort details      
+        
+        primaireLocatiecode</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>primaireLocatiecode</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U3b63546f-78ae-468b-a35f-8b6cad6b8945"><h6>
+        Attribuutsoort details      
+        
+        subLocatiecode</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>subLocatiecode</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>Rijactiviteit</h5>
+<section id="Ufd7b6373-f493-4152-902b-aff9beee3fcf"><h6>
+        Attribuutsoort details      
+        
+        treinsoort</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>treinsoort</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>voorheen: rijkarakteristiek</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>De treinsoort waarmee de bewegingsactiviteit wordt uitgevoerd.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#Uf5bddf99-dd6b-43dd-9909-fe4dfbbb0dd3">Rijkarakteristiek</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U11288899-25e7-4dc4-b93e-5d19c1e62aa2"><h6>
+        Attribuutsoort details      
+        
+        activiteitsoort</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>activiteitsoort</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Classificatie van een activiteit naar haar aard of functie.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U7cc99c65-b26e-463b-9f21-ec7bbe42134b">SoortRijactiviteit</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>Rijweginstructie</h5>
+<section id="U790f2c7b-c44c-4356-8722-c0486d484e93"><h6>
+        Attribuutsoort details      
+        
+        instructie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>instructie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U20c5880c-f71a-42d3-8628-c823b8902544">Instructie</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..*</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U46e9c6b9-f31b-4d6c-8a8b-2cfe3bf2e022"><h6>
+        Attribuutsoort details      
+        
+        bijzonderheid</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>bijzonderheid</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>0..*</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="Ufba42d5a-e3f8-4f1b-b0fa-39a3098563cf"><h6>
+        Relatiesoort details
+        
+        <a href="#U46fa23bd-364f-4fb7-9766-7cea0aabbf1f">Rijweginstructie</a>bevat<a href="#U46fa23bd-364f-4fb7-9766-7cea0aabbf1f"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>bevat</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Rijweginstructie bevat één Route.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U716f4b30-1b59-4e6d-b205-48302927d13d">route</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U716f4b30-1b59-4e6d-b205-48302927d13d"><h7>
+        Doelrelatierol details
+        route</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>route</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>rijweg</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Route, die door de rijweginstructie wordt bevat.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section id="U104f029d-fb2e-44ae-bf26-98a0ffa0563b"><h6>
+        Relatiesoort details
+        
+        <a href="#U46fa23bd-364f-4fb7-9766-7cea0aabbf1f">Rijweginstructie</a>realiseert<a href="#U46fa23bd-364f-4fb7-9766-7cea0aabbf1f"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>realiseert</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Één of meer Rijweginstructie realiseert een Treinbeweging.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U9ca39e9c-95dc-4235-9951-55b7adc0015a">treinbeweging</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U9ca39e9c-95dc-4235-9951-55b7adc0015a"><h7>
+        Doelrelatierol details
+        treinbeweging</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>treinbeweging</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Treinbeweging, die door de rijweginstructie wordt gerealiseerd.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section></section><section><h5>Route</h5>
+<section id="U811054fb-35a4-4a1b-a89d-52f6fcd477d2"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een Route.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U5b4bcf8b-bf5c-4d91-9da7-140cc77941a6"><h6>
+        Attribuutsoort details      
+        
+        dwangnummer</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>dwangnummer</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Waarde waarmee de voorkeurs- of afhandelingsvolgorde van een route wordt vastgelegd.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Een dwangnummer bepaalt de relatieve voorkeur tussen alternatieve routes. Een dwangnummer met waarde -1 geeft de voorkeursroute aan.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ITM DienstregelingInfrainzetPlan en Uitvoering</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U53648542-fdfd-4119-8496-d862d6a99937">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Domein: patroon</th>
+<td>Geheel getal tussen -1 en 9</td>
+</tr>
+<tr>
+<th>Domein: formeel patroon</th>
+<td>[-1;9]</td>
+</tr>
+<tr>
+<th>Domein: minimumwaarde inclusief</th>
+<td>-1</td>
+</tr>
+<tr>
+<th>Domein: maximumwaarde inclusief</th>
+<td>9</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="Ue9561808-b566-46ee-81af-ddb7fe748b09"><h6>
+        Relatiesoort details
+        
+        <a href="#Uca9eaa96-4a76-4572-b58b-725c1e4d1197">Route</a>is samengesteld uit<a href="#Uca9eaa96-4a76-4572-b58b-725c1e4d1197"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>is samengesteld uit</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Route is samengesteld uit één of meer Infracapaciteitseenheden.</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#Ube5058c3-1d9f-4e7a-8f10-6f08971b6148">infracapaciteitseenheid</a></td>
+</tr>
+</tbody>
+</table>
+<section id="Ube5058c3-1d9f-4e7a-8f10-6f08971b6148"><h7>
+        Doelrelatierol details
+        infracapaciteitseenheid</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>infracapaciteitseenheid</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde infracapaciteitseenheid, waar de route uit is samengesteld.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section></section><section><h5>Slot</h5>
+<section id="U2c4a7f7f-c8f1-472d-a324-b83861f5a141"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een Slot.</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>Stopactiviteit</h5>
+<section id="U1a1e7000-6be3-4c02-b830-529969252b4a"><h6>
+        Attribuutsoort details      
+        
+        activiteitsoort</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>activiteitsoort</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Classificatie van een activiteit naar haar aard of functie.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#Ud456c192-64be-4131-831d-ca631c143ffc">SoortStopactiviteit</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section><section><h5>Treinbeweging</h5>
+<section id="Ua7900b7d-c802-4f10-b846-ed6424c668a0"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een Treinbeweging.</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U0683bd4d-5788-41fb-b532-fd5435d3be81">Treinidentificatie</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Mogelijk geen waarde</th>
+<td>Nee</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="Ub92a70bd-2cb3-44e9-b1f5-6fb3cd1a4634"><h6>
+        Attribuutsoort details      
+        
+        typeBeweging</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>typeBeweging</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9d6733a9-7359-4418-ac20-b51619db7df6">TypeTreinbeweging</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="Ua10567fb-5375-4774-8146-6b680f5c9b51"><h6>
+        Relatiesoort details
+        
+        <a href="#U51824e05-fc15-4638-a3ed-5cae68ce634b">Treinbeweging</a>bestaat uit  <a href="#U51824e05-fc15-4638-a3ed-5cae68ce634b"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>bestaat uit  </td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Treinbeweging bestaat uit één of meer Gebeurtenissen.</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U9c769044-fe8b-48f6-b753-70da5cca1766">gebeurtenis</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U9c769044-fe8b-48f6-b753-70da5cca1766"><h7>
+        Doelrelatierol details
+        gebeurtenis</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>gebeurtenis</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde gebeurtenis, waaruit de treinbeweging bestaat.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section></section><section><h5>Vrijgave</h5>
+<section id="Uea273b8c-eb55-4488-befd-833163dd2184"><h6>
+        Attribuutsoort details      
+        
+        type</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>type</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#Uc87fbb26-64be-48f3-a58d-028d640c782b">TypeVrijgave</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+</tbody>
+</table></section><section id="Udca3c01d-bed7-4084-b8f8-8fe80fa0fe1a"><h6>
+        Relatiesoort details
+        
+        <a href="#U32454a87-4bae-4bfc-b269-975cbda9fbdd">Vrijgave</a>is verleend binnen<a href="#U32454a87-4bae-4bfc-b269-975cbda9fbdd"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>is verleend binnen</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Vrijgave is verleend binnen Vrijgavegebied.</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#U799d0357-d036-45f4-958d-7d97466be01a">vrijgavegebied</a></td>
+</tr>
+</tbody>
+</table>
+<section id="U799d0357-d036-45f4-958d-7d97466be01a"><h7>
+        Doelrelatierol details
+        vrijgavegebied</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>vrijgavegebied</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde Vrijgavegebied, waar vrijgave binnen is verleend.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn geldigheid</th>
+<td>Ja</td>
+</tr>
+<tr>
+<th>Indicatie heeft tijdlijn registratie</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section></section></section><section><h5>Vrijgavegebied</h5>
+<section id="U926bc4cf-2b47-4366-b424-c7bb9dc72fc5"><h6>
+        Attribuutsoort details      
+        
+        identificatie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>identificatie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Unieke aanduiding van een Vrijgavegebied.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+<tr>
+<th>Type</th>
+<td><a href="#U9b19be03-1bc1-4c7d-b2ff-5ac77e5c1eb1">CharacterString</a></td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Indicatie identificerend</th>
+<td>Ja</td>
+</tr>
+</tbody>
+</table></section><section id="U8a584621-9583-4e54-af79-fa95e30dfc45"><h6>
+        Relatiesoort details
+        
+        <a href="#Uebb6afb8-3844-45a6-a6a8-925caccab021">Vrijgavegebied</a>bestaat uit<a href="#Uebb6afb8-3844-45a6-a6a8-925caccab021"></a>
+</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>bestaat uit</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Infracapiteitseenheid bestaat uit één of meer Infracapaciteitseenheden.</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+<tr>
+<th>Kardinaliteit bron</th>
+<td>1</td>
+</tr>
+<tr>
+<th>Relatierol doel</th>
+<td><a href="#Ub77aa956-98f7-468c-8f87-891736ddb16c">infracapaciteitseenheid</a></td>
+</tr>
+</tbody>
+</table>
+<section id="Ub77aa956-98f7-468c-8f87-891736ddb16c"><h7>
+        Doelrelatierol details
+        infracapaciteitseenheid</h7><table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>infracapaciteitseenheid</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gerelateerde infracapaciteitseenheid, waar het vrijgavegebied uit bestaat.</td>
+</tr>
+<tr>
+<th>Kardinaliteit</th>
+<td>1..*</td>
+</tr>
+</tbody>
+</table></section></section></section></section><section id="gestructureerddatatypedetails"><h3>GestructureerdeDatatype details</h3></section><section id="enumeratiedetails"><h4>Enumeratie details</h4>
+<section id="enumeratiedetails-Instructie"><h4>Instructie</h4>
+<section id="U878326c0-1bf1-46ab-bb54-6b7d6e36a260"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U20c5880c-f71a-42d3-8628-c823b8902544">Instructie</a>  roestrijden</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>roestrijden</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+</tbody>
+</table></section><section id="Ub6a58b97-c297-48cb-b432-eed3626fe716"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U20c5880c-f71a-42d3-8628-c823b8902544">Instructie</a>  rijden op zicht</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>rijden op zicht</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+</tbody>
+</table></section><section id="U454f0927-d907-4424-b2fa-e6ca65f7632b"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U20c5880c-f71a-42d3-8628-c823b8902544">Instructie</a>  goederencriterium</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>goederencriterium</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+</tbody>
+</table></section><section id="U64a3dab6-bb36-48a2-9700-106d8faeaf7d"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U20c5880c-f71a-42d3-8628-c823b8902544">Instructie</a>  dieseltractie</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>dieseltractie</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+</tbody>
+</table></section><section id="Uc136cb46-91fa-4297-87dd-932b15af0f4b"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U20c5880c-f71a-42d3-8628-c823b8902544">Instructie</a>  herfstcriterium</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>herfstcriterium</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+</tbody>
+</table></section></section><section id="enumeratiedetails-SoortRijactiviteit"><h4>SoortRijactiviteit</h4>
+<section id="U199af993-c8b8-42c0-844d-3b3097a0b77d"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U7cc99c65-b26e-463b-9f21-ec7bbe42134b">SoortRijactiviteit</a>  rangeren</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>rangeren</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>0020</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+</tbody>
+</table></section><section id="U84bee097-abeb-42d7-b006-b8468d6a3939"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U7cc99c65-b26e-463b-9f21-ec7bbe42134b">SoortRijactiviteit</a>  rangeerdienst uitvoeren</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>rangeerdienst uitvoeren</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>0021</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+</tbody>
+</table></section><section id="U23d04c1e-6b03-4055-920f-f4f7299cb18d"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U7cc99c65-b26e-463b-9f21-ec7bbe42134b">SoortRijactiviteit</a>  terminaldienst verlenen</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>terminaldienst verlenen</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>0022</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+</tbody>
+</table></section><section id="U9174cbb5-f47c-41cb-876d-375bbe8d62b4"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U7cc99c65-b26e-463b-9f21-ec7bbe42134b">SoortRijactiviteit</a>  locomotief omlopen</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>locomotief omlopen</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>0007</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+</tbody>
+</table></section><section id="Ue5e2c01b-d856-4b81-ac0c-d41d801ea523"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U7cc99c65-b26e-463b-9f21-ec7bbe42134b">SoortRijactiviteit</a>  meerijden met andere trein</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>meerijden met andere trein</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>0043</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+</tbody>
+</table></section></section><section id="enumeratiedetails-TypeGebeurtenis"><h4>TypeGebeurtenis</h4>
+<section id="U8a224b27-1d28-4b96-ac5e-0992c0a0717a"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U8336ae34-6d92-4858-8964-19a2e9393f47">TypeGebeurtenis</a>  aankomst</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>aankomst</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gebeurtenis die markeert dat een trein een locatie bereikt.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ITM DienstregelInfraInzetPlan en Uitvoering</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U093c0c2f-837a-408b-83e6-5264f2ef230f"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U8336ae34-6d92-4858-8964-19a2e9393f47">TypeGebeurtenis</a>  doorkomst</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>doorkomst</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gebeurtenis die markeert dat een trein een locatie passeert zonder daar te stoppen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ITM DienstregelInfraInzetPlan en Uitvoering</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="Ub32afc1b-20d4-4bb6-8d5b-d752c48da891"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U8336ae34-6d92-4858-8964-19a2e9393f47">TypeGebeurtenis</a>  vertrek</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>vertrek</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Gebeurtenis die markeert dat een trein een locatie verlaat.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ITM DienstregelInfraInzetPlan en Uitvoering</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section></section><section id="enumeratiedetails-TypeMeetpunt"><h4>TypeMeetpunt</h4>
+<section id="U9c80a136-699a-4870-87a8-b63d23f171ab"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</a>  assentellertelpunt</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>assentellertelpunt</td>
+</tr>
+<tr>
+<th>Begrip</th>
+<td><a href="https://otl.prorail.nl/otl/vigerend/Assenteller-Telpunt" target="_blank">https://otl.prorail.nl/otl/vigerend/Assenteller-Telpunt</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U77ec8185-380f-4726-b3b6-1c7c5766e5c1"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</a>  balisegroep</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>balisegroep</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>Balise-Groep</td>
+</tr>
+<tr>
+<th>Begrip</th>
+<td><a href="https://otl.prorail.nl/otl/vigerend/Balise-Groep" target="_blank">https://otl.prorail.nl/otl/vigerend/Balise-Groep</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U6c1d06c2-1ac0-4af5-b655-9cad6cb3b767"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</a>  detectiepedaal</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>detectiepedaal</td>
+</tr>
+<tr>
+<th>Begrip</th>
+<td><a href="https://otl.prorail.nl/otl/vigerend/Detectiepedaal" target="_blank">https://otl.prorail.nl/otl/vigerend/Detectiepedaal</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="Uff29c00c-e7f5-452e-afd4-e6fc663dce45"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</a>  massadetectielus</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>massadetectielus</td>
+</tr>
+<tr>
+<th>Begrip</th>
+<td><a href="https://otl.prorail.nl/otl/vigerend/Massadetectielus" target="_blank">https://otl.prorail.nl/otl/vigerend/Massadetectielus</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="Ua3b2ff4d-ac8a-4dc6-82c9-277e30e2c0ec"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</a>  sectielas</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>sectielas</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>ES-las</td>
+</tr>
+<tr>
+<th>Begrip</th>
+<td><a href="https://otl.prorail.nl/otl/vigerend/ES-Las" target="_blank">https://otl.prorail.nl/otl/vigerend/ES-Las</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>ProRail OTLspoor</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U576e80f5-09a1-46ff-ac0b-0c2acb833e7b"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U30cc1ff9-689e-4e6a-99d2-5cecb9c2568e">TypeMeetpunt</a>  virtueel meetpunt</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>virtueel meetpunt</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Logisch gedefinieerd meetpunt zonder directe fysieke infrastructuurcomponent.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section></section><section id="enumeratiedetails-TypeOpstelling"><h4>TypeOpstelling</h4>
+<section id="Ufffbf8ea-bde7-4dd5-a2bc-faa7d23b3b8c"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#Ud70e4911-5f4e-4acd-8479-e9d4877e822c">TypeOpstelling</a>  wachten</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>wachten</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>0042</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="Udb6f1f10-8e18-489b-910e-2950fbfba734"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#Ud70e4911-5f4e-4acd-8479-e9d4877e822c">TypeOpstelling</a>  voertuig parkeren</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>voertuig parkeren</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>0018</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>TSI</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="Ubb537f5c-0fde-48f0-8815-5bd1f29ba18f"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#Ud70e4911-5f4e-4acd-8479-e9d4877e822c">TypeOpstelling</a>  operationele opstelling</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>operationele opstelling</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een materieelopstelling waarbij materieel is opgesteld ten behoeve van operationele handelingen, zoals samenstellen, splitsen, combineren, keren of locomotief omlopen.</td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>CIM RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section></section><section id="enumeratiedetails-TypeTreinbeweging"><h4>TypeTreinbeweging</h4>
+<section id="U445be15a-9fd8-4a0f-b8b3-fe66daf1aba9"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U9d6733a9-7359-4418-ac20-b51619db7df6">TypeTreinbeweging</a>  vervoerbeweging</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>vervoerbeweging</td>
+</tr>
+<tr>
+<th>Alias</th>
+<td>treinrit</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een treinrit met het oogmerk van vervoer, waarbij goederen, personen of materieel over het spoor worden verplaatst volgens een dienstregeling of gepland traject.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Deze beweging vindt plaats over de vrije baan en/of emplacementen en wordt gerealiseerd via vastgelegde routes en rijwegen.</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="Ucba7278a-3823-4d88-a58e-e31235599aa3"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U9d6733a9-7359-4418-ac20-b51619db7df6">TypeTreinbeweging</a>  rangeerbeweging</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>rangeerbeweging</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een beweging van spoorvoertuigen zonder oogmerk van vervoer, uitgevoerd binnen de grenzen van een emplacement of materieelknooppunt, waarbij geen vrije baan wordt bereden.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>In bediend gebied blijft de beweging binnen één PPLG, tenzij een PPLG-vrijebaan kort wordt bereden om te keren (zaagbeweging).</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section><section id="U24d8784c-18b3-4e46-b7fd-dfa691c5148d"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#U9d6733a9-7359-4418-ac20-b51619db7df6">TypeTreinbeweging</a>  terminalbeweging</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>terminalbeweging</td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td>Een beweging van spoorvoertuigen binnen een terminalgebied, uitgevoerd om logistieke activiteiten zoals laden, lossen, rangeren of opstellen mogelijk te maken.</td>
+</tr>
+<tr>
+<th>Toelichting</th>
+<td>Deze beweging vindt plaats buiten de reguliere vervoersroute en is vaak gekoppeld aan een tijd-ruimte reservering (ruimteslot) in plaats van een vooraf exact vastgelegde route.</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>RTTP</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section></section><section id="enumeratiedetails-TypeVrijgave"><h4>TypeVrijgave</h4>
+<section id="Ua3670258-ff17-4d82-bc05-c7f63516969a"><h6>
+        Enumeratiewaarde details 
+        
+        <a href="#Uc87fbb26-64be-48f3-a58d-028d640c782b">TypeVrijgave</a>  vrijgave rangeergebied</h6>
+<table>
+<thead></thead>
+<tbody>
+<tr>
+<th>Naam</th>
+<td>vrijgave rangeergebied</td>
+</tr>
+<tr>
+<th>Begrip</th>
+<td><a href="https://otl.prorail.nl/otl/vigerend/Vrijgave-Rangeer-Gebied" target="_blank">https://otl.prorail.nl/otl/vigerend/Vrijgave-Rangeer-Gebied</a></td>
+</tr>
+<tr>
+<th>Definitie</th>
+<td></td>
+</tr>
+<tr>
+<th>Herkomst</th>
+<td>OTL ProRail</td>
+</tr>
+<tr>
+<th>Herkomst definitie</th>
+<td>OTL ProRail</td>
+</tr>
+<tr>
+<th>Datum opname</th>
+<td>01-07-2026</td>
+</tr>
+</tbody>
+</table></section></section></section><section id="relatieklassedetails"><h3>Relatieklasse details</h3></section></section></section>
