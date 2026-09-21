@@ -1,4 +1,3 @@
-// Dit bestand is gepubliceerd als https://tools.geostandaarden.nl/respec/config/geonovum-config.js, voor hergebruik in Geonovum ReSpec documenten.
 var organisationConfig = {
   nl_organisationName: "ProRail",
   // werkt nog niet
